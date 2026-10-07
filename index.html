@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&amp;family=Jost:wght@200;300;400&amp;display=swap" rel="stylesheet">
+<style>
+  html, body { margin:0; padding:0; background:#0C0B0A; }
+  a { color:#FFFDFA; text-decoration:none; }
+  a:hover { color:#FFFFFF; }
+@keyframes kpLoaderOut{to{opacity:0;visibility:hidden}}
+</style>
+</helmet>
+<div aria-hidden="true" style="position:fixed;inset:0;z-index:9999;background:#0A0A0A;display:flex;align-items:center;justify-content:center;pointer-events:none;animation:kpLoaderOut 0.5s ease 0.15s forwards"><span style="font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:500;font-size:0.8125rem;letter-spacing:0.3em;text-transform:uppercase;color:#FFFFFF;white-space:nowrap">Kofman + Partners</span></div>
+
+
+<div style="background:#0C0B0A;color:#FFFDFA;font-family:Manrope,sans-serif;min-height:100vh;display:flex;flex-direction:column;box-sizing:border-box;padding:0 clamp(24px,6vw,72px)">
+
+  <header style="width:100%;max-width:1320px;margin:0 auto;box-sizing:border-box;padding:clamp(72px,12vh,148px) 0 clamp(56px,8vh,92px);text-align:center">
+    <h1 style="margin:0;font-family:Jost,Manrope,sans-serif;font-weight:200;font-size:clamp(20px,4vw,50px);letter-spacing:.2em;text-transform:uppercase;line-height:1.05;white-space:nowrap">Kofman<span style="letter-spacing:.1em">+</span>Partners</h1>
+    <div style="display:flex;align-items:center;justify-content:center;gap:clamp(12px,1.5vw,22px);margin:clamp(18px,2.4vh,26px) 0 0;font-family:Jost,Manrope,sans-serif;font-size:clamp(8.5px,.82vw,11px);letter-spacing:.34em;text-transform:uppercase;font-weight:300;color:rgba(255,253,250,.6)">
+      <span>London</span>
+      <span style="color:rgba(255,253,250,.28)">|</span>
+      <span>Zurich</span>
+      <span style="color:rgba(255,253,250,.28)">|</span>
+      <span>Dubai</span>
+    </div>
+  </header>
+
+  <main style="width:100%;max-width:1320px;margin:0 auto;box-sizing:border-box;flex:1">
+    <div style="display:grid;grid-template-columns:{{ colsDoors }};gap:clamp(16px,2vw,28px)">
+
+      <a href="residential.html" style="position:relative;display:block;min-height:clamp(340px,46vh,520px);overflow:hidden;background:#15120F;color:#FFFDFA" style-hover="color:#FFFFFF">
+        <img src="assets/res-door.jpg" alt="Prime London reception room with river views" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,11,10,.08) 0%,rgba(12,11,10,.32) 44%,rgba(12,11,10,.9) 100%)"></div>
+        <div style="position:relative;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(28px,3vw,42px);box-sizing:border-box">
+          <span style="font-size:9.5px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,253,250,.72);font-weight:500">Private clients</span>
+          <h2 style="font-size:clamp(23px,2.5vw,34px);font-weight:300;letter-spacing:-.012em;margin:14px 0 12px">Residential</h2>
+          <p style="color:rgba(255,253,250,.72);font-size:13.5px;line-height:1.65;margin:0 0 26px;max-width:34ch;text-wrap:pretty">Buying, letting and portfolio mandates in prime London, the Gulf and across Europe.</p>
+          <span style="font-size:9.5px;letter-spacing:.26em;text-transform:uppercase;border-bottom:1px solid rgba(255,253,250,.42);padding-bottom:7px;align-self:flex-start">Enter Residential</span>
+        </div>
+      </a>
+
+      <a href="commercial/" style="position:relative;display:block;min-height:clamp(340px,46vh,520px);overflow:hidden;background:#15120F;color:#FFFDFA" style-hover="color:#FFFFFF">
+        <img src="assets/hero-home.jpg" alt="Kofman + Partners commercial project interior" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 38%">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,11,10,.08) 0%,rgba(12,11,10,.32) 44%,rgba(12,11,10,.9) 100%)"></div>
+        <div style="position:relative;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(28px,3vw,42px);box-sizing:border-box">
+          <span style="font-size:9.5px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,253,250,.72);font-weight:500">Brands &amp; operators</span>
+          <h2 style="font-size:clamp(23px,2.5vw,34px);font-weight:300;letter-spacing:-.012em;margin:14px 0 12px">Commercial</h2>
+          <p style="color:rgba(255,253,250,.72);font-size:13.5px;line-height:1.65;margin:0 0 26px;max-width:34ch;text-wrap:pretty">F&amp;B and retail site acquisition for brands entering the UK, Europe and the Middle East.</p>
+          <span style="font-size:9.5px;letter-spacing:.26em;text-transform:uppercase;border-bottom:1px solid rgba(255,253,250,.42);padding-bottom:7px;align-self:flex-start">Enter Commercial</span>
+        </div>
+      </a>
+
+    </div>
+
+    <div style="display:grid;grid-template-columns:{{ colsProof }};gap:clamp(16px,2vw,28px);margin-top:clamp(16px,2vw,28px)">
+      <div style="border-top:1px solid rgba(255,253,250,.16);padding:22px 0 0">
+        <b style="display:block;font-size:clamp(21px,2.1vw,30px);font-weight:300;letter-spacing:-.02em;margin-bottom:9px">18</b>
+        <span style="font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,253,250,.46)">Years on the market</span>
+      </div>
+      <div style="border-top:1px solid rgba(255,253,250,.16);padding:22px 0 0">
+        <b style="display:block;font-size:clamp(21px,2.1vw,30px);font-weight:300;letter-spacing:-.02em;margin-bottom:9px">98%</b>
+        <span style="font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,253,250,.46)">Mandate success rate</span>
+      </div>
+      <div style="border-top:1px solid rgba(255,253,250,.16);padding:22px 0 0">
+        <b style="display:block;font-size:clamp(21px,2.1vw,30px);font-weight:300;letter-spacing:-.02em;margin-bottom:9px">3</b>
+        <span style="font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,253,250,.46)">Offices, one team</span>
+      </div>
+      <div style="border-top:1px solid rgba(255,253,250,.16);padding:22px 0 0">
+        <b style="display:block;font-size:clamp(21px,2.1vw,30px);font-weight:300;letter-spacing:-.02em;margin-bottom:9px">2025</b>
+        <span style="font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,253,250,.46)">Best property consultancy</span>
+      </div>
+    </div>
+  </main>
+
+  <footer style="width:100%;max-width:1320px;margin:0 auto;box-sizing:border-box;padding:clamp(56px,8vh,88px) 0 clamp(40px,5vh,60px)"></footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { w: typeof window !== "undefined" ? window.innerWidth : 1280 };
+  componentDidMount() {
+    this._r = () => this.setState({ w: window.innerWidth });
+    window.addEventListener("resize", this._r);
+  }
+  componentWillUnmount() { window.removeEventListener("resize", this._r); }
+  renderVals() {
+    const w = this.state.w;
+    return {
+      colsDoors: w < 820 ? "1fr" : "1fr 1fr",
+      colsProof: w < 620 ? "1fr 1fr" : w < 1020 ? "repeat(2, minmax(0,1fr))" : "repeat(4, minmax(0,1fr))"
+    };
+  }
+}
+</script>
+</body>
+</html>

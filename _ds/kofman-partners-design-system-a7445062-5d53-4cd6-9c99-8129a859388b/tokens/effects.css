@@ -1,0 +1,8 @@
+:root{
+--radius-sm:0px;--radius-md:0px;--radius-lg:0px;--radius-pill:999px;/* flat fills, hard edges — KP Visual Standard 2026 RevC. radius-pill kept only for the Instagram highlight-tray circle */
+--shadow-sm:0 1px 2px rgba(11,11,11,0.06);--shadow-md:0 8px 24px rgba(11,11,11,0.10);--shadow-lg:0 24px 64px rgba(11,11,11,0.18);
+--ease-standard:cubic-bezier(.4,0,.2,1);/* @kind other */
+--duration-fast:150ms;/* @kind other */
+--duration-base:250ms;/* @kind other */
+--duration-slow:450ms/* @kind other */
+}

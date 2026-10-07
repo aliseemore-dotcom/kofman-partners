@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="_ds/kofman-partners-design-system-a7445062-5d53-4cd6-9c99-8129a859388b/tokens/colors.css">
+<link rel="stylesheet" href="_ds/kofman-partners-design-system-a7445062-5d53-4cd6-9c99-8129a859388b/tokens/typography.css">
+<link rel="stylesheet" href="_ds/kofman-partners-design-system-a7445062-5d53-4cd6-9c99-8129a859388b/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/kofman-partners-design-system-a7445062-5d53-4cd6-9c99-8129a859388b/tokens/effects.css">
+<link rel="stylesheet" href="_ds/kofman-partners-design-system-a7445062-5d53-4cd6-9c99-8129a859388b/styles.css">
+<script src="_ds/kofman-partners-design-system-a7445062-5d53-4cd6-9c99-8129a859388b/_ds_bundle.js"></script>
+<script src="image-slot.js"></script>
+<style>
+:root{
+ --text-display-1:clamp(2rem,1.5rem + 1.9vw,3.25rem);
+ --text-display-2:clamp(1.5rem,1.2rem + 1.2vw,2.125rem);
+ --text-h3:1rem;
+ --text-body-lg:1rem;
+ --text-body:0.9375rem;
+ --text-small:0.8125rem;
+ --text-eyebrow:0.75rem;
+}
+html{scroll-behavior:smooth}
+body{margin:0;background:#0A0A0A}
+a{color:#FFFFFF}
+a:hover{color:rgba(255,255,255,.7)}
+:focus-visible{outline:2px solid #FFFFFF;outline-offset:3px}
+[data-mobile]{display:none}
+@media (max-width:900px){
+ [data-desktop]{display:none !important}
+ [data-mobile]{display:flex !important}
+ [data-cols="3"]{grid-template-columns:1fr !important}
+ [data-split]{grid-template-columns:1fr !important;gap:var(--space-5) !important}
+ [data-why]{grid-template-columns:1fr !important;gap:var(--space-5) !important}
+ [data-why]>div:last-child{margin-top:0 !important}
+ [data-split]>div:first-child{max-width:360px}
+ [data-pad]{padding-left:20px !important;padding-right:20px !important}
+ [data-hero]{height:auto !important;min-height:520px}
+ [data-card]{flex-basis:82% !important}
+}
+@media (max-width:1080px){
+ header [data-desktop]{display:none !important}
+ header [data-mobile]{display:flex !important}
+}
+@media (prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *{transition:none !important;animation:none !important}
+}
+[data-carousel]{scrollbar-width:none}
+[data-carousel]::-webkit-scrollbar{display:none}
+@keyframes kpLoaderOut{to{opacity:0;visibility:hidden}}
+</style>
+</helmet>
+<div aria-hidden="true" style="position:fixed;inset:0;z-index:9999;background:#0A0A0A;display:flex;align-items:center;justify-content:center;pointer-events:none;animation:kpLoaderOut 0.5s ease 0.15s forwards"><span style="font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:500;font-size:0.8125rem;letter-spacing:0.3em;text-transform:uppercase;color:#FFFFFF;white-space:nowrap">Kofman + Partners</span></div>
+
+
+<div style="background:#0A0A0A;color:var(--text-on-dark);font-family:var(--font-sans);font-weight:var(--weight-body);min-height:100vh">
+
+  <header style="position:relative;z-index:30;border-bottom:1px solid var(--border-on-dark-soft)">
+    <div data-pad style="max-width:1320px;margin:0 auto;padding:30px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <a href="index.html" style="display:flex;align-items:baseline;gap:0.6em;text-decoration:none;white-space:nowrap">
+        <span style="font-family:var(--font-label);font-weight:500;font-size:0.8125rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--ink-0)">Kofman + Partners</span>
+        <span data-desktop style="font-family:var(--font-label);font-weight:400;font-size:0.8125rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--ink-300)">Lettings</span>
+      </a>
+      <nav data-desktop style="display:flex;align-items:center;gap:30px">
+        <a href="residential.html" style="font-family:var(--font-label);font-size:0.6875rem;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;white-space:nowrap;color:var(--ink-300)" style-hover="color:var(--ink-0)">Residential</a>
+        <a href="#top" aria-current="page" style="font-family:var(--font-label);font-size:0.6875rem;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;white-space:nowrap;color:var(--ink-0)">Lettings</a>
+        <a href="how-we-work.html" style="font-family:var(--font-label);font-size:0.6875rem;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;white-space:nowrap;color:var(--ink-300)" style-hover="color:var(--ink-0)">How we work</a>
+        <a href="#advisors" style="font-family:var(--font-label);font-size:0.6875rem;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;white-space:nowrap;color:rgba(255,255,255,0.6)" style-hover="color:#FFFFFF">Your advisors</a>
+        <a href="commercial/" style="font-family:var(--font-label);font-size:0.6875rem;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;white-space:nowrap;color:rgba(255,255,255,0.6)" style-hover="color:#FFFFFF">Commercial</a>
+        <a data-analytics="nav_contact" href="#contact" style="display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--border-on-dark);padding:9px 20px;margin-left:8px;font-family:var(--font-label);font-size:0.6875rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-0);text-decoration:none;transition:border-color var(--duration-fast) var(--ease-standard)" style-hover="border-color:var(--ink-0)">Contact</a>
+      </nav>
+      <div data-mobile style="align-items:center;gap:16px">
+        <a data-analytics="nav_contact" href="#contact" style="display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--border-on-dark);padding:12px 20px;font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-0);text-decoration:none">Contact</a>
+        <button type="button" onClick="{{ openMenu }}" style="background:none;border:none;padding:8px 0;color:var(--ink-0);font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.16em;text-transform:uppercase;cursor:pointer">Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;inset:0;z-index:60;background:#0A0A0A;display:flex;flex-direction:column;padding:22px 20px 40px">
+      <div style="display:flex;align-items:center;justify-content:space-between">
+        <span style="font-family:var(--font-display);font-size:1.0625rem">Kofman + Partners</span>
+        <button type="button" onClick="{{ closeMenu }}" style="background:none;border:none;color:var(--ink-0);font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.16em;text-transform:uppercase;cursor:pointer;padding:8px 0">Close</button>
+      </div>
+      <nav style="display:flex;flex-direction:column;gap:4px;margin-top:56px">
+        <a href="residential.html" style="font-family:var(--font-display);font-weight:300;font-size:2rem;text-decoration:none;color:var(--ink-0);padding:10px 0">Residential</a>
+        <a href="#top" onClick="{{ closeMenu }}" style="font-family:var(--font-display);font-weight:300;font-size:2rem;text-decoration:none;color:var(--ink-0);padding:10px 0">Lettings</a>
+        <a href="how-we-work.html" style="font-family:var(--font-display);font-weight:300;font-size:2rem;text-decoration:none;color:var(--ink-0);padding:10px 0">How we work</a>
+        <a href="#advisors" onClick="{{ closeMenu }}" style="font-family:var(--font-display);font-weight:300;font-size:2rem;text-decoration:none;color:var(--ink-0);padding:10px 0">Your advisors</a>
+        <a href="commercial/" style="font-family:var(--font-display);font-weight:300;font-size:2rem;text-decoration:none;color:var(--ink-0);padding:10px 0">Commercial</a>
+        <a data-analytics="nav_contact" href="#contact" onClick="{{ closeMenu }}" style="font-family:var(--font-display);font-weight:300;font-size:2rem;text-decoration:none;color:var(--ink-0);padding:10px 0">Contact</a>
+      </nav>
+    </div>
+  </sc-if>
+
+  <section id="top" data-hero data-screen-label="Hero" style="position:relative;min-height:640px;display:flex;align-items:flex-end;overflow:hidden">
+    <image-slot id="kp-let-hero-v2" src="assets/rev/heroes/lettings_hero_interior.jpg" fit="cover" shape="rect" alt="Drawing room with library wall and garden windows" placeholder="Lettings hero — interior" style="position:absolute;inset:0;width:100%;height:100%;transform:scaleX(-1)"></image-slot>
+    <div aria-hidden="true" style="position:absolute;left:0;bottom:0;width:min(1100px,100%);height:100%;pointer-events:none;background:linear-gradient(90deg,rgba(10,10,10,0.68) 0%,rgba(10,10,10,0.52) 32%,rgba(10,10,10,0.2) 56%,rgba(10,10,10,0) 72%)"></div>
+    <div data-pad style="position:relative;z-index:1;max-width:1320px;width:100%;margin:0 auto;padding:120px 32px 88px;display:flex;flex-direction:column;gap:20px">
+      <span style="font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-300)">Private Client · Lettings</span>
+      <h1 style="font-family:var(--font-display);font-weight:var(--weight-display);font-size:var(--text-display-1);line-height:var(--lh-tight);letter-spacing:var(--tracking-tight);margin:0;max-width:22ch;text-wrap:balance">Your partner in finding exceptional properties to rent, both on and beyond the open market.</h1>
+      <p style="font-family:var(--font-label);font-size:var(--text-small);letter-spacing:0.06em;color:var(--ink-300);margin:0">Mayfair · Belgravia · Knightsbridge · Kensington &amp; Chelsea</p>
+      <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:14px">
+        <a data-analytics="hero_whatsapp" href="{{ waHero }}" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--ink-0);color:var(--ink-950);padding:16px 28px;font-family:var(--font-label);font-size:0.75rem;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;border:1px solid var(--ink-0)" style-hover="background:var(--charcoal);color:var(--ink-0)">WhatsApp →</a>
+      </div>
+      <div style="display:flex;flex-wrap:nowrap;align-items:center;gap:14px;margin-top:18px">
+        <img src="assets/award-flag.png" alt="UK International Property Awards, Real Estate, 2025-2026" style="display:block;width:26px;height:50px;object-fit:contain;flex:none">
+        <span style="font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-300)">UK Property Awards · Best Property Consultancy 2025–2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div style="background:#131517;border-top:1px solid var(--border-on-dark-soft)">
+    <section data-why id="why" data-screen-label="Why" data-pad style="max-width:1320px;margin:0 auto;padding:clamp(56px,8vh,88px) 32px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-7);align-items:start">
+    <div style="display:flex;flex-direction:column;align-items:flex-start;gap:var(--space-4)">
+      <h2 style="font-family:var(--font-display);font-weight:var(--weight-display);font-size:var(--text-display-1);line-height:var(--lh-tight);letter-spacing:var(--tracking-tight);margin:0;max-width:18ch;text-wrap:balance">Our approach</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:var(--space-5)">
+      <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+        <span style="font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-300);line-height:1">01 | We work for you</span>
+        <p style="font-size:var(--text-body-lg);line-height:var(--lh-normal);color:var(--ink-100);max-width:52ch;text-wrap:pretty;margin:0">We search for properties that match your brief, including opportunities beyond the open market. We approach owners directly, negotiate on your behalf and present you with a carefully selected shortlist.</p>
+      </div>
+      <div style="height:1px;background:var(--border-on-dark-soft);max-width:52ch;width:100%"></div>
+      <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+        <span style="font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-300);line-height:1">02 | More than a letting</span>
+        <p style="font-size:var(--text-body-lg);line-height:var(--lh-normal);color:var(--ink-100);max-width:52ch;text-wrap:pretty;margin:0">We know the market beyond the property itself. From the right neighbourhood and lifestyle to the people and services around you, we help you settle into the right place — not simply rent a property.</p>
+      </div>
+    </div>
+  </section>
+  </div>
+
+  <section id="lettings" data-screen-label="Selected lettings" data-pad style="max-width:1320px;margin:0 auto;padding:var(--space-7) 32px;border-top:1px solid var(--border-on-dark-soft)">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:var(--space-6)">
+      <span style="font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-300)">Selected lettings</span>
+      <div style="display:flex;gap:8px">
+        <button type="button" aria-label="Previous" onClick="{{ ltPrev }}" style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;border:1px solid var(--border-on-dark);background:none;color:var(--ink-0);font-family:var(--font-label);font-size:1rem;cursor:pointer;opacity:{{ ltPrevOp }};transition:border-color var(--duration-fast) var(--ease-standard)" style-hover="border-color:var(--ink-0)">←</button>
+        <button type="button" aria-label="Next" onClick="{{ ltNext }}" style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;border:1px solid var(--border-on-dark);background:none;color:var(--ink-0);font-family:var(--font-label);font-size:1rem;cursor:pointer;opacity:{{ ltNextOp }};transition:border-color var(--duration-fast) var(--ease-standard)" style-hover="border-color:var(--ink-0)">→</button>
+      </div>
+    </div>
+    <div data-carousel ref="{{ ltRef }}" onScroll="{{ ltOnScroll }}" style="display:flex;gap:var(--space-5);overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth">
+      <sc-for list="{{ ltItems }}" as="p" hint-placeholder-count="3">
+        <div data-card style="flex:0 0 calc((100% - 2 * var(--space-5)) / 2.4);min-width:0;scroll-snap-align:start">
+          <div style="aspect-ratio:1/1;background:var(--ink-900);overflow:hidden;position:relative">
+            <image-slot id="{{ p.slot }}" src="{{ p.src }}" fit="cover" position="{{ p.pos }}" shape="rect" alt="{{ p.alt }}" placeholder="{{ p.alt }}" style="position:absolute;inset:0;width:100%;height:100%;filter:saturate(0.85)"></image-slot>
+            <span aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(10,10,10,0.72) 0%,rgba(10,10,10,0.28) 30%,rgba(10,10,10,0) 55%)"></span>
+            <div style="position:absolute;left:0;right:0;bottom:0;padding:20px 22px;display:flex;flex-direction:column;gap:6px;pointer-events:none">
+              <span style="font-family:var(--font-sans);font-weight:400;font-size:var(--text-h2);color:#FFFFFF">{{ p.name }}</span>
+              <sc-if value="{{ p.loc }}" hint-placeholder-val="{{ true }}"><span style="font-family:var(--font-label);font-size:var(--text-small);letter-spacing:0.04em;color:rgba(255,255,255,0.6)">{{ p.loc }}</span></sc-if>
+              <span style="font-family:var(--font-label);font-size:var(--text-small);letter-spacing:0.04em;color:#FFFFFF">{{ p.price }}</span>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <div style="background:#131517;border-top:1px solid var(--border-on-dark-soft)">
+    <section id="advisors" data-screen-label="Your Advisors" data-pad style="max-width:1320px;margin:0 auto;padding:var(--space-7) 32px var(--space-6)">
+      <div style="display:flex;flex-direction:column;gap:var(--space-4);margin-bottom:var(--space-6)">
+        <h2 style="font-family:var(--font-display);font-weight:var(--weight-display);font-size:var(--text-display-2);line-height:var(--lh-tight);letter-spacing:var(--tracking-tight);margin:0;max-width:20ch;text-wrap:balance">Your Advisors</h2>
+      </div>
+      <figure style="margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-6) clamp(32px,6vw,96px)">
+          <div style="flex:0 1 380px;min-width:240px;aspect-ratio:3/4;background:#2B2B2B;overflow:hidden"><img src="assets/team/v4/tatiana.jpg" alt="Tatiana Knyazeva" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center top"></div>
+          <div style="flex:1 1 360px;min-width:0;display:flex;flex-direction:column;gap:var(--space-5)">
+          <p style="font-family:var(--font-display);font-weight:var(--weight-display);font-size:clamp(1.75rem,3vw,2.75rem);line-height:var(--lh-snug,1.2);letter-spacing:var(--tracking-tight);color:var(--ink-0);max-width:22ch;margin:0;text-wrap:balance">Tatiana finds your home, arranges the viewings and negotiates the tenancy on your side.</p>
+          <figcaption style="display:flex;flex-direction:column;gap:2px;padding-top:14px;padding-top:var(--space-4);border-top:1px solid var(--border-on-dark-soft)">
+            <span style="font-family:var(--font-sans);font-weight:300;font-size:22px;letter-spacing:-.005em;line-height:1.25;color:#FFFFFF;margin-bottom:10px">Tatiana Knyazeva</span>
+            <span style="font-family:var(--font-sans);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,0.5);line-height:1.8">Private Client · Premium &amp; Super-Prime Lettings Advisor</span>
+            <span style="font-family:var(--font-sans);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,0.5);line-height:1.8">London</span>
+          </figcaption>
+          </div>
+      </figure>
+    </section>
+  </div>
+
+  <section id="contact" data-screen-label="Contact" data-pad style="max-width:1320px;margin:0 auto;padding:var(--space-7) 32px var(--space-7);border-top:1px solid var(--border-on-dark-soft)">
+    <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:var(--space-4);max-width:52ch;margin:0 auto">
+      <h2 style="font-family:var(--font-display);font-weight:var(--weight-display);font-size:var(--text-display-2);line-height:var(--lh-tight);letter-spacing:var(--tracking-tight);margin:0;max-width:18ch;text-wrap:balance">Looking for a home that isn't listed?</h2>
+      <p style="font-size:var(--text-body);line-height:var(--lh-normal);color:var(--ink-300);margin:0;text-wrap:pretty">Most clients start with a message.</p>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:var(--space-2)">
+        <a data-analytics="contact_whatsapp" href="{{ waContact }}" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--ink-0);color:var(--ink-950);padding:16px 28px;font-family:var(--font-label);font-size:0.75rem;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;border:1px solid var(--ink-0);min-width:200px;box-sizing:border-box" style-hover="background:var(--charcoal);color:var(--ink-0)">WhatsApp →</a>
+        <a data-analytics="contact_email" href="mailto:office@kofmanpartners.com?subject=Lettings%20enquiry" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:200px;background:transparent;color:var(--ink-0);padding:16px 28px;font-family:var(--font-label);font-size:0.75rem;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;border:1px solid var(--ink-0);box-sizing:border-box" style-hover="background:var(--ink-0);color:var(--ink-950)">Email →</a>
+      </div>
+      <span style="font-family:var(--font-label);font-size:var(--text-small);color:var(--ink-300)">or call <a data-analytics="contact_phone_tap" href="tel:+447457411495" style="color:var(--ink-0);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;display:inline-block;padding:10px 0" style-hover="color:var(--ink-300)">+44 7457 411495</a></span>
+      <span style="font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.06em;color:var(--ink-300)">Your enquiry stays confidential.</span>
+    </div>
+  </section>
+
+  <footer data-pad style="border-top:1px solid var(--border-on-dark-soft);padding:22px 32px 96px">
+    <div style="max-width:1320px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 32px;align-items:center">
+      <span style="font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.12em;color:var(--ink-300)">12 Hay Hill, Mayfair, London</span>
+      <span style="font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.12em;color:var(--ink-300)">PRS · SmartSearch · UK-Arab Chamber of Commerce</span>
+    </div>
+  </footer>
+
+  <sc-if value="{{ waBar }}" hint-placeholder-val="{{ true }}">
+    <a data-analytics="floating_whatsapp" href="{{ waFloat }}" style="position:fixed;right:20px;bottom:20px;z-index:40;background:var(--ink-0);color:var(--ink-950);padding:14px 22px;font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;border:1px solid var(--ink-0);transition:opacity var(--duration-fast) var(--ease-standard);opacity:{{ waBarOpacity }};pointer-events:{{ waBarPointer }}" style-hover="background:var(--charcoal);color:var(--ink-0)">WhatsApp →</a>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;whatsappNumber&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;447457411495&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Behaviour&quot;},&quot;whatsappBar&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behaviour&quot;}}">
+const LETTINGS = [
+  { slot:'kp-let-card-1', src:'assets/rev/let/01_the-lancasters_exterior.jpg', alt:'The Lancasters', name:'The Lancasters', loc:'Hyde Park', price:'From £8,000 pcm', pos:'center' },
+  { slot:'kp-let-card-2', src:'assets/rev/let/02_corniche_interior.jpg', alt:'Corniche', name:'Corniche', loc:'Albert Embankment', price:'From £7,500 pcm', pos:'center' },
+  { slot:'kp-let-card-3', src:'assets/rev/let/03_embassy-gardens_exterior.jpg', alt:'Embassy Gardens', name:'Embassy Gardens', loc:'Nine Elms', price:'From £5,000 pcm', pos:'center' },
+  { slot:'kp-let-card-4', src:'assets/rev/let/04_the-tower_exterior.jpg', alt:'The Tower', name:'The Tower', loc:'One St George Wharf', price:'From £5,000 pcm', pos:'center' },
+  { slot:'kp-let-card-5', src:'assets/rev/let/05_chelsea-waterfront_exterior.jpg', alt:'Chelsea Waterfront', name:'Chelsea Waterfront', loc:'', price:'From £5,000 pcm', pos:'center 30%' },
+  { slot:'kp-let-card-6', src:'assets/rev/let/06_chelsea-creek_exterior.jpg', alt:'Chelsea Creek', name:'Chelsea Creek', loc:'', price:'From £4,500 pcm', pos:'center 35%' },
+  { slot:'kp-let-card-7', src:'assets/rev/let/07_holland-park-gate_exterior.jpg', alt:'Holland Park Gate', name:'Holland Park Gate', loc:'', price:'From £8,000 pcm', pos:'center' },
+  { slot:'kp-let-card-8', src:'assets/rev/let/08_the-whiteley_exterior.jpg', alt:'The Whiteley', name:'The Whiteley', loc:'Bayswater', price:'From £10,000 pcm', pos:'center' }
+];
+
+class Component extends DCLogic {
+  state = { menuOpen:false, nearContact:true, ltStart:true, ltEnd:false };
+  ltRef = React.createRef();
+  ltScroll(dir){
+    const el = this.ltRef.current; if (!el) return;
+    const c = el.querySelector('[data-card]');
+    const gap = parseFloat(getComputedStyle(el).columnGap) || 24;
+    el.scrollBy({ left: dir * (c ? c.getBoundingClientRect().width + gap : el.clientWidth * 0.8), behavior:'smooth' });
+  }
+  ltSync = () => {
+    const el = this.ltRef.current; if (!el) return;
+    const s = el.scrollLeft < 4, e = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4;
+    if (s !== this.state.ltStart || e !== this.state.ltEnd) this.setState({ ltStart:s, ltEnd:e });
+  };
+
+  wa(text, src){
+    const num = (this.props.whatsappNumber || '447457411495').replace(/\D/g,'');
+    return 'https://wa.me/' + num + '?text=' + encodeURIComponent(text) + '&utm_source=lettings&utm_content=' + src;
+  }
+
+  componentDidMount(){
+    this._onScroll = () => {
+      const hero = document.getElementById('top');
+      const inHero = hero ? hero.getBoundingClientRect().bottom > 0 : false;
+      let nearC = false;
+      if (window.innerWidth <= 900) {
+        const el = document.getElementById('contact');
+        if (el) { const r = el.getBoundingClientRect(); nearC = r.top < window.innerHeight && r.bottom > 0; }
+      }
+      const hide = inHero || nearC;
+      if (hide !== this.state.nearContact) this.setState({nearContact: hide});
+    };
+    this._onClick = (e) => {
+      const a = e.target.closest && e.target.closest('[data-analytics]');
+      if (!a) return;
+      const ev = a.getAttribute('data-analytics');
+      (window.dataLayer = window.dataLayer || []).push({event:'lettings_click', cta: ev});
+      if (typeof window.gtag === 'function') window.gtag('event', ev, {page:'lettings'});
+    };
+    window.addEventListener('scroll', this._onScroll, {passive:true});
+    window.addEventListener('resize', this._onScroll);
+    document.addEventListener('click', this._onClick, true);
+    window.addEventListener('resize', this.ltSync);
+    this._onScroll();
+    setTimeout(this.ltSync, 300);
+  }
+  componentWillUnmount(){
+    window.removeEventListener('scroll', this._onScroll);
+    window.removeEventListener('resize', this._onScroll);
+    document.removeEventListener('click', this._onClick, true);
+    window.removeEventListener('resize', this.ltSync);
+  }
+
+  renderVals(){
+    const s = this.state;
+    const msg = "Hello, I'm looking for a rental in London.";
+    return {
+      ltItems: LETTINGS,
+      ltRef: this.ltRef,
+      ltOnScroll: this.ltSync,
+      ltPrev: () => this.ltScroll(-1),
+      ltNext: () => this.ltScroll(1),
+      ltPrevOp: s.ltStart ? 0.3 : 1,
+      ltNextOp: s.ltEnd ? 0.3 : 1,
+      menuOpen: s.menuOpen,
+      openMenu: () => this.setState({menuOpen:true}),
+      closeMenu: () => this.setState({menuOpen:false}),
+      waBar: this.props.whatsappBar !== false,
+      waBarOpacity: s.nearContact ? 0 : 1,
+      waBarPointer: s.nearContact ? 'none' : 'auto',
+      waHero: this.wa(msg, 'hero'),
+      waContact: this.wa(msg, 'contact'),
+      waFloat: this.wa(msg, 'floating')
+    };
+  }
+}
+</script>
+</body>
+</html>

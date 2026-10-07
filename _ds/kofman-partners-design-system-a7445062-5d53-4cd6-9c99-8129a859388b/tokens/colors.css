@@ -1,0 +1,12 @@
+:root{
+/* Three-tone brand palette (KP Visual Standard 2026 RevC) — black, charcoal, white are the brand. Steel is functional (labels/hairlines) only, never a fill. */
+--black:#0A0A0A;--charcoal:#2B2F33;--white:#FFFFFF;--steel:#838B92;/* lightened from #6E767D: 12px caps labels on #0A0A0A now clear 4.5:1 */
+--ink-0:var(--white);--ink-100:rgba(255,255,255,.88);--ink-300:rgba(255,255,255,.55);--ink-500:var(--steel);--ink-700:var(--charcoal);--ink-900:#171A1C;--ink-950:var(--black);
+--surface-dark:var(--black);--surface-dark-raised:var(--charcoal);--surface-light:var(--white);--surface-light-raised:var(--white);
+--text-on-dark:var(--white);--text-on-dark-muted:rgba(255,255,255,.55);--text-on-light:var(--black);--text-on-light-muted:#5C646B;
+--border-on-dark:rgba(255,255,255,.18);--border-on-dark-soft:rgba(255,255,255,.12);
+--border-on-light:rgba(10,10,10,.14);--border-on-light-soft:rgba(10,10,10,.08);
+--focus-ring:rgba(10,10,10,.35);
+/* Seasonal accent — feed/story copy ONLY (a coloured full stop, quote mark or currency symbol inside a headline). Never a fill, never UI chrome. */
+--accent-spring:#4B7F52;--accent-summer:#C9A227;--accent-autumn:#C1561E;--accent-winter:#2E5CAD
+}

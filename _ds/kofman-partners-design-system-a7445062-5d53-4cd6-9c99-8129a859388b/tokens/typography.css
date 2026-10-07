@@ -1,0 +1,22 @@
+@font-face{font-family:'Manrope';font-style:normal;font-weight:300;font-display:swap;src:url(https://cdn.jsdelivr.net/fontsource/fonts/manrope@latest/latin-300-normal.woff2) format('woff2')}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:400;font-display:swap;src:url(https://cdn.jsdelivr.net/fontsource/fonts/manrope@latest/latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:500;font-display:swap;src:url(https://cdn.jsdelivr.net/fontsource/fonts/manrope@latest/latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:600;font-display:swap;src:url(https://cdn.jsdelivr.net/fontsource/fonts/manrope@latest/latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:700;font-display:swap;src:url(https://cdn.jsdelivr.net/fontsource/fonts/manrope@latest/latin-700-normal.woff2) format('woff2')}
+:root{
+/* Manrope only — the real live font on commerce.kofmanpartners.com (confirmed via source grep: font-family:Manrope,sans-serif everywhere). The Geist standard in the PDF is a separate, not-yet-shipped social/print guideline — the user asked to follow the SITE's fonts here. */
+--font-display:'Manrope',-apple-system,'Segoe UI',sans-serif;
+--font-sans:'Manrope',-apple-system,'Segoe UI',sans-serif;
+--font-label:'Manrope',-apple-system,'Segoe UI',sans-serif;/* labels, meta, eyebrows — NOT a monospace face; no mono exists in this system */
+--font-mono:var(--font-label);/* deprecated alias */
+--text-display-1:clamp(2.75rem,2rem + 3vw,5.5rem);/* @kind other */
+--text-display-2:clamp(2rem,1.5rem + 2vw,3.5rem);/* @kind other */
+--text-h1:clamp(1.75rem,1.4rem + 1.2vw,2.5rem);/* @kind other */
+--text-h2:1.5rem;--text-h3:1.125rem;
+--text-body-lg:1.125rem;--text-body:1rem;--text-small:0.875rem;--text-eyebrow:0.75rem;
+--weight-display:300;--weight-heading:300;--weight-body:300;/* @kind other */
+--lh-tight:1.05;/* @kind other */
+--lh-snug:1.25;/* @kind other */
+--lh-normal:1.55;/* @kind other */
+--tracking-eyebrow:0.24em;--tracking-tight:-0.01em
+}

@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #0B0B0B; }
+  a { color: #FFFFFF; text-decoration: none; }
+  a:hover { color: rgba(255,255,255,.6); }
+  ::selection { background: #FFFFFF; color: #0B0B0B; }
+</style>
+</helmet>
+
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#0B0B0B"></rect><text x="50" y="56" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="19" font-weight="300" letter-spacing="2" fill="#FFFFFF">K+P</text><rect x="30" y="64" width="40" height="1" fill="#FFFFFF" opacity="0.5"></rect></svg></template>
+
+<div onClick="{{ onNav }}" style="background:#0B0B0B;color:#FFFFFF;font-family:Manrope,sans-serif;font-size:16px;font-weight:300;line-height:1.65;min-height:100vh">
+
+  
+
+  <nav style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:30px 6vw;border-bottom:1px solid rgba(255,255,255,.12)">
+    <a href="#" data-goto="home" style="display:flex;align-items:baseline;gap:12px;flex-shrink:0;font-size:12px;letter-spacing:.32em;text-transform:uppercase;font-weight:400;color:#FFFFFF;white-space:nowrap">Kofman <span style="font-weight:300">+</span> Partners <span style="color:rgba(255,255,255,.45);letter-spacing:.3em">Commercial</span></a>
+
+    <sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}">
+    <div style="display:flex;gap:28px;align-items:center;font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:400;white-space:nowrap">
+      <a href="#" data-goto="work" style="color:rgba(255,255,255,.6)" style-hover="color:#FFFFFF">Work</a>
+      <a href="#" data-goto="what" style="color:rgba(255,255,255,.6)" style-hover="color:#FFFFFF">What We Do</a>
+      <a href="#" data-goto="markets" style="color:rgba(255,255,255,.6)" style-hover="color:#FFFFFF">Markets</a>
+      <a href="#" data-goto="brands" style="color:rgba(255,255,255,.6)" style-hover="color:#FFFFFF">Brands</a>
+      <a href="#" data-goto="team" style="color:rgba(255,255,255,.6)" style-hover="color:#FFFFFF">Your Advisors</a>
+      <a href="../residential.html" style="color:rgba(255,255,255,.6)" style-hover="color:#FFFFFF">Residential</a>
+      <a href="#" data-goto="enquire" style="border:1px solid rgba(255,255,255,.35);color:#FFFFFF;padding:11px 22px;font-size:10px;letter-spacing:.2em;margin-left:8px;transition:background .3s,color .3s" style-hover="background:#FFFFFF;color:#0B0B0B">Contact</a>
+    </div>
+    </sc-if>
+
+    <sc-if value="{{ isNarrow }}" hint-placeholder-val="{{ false }}">
+    <div style="display:flex;align-items:center;gap:14px">
+      <a href="#" data-goto="enquire" style="border:1px solid rgba(255,255,255,.35);color:#FFFFFF;padding:12px 22px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap">Contact</a>
+      <button onClick="{{ toggleMenu }}" aria-label="Menu" style="background:transparent;border:1px solid rgba(255,255,255,.35);color:#FFFFFF;font-family:Manrope,sans-serif;font-size:10px;letter-spacing:.22em;text-transform:uppercase;padding:12px 18px;cursor:pointer">Menu</button>
+    </div>
+    </sc-if>
+  </nav>
+
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;inset:0;z-index:80;background:#0B0B0B;display:flex;flex-direction:column;padding:30px 6vw">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.12)">
+      <span style="font-size:13px;letter-spacing:.32em;text-transform:uppercase">Kofman + Partners</span>
+      <button onClick="{{ toggleMenu }}" style="background:transparent;border:1px solid rgba(255,255,255,.35);color:#FFFFFF;font-family:Manrope,sans-serif;font-size:10px;letter-spacing:.22em;text-transform:uppercase;padding:12px 18px;cursor:pointer">Close</button>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:0;flex:1;justify-content:center">
+      <a href="#" data-goto="work" onClick="{{ toggleMenu }}" style="font-size:30px;font-weight:300;letter-spacing:.02em;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.12)">Work</a>
+      <a href="#" data-goto="what" onClick="{{ toggleMenu }}" style="font-size:30px;font-weight:300;letter-spacing:.02em;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.12)">What We Do</a>
+      <a href="#" data-goto="markets" onClick="{{ toggleMenu }}" style="font-size:30px;font-weight:300;letter-spacing:.02em;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.12)">Markets</a>
+      <a href="#" data-goto="brands" onClick="{{ toggleMenu }}" style="font-size:30px;font-weight:300;letter-spacing:.02em;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.12)">Brands</a>
+      <a href="#" data-goto="team" onClick="{{ toggleMenu }}" style="font-size:30px;font-weight:300;letter-spacing:.02em;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.12)">Your Advisors</a>
+      <a href="../residential.html" style="font-size:30px;font-weight:300;letter-spacing:.02em;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.55)">Residential</a>
+      <a href="#" data-goto="enquire" onClick="{{ toggleMenu }}" style="font-size:30px;font-weight:300;letter-spacing:.02em;padding:22px 0">Contact</a>
+    </div>
+    <div style="padding:24px 0;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45)">London · Dubai · Zurich</div>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <div>
+
+    <sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}">
+    <header data-screen-label="Home" style="position:relative;min-height:78vh;display:flex;align-items:flex-end;background:#EDEDED;border-bottom:1px solid rgba(255,255,255,.12);overflow:hidden">
+      <img src="assets/hero-commercial-sakhalin.jpg?v=1" alt="Sakhalin restaurant entrance, Dubai" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 60%">
+      <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,11,11,.6) 0%,rgba(11,11,11,.42) 35%,rgba(11,11,11,.12) 65%,rgba(11,11,11,0) 100%)"></div>
+      <div style="position:relative;padding:0 6vw 8vh;max-width:min(760px,48vw)">
+        <span style="font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.8);font-weight:400">Global F&amp;B &amp; Retail Advisory</span>
+        <h1 style="font-size:clamp(36px,4.4vw,66px);line-height:1.06;font-weight:300;letter-spacing:-.02em;margin:22px 0 20px;max-width:16ch;text-wrap:balance;color:#FFFFFF">The world's best concepts, at the world's best addresses.</h1>
+        <p style="color:rgba(255,255,255,.85);font-size:15px;letter-spacing:.04em;margin:0 0 32px">London · Monaco · Dubai</p>
+        <div style="display:flex;gap:14px;flex-wrap:wrap">
+          <a href="#" data-goto="enquire" style="background:#FFFFFF;border:1px solid #FFFFFF;color:#0B0B0B;padding:15px 30px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;transition:opacity .3s" style-hover="opacity:.8;color:#0B0B0B">Start a conversation</a>
+          <a href="#" data-goto="work" style="border:1px solid rgba(255,255,255,.6);color:#FFFFFF;padding:15px 30px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;transition:background .3s,color .3s" style-hover="background:#FFFFFF;color:#0B0B0B">View the work</a>
+        </div>
+      </div>
+    </header>
+    </sc-if>
+    <sc-if value="{{ isNarrow }}" hint-placeholder-val="{{ false }}">
+    <header data-screen-label="Home" style="background:#F2F1EF;color:#1A1A1A;border-bottom:1px solid rgba(255,255,255,.12)">
+      <img src="assets/hero-commercial-sakhalin.jpg?v=1" alt="Sakhalin restaurant entrance, Dubai" style="display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:center">
+      <div style="padding:44px 6vw 52px">
+        <span style="font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(26,26,26,.7);font-weight:500">Global F&amp;B &amp; Retail Advisory</span>
+        <h1 style="font-size:clamp(32px,6vw,48px);line-height:1.08;font-weight:300;letter-spacing:-.01em;margin:20px 0 20px;max-width:16ch;text-wrap:balance;color:#1A1A1A">The world's best concepts, at the world's best addresses.</h1>
+        <p style="color:rgba(26,26,26,.78);max-width:44ch;font-size:15px;margin:0 0 28px;text-wrap:pretty">For eighteen years, K+P has sourced the sites and closed the deals behind some of the world's most celebrated restaurants and retail flagships in hotspots such as London, Monaco and Dubai.</p>
+        <div style="display:flex;gap:14px;flex-wrap:wrap">
+          <a href="#" data-goto="enquire" style="background:#1A1A1A;border:1px solid #1A1A1A;color:#FFFFFF;padding:15px 30px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;transition:opacity .3s" style-hover="opacity:.8;color:#FFFFFF">Start a conversation</a>
+          <a href="#" data-goto="work" style="border:1px solid rgba(26,26,26,.5);color:#1A1A1A;padding:15px 30px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;transition:background .3s,color .3s" style-hover="background:#1A1A1A;color:#FFFFFF">View the work</a>
+        </div>
+      </div>
+    </header>
+    </sc-if>
+
+    <div style="border-bottom:1px solid rgba(255,255,255,.12);display:flex;flex-wrap:wrap">
+      <a href="#" data-goto="markets" data-market="uk" style="flex:1;min-width:200px;padding:30px 32px;border-right:1px solid rgba(255,255,255,.12);display:block;color:#FFFFFF;transition:background .3s" style-hover="background:#141414">
+        <b style="display:block;font-size:12px;font-weight:400;letter-spacing:.26em;text-transform:uppercase;margin-bottom:10px">United Kingdom</b>
+        <span style="font-size:13px;color:rgba(255,255,255,.5);font-weight:300">14 venues</span>
+      </a>
+      <a href="#" data-goto="markets" data-market="europe" style="flex:1;min-width:200px;padding:30px 32px;border-right:1px solid rgba(255,255,255,.12);display:block;color:#FFFFFF;transition:background .3s" style-hover="background:#141414">
+        <b style="display:block;font-size:12px;font-weight:400;letter-spacing:.26em;text-transform:uppercase;margin-bottom:10px">Europe</b>
+        <span style="font-size:13px;color:rgba(255,255,255,.5);font-weight:300">Monaco · Marbella</span>
+      </a>
+      <a href="#" data-goto="markets" data-market="me" style="flex:1.5;min-width:220px;padding:30px 32px;border-right:1px solid rgba(255,255,255,.12);display:block;color:#FFFFFF;transition:background .3s" style-hover="background:#141414">
+        <b style="display:block;font-size:12px;font-weight:400;letter-spacing:.26em;text-transform:uppercase;margin-bottom:10px">The Middle East</b>
+        <span style="font-size:13px;color:rgba(255,255,255,.5);font-weight:300">Dubai</span>
+      </a>
+      <a href="#" data-goto="enquire" style="flex:1.2;min-width:200px;padding:30px 32px;display:block;color:#FFFFFF;transition:background .3s" style-hover="background:#141414">
+        <b style="display:block;font-size:12px;font-weight:400;letter-spacing:.26em;text-transform:uppercase;margin-bottom:10px;color:rgba(255,255,255,.5)">Office</b>
+        <span style="font-size:13px;color:rgba(255,255,255,.5);font-weight:300">London</span>
+      </a>
+    </div>
+
+    <section style="padding:110px 6vw">
+      <div style="max-width:1320px;margin:0 auto">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-bottom:54px;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,.12);padding-bottom:22px">
+          <h2 style="font-size:12px;letter-spacing:.3em;text-transform:uppercase;font-weight:400;margin:0">Selected work</h2>
+          <a href="#" data-goto="work" style="font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.6)" style-hover="color:#FFFFFF">All projects →</a>
+        </div>
+
+        <div style="display:grid;grid-template-columns:{{ colsWork }};gap:2px">
+
+          <a href="#" data-goto="project" data-project="Novikov" style="display:block;color:#FFFFFF;background:#0F0F0F">
+            <div style="position:relative;aspect-ratio:4/4.4;overflow:hidden;background:#111111">
+              <img src="assets/tile-novikov.jpg" alt="Novikov — dining room" style="display:block;width:100%;height:100%;object-fit:cover">
+            </div>
+            <div style="padding:22px 24px 26px;border-top:1px solid rgba(255,255,255,.12)">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px">
+                <span style="font-size:20px;font-weight:300;letter-spacing:.02em">Novikov</span>
+                <span style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.28);padding:4px 9px;white-space:nowrap">Advisory</span>
+              </div>
+              <span style="display:block;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.85);border-top:1px solid rgba(255,255,255,.18);border-bottom:1px solid rgba(255,255,255,.18);padding:10px 0;margin-bottom:14px">50A Berkeley St · Mayfair</span>
+              <div style="font-size:12.5px;color:rgba(255,255,255,.45);font-weight:300">Opened 2011 — trading 15 years</div>
+            </div>
+          </a>
+
+          <a href="#" data-goto="project" data-project="gaia-monaco" style="display:block;color:#FFFFFF;background:#0F0F0F">
+            <div style="position:relative;aspect-ratio:4/4.4;overflow:hidden;background:#111111">
+              <img src="assets/tile-gaia-v2.jpg" alt="GAIA — terrace dining" style="display:block;width:100%;height:100%;object-fit:cover">
+            </div>
+            <div style="padding:22px 24px 26px;border-top:1px solid rgba(255,255,255,.12)">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px">
+                <span style="font-size:20px;font-weight:300;letter-spacing:.02em">GAIA</span>
+                <span style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.28);padding:4px 9px;white-space:nowrap">Advisory</span>
+              </div>
+              <span style="display:block;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.85);border-top:1px solid rgba(255,255,255,.18);border-bottom:1px solid rgba(255,255,255,.18);padding:10px 0;margin-bottom:14px">Monaco · London · Marbella</span>
+              <div style="font-size:12.5px;color:rgba(255,255,255,.45);font-weight:300">Three markets, one brand — 2019 · 2023 · 2024</div>
+            </div>
+          </a>
+
+          <a href="#" data-goto="project" data-project="YDF Interiors" style="display:block;color:#FFFFFF;background:#0F0F0F">
+            <div style="position:relative;aspect-ratio:4/4.4;overflow:hidden;background:#111111">
+              <img src="assets/tile-ydf.jpg" alt="YDF Interiors — design showroom" style="display:block;width:100%;height:100%;object-fit:cover">
+            </div>
+            <div style="padding:22px 24px 26px;border-top:1px solid rgba(255,255,255,.12)">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px">
+                <span style="font-size:20px;font-weight:300;letter-spacing:.02em">YDF Interiors</span>
+                <span style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.28);padding:4px 9px;white-space:nowrap">Advisory</span>
+              </div>
+              <span style="display:block;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.85);border-top:1px solid rgba(255,255,255,.18);border-bottom:1px solid rgba(255,255,255,.18);padding:10px 0;margin-bottom:14px">70 Brompton Rd · Knightsbridge</span>
+              <div style="font-size:12.5px;color:rgba(255,255,255,.45);font-weight:300">Retail · 20,000+ sq ft · 2024</div>
+            </div>
+          </a>
+
+          <a href="#" data-goto="project" data-project="Park Chinois" style="display:block;color:#FFFFFF;background:#0F0F0F">
+            <div style="position:relative;aspect-ratio:4/4.4;overflow:hidden;background:#111111">
+              <img src="assets/tile-park-chinois.jpg" alt="Park Chinois — salon" style="display:block;width:100%;height:100%;object-fit:cover">
+            </div>
+            <div style="padding:22px 24px 26px;border-top:1px solid rgba(255,255,255,.12)">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px">
+                <span style="font-size:20px;font-weight:300;letter-spacing:.02em">Park Chinois</span>
+                <span style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.28);padding:4px 9px;white-space:nowrap">Advisory</span>
+              </div>
+              <span style="display:block;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.85);border-top:1px solid rgba(255,255,255,.18);border-bottom:1px solid rgba(255,255,255,.18);padding:10px 0;margin-bottom:14px">Berkeley St · Mayfair</span>
+              <div style="font-size:12.5px;color:rgba(255,255,255,.45);font-weight:300">Opened 2015</div>
+            </div>
+          </a>
+
+          <a href="#" data-goto="project" data-project="Baxter Made In Italy" style="display:block;color:#FFFFFF;background:#0F0F0F">
+            <div style="position:relative;aspect-ratio:4/4.4;overflow:hidden;background:#111111">
+              <img src="assets/tile-baxter.jpg" alt="Baxter — flagship gallery" style="display:block;width:100%;height:100%;object-fit:cover">
+            </div>
+            <div style="padding:22px 24px 26px;border-top:1px solid rgba(255,255,255,.12)">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px">
+                <span style="font-size:20px;font-weight:300;letter-spacing:.02em">Baxter Made In Italy</span>
+                <span style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.28);padding:4px 9px;white-space:nowrap">Advisory</span>
+              </div>
+              <span style="display:block;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.85);border-top:1px solid rgba(255,255,255,.18);border-bottom:1px solid rgba(255,255,255,.18);padding:10px 0;margin-bottom:14px">Brompton Rd · London</span>
+              <div style="font-size:12.5px;color:rgba(255,255,255,.45);font-weight:300">Retail · 4,000 sq ft · 2025</div>
+            </div>
+          </a>
+
+          <a href="#" data-goto="project" data-project="African Queen" style="display:block;color:#FFFFFF;background:#0F0F0F">
+            <div style="position:relative;aspect-ratio:4/4.4;overflow:hidden;background:#111111">
+              <img src="assets/tile-african-queen-v2.jpg" alt="African Queen — J1 Beach, Dubai" style="display:block;width:100%;height:100%;object-fit:cover">
+            </div>
+            <div style="padding:22px 24px 26px;border-top:1px solid rgba(255,255,255,.12)">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px">
+                <span style="font-size:20px;font-weight:300;letter-spacing:.02em">African Queen</span>
+                <span style="font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#0B0B0B;background:#FFFFFF;padding:4px 9px;white-space:nowrap">Founder Venture</span>
+              </div>
+              <span style="display:block;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.85);border-top:1px solid rgba(255,255,255,.18);border-bottom:1px solid rgba(255,255,255,.18);padding:10px 0;margin-bottom:14px">J1 Beach · Dubai</span>
+              <div style="font-size:12.5px;color:rgba(255,255,255,.45);font-weight:300">Franchise partnership · Opened 2024</div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <section style="background:#FFFFFF;color:#0B0B0B;padding:104px 6vw 0">
+      <div style="max-width:1320px;margin:0 auto;display:grid;grid-template-columns:{{ colsCred }};gap:72px;align-items:start">
+        <div>
+          <span style="font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(11,11,11,.45);font-weight:500">Why K+P</span>
+          <h2 style="font-size:clamp(48px,6.4vw,92px);line-height:1.02;font-weight:300;letter-spacing:-.025em;margin:22px 0 0;max-width:9ch">Skin in the game.</h2>
+        </div>
+        <div>
+          <p style="color:rgba(11,11,11,.62);max-width:58ch;margin:0;font-size:16px;text-wrap:pretty">For eighteen years we've sourced prime locations for the world's best brands. We've also created and opened our own — MNKY HSE, African Queen, SANA among them. It's why our advice comes from the inside out — we've sat on every side of these deals — as advisor, as tenant, as owner.</p>
+          <sc-if value="{{ showDisclosure }}" hint-placeholder-val="{{ true }}">
+          <div style="border-top:1px solid rgba(11,11,11,.16);padding-top:20px;font-size:14px;color:rgba(11,11,11,.65);margin:26px 0 0;max-width:58ch;text-wrap:pretty"><strong style="font-weight:600;color:#0B0B0B">A straight answer to a fair question.</strong> Our own venues are listed openly on this site and tagged as Founder Ventures — defined concepts, defined locations, disclosed before any engagement. Client mandates take first look on every site we source — without exception.</div>
+          </sc-if>
+          <div style="margin-top:28px"><a href="#" data-goto="what" style="display:inline-block;border:1px solid #0B0B0B;color:#0B0B0B;padding:15px 34px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;transition:background .3s,color .3s" style-hover="background:#0B0B0B;color:#FFFFFF">How we work</a></div>
+        </div>
+      </div>
+
+      <div style="max-width:1320px;margin:80px auto 0;display:grid;grid-template-columns:{{ colsStat }};gap:1px;background:rgba(11,11,11,.18)">
+          <div style="background:#FFFFFF;padding:38px 26px">
+            <div style="font-size:clamp(42px,5vw,72px);font-weight:300;letter-spacing:-.03em;line-height:1">23</div>
+            <div style="font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:rgba(11,11,11,.5);margin-top:14px">Openings delivered</div>
+          </div>
+          <div style="background:#FFFFFF;padding:38px 26px">
+            <div style="font-size:clamp(42px,5vw,72px);font-weight:300;letter-spacing:-.03em;line-height:1">3</div>
+            <div style="font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:rgba(11,11,11,.5);margin-top:14px">Markets entered</div>
+          </div>
+          <div style="background:#FFFFFF;padding:38px 26px">
+            <div style="font-size:clamp(42px,5vw,72px);font-weight:300;letter-spacing:-.03em;line-height:1">15</div>
+            <div style="font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:rgba(11,11,11,.5);margin-top:14px">Years, longest-trading address</div>
+          </div>
+          <div style="background:#FFFFFF;padding:38px 26px">
+            <div style="font-size:clamp(42px,5vw,72px);font-weight:300;letter-spacing:-.03em;line-height:1">3</div>
+            <div style="font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:rgba(11,11,11,.5);margin-top:14px">Markets — UK · Europe · Middle East</div>
+          </div>
+      </div>
+
+      <div style="max-width:1320px;margin:0 auto;padding:34px 0 100px;display:flex;justify-content:space-between;align-items:baseline;gap:32px;flex-wrap:wrap">
+        
+        <a href="#" data-goto="brands" style="font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#0B0B0B;border-bottom:1px solid rgba(11,11,11,.35);padding-bottom:4px;white-space:nowrap">Brands &amp; partners →</a>
+      </div>
+    </section>
+
+    <section style="text-align:center;padding:120px 6vw;border-bottom:1px solid rgba(255,255,255,.12)">
+      <span style="font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:500">Contact</span>
+      <h2 style="font-size:clamp(32px,4vw,58px);max-width:20ch;margin:24px auto 40px;line-height:1.16;font-weight:300;letter-spacing:-.01em">Bringing a brand to a new market?</h2>
+      <a href="#" data-goto="enquire" style="display:inline-block;background:#FFFFFF;border:1px solid #FFFFFF;color:#0B0B0B;padding:16px 38px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;transition:opacity .3s" style-hover="opacity:.75">Start a conversation</a>
+    </section>
+
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ isProject }}" hint-placeholder-val="{{ false }}">
+  <div data-screen-label="Project detail">
+
+    <div style="padding:18px 6vw;border-bottom:1px solid rgba(255,255,255,.12)">
+      <a href="#" data-goto="work" style="display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,.6);font-size:10px;letter-spacing:.2em;text-transform:uppercase" style-hover="color:#FFFFFF">&larr; Back to work</a>
+    </div>
+
+    <div style="display:grid;grid-template-columns:{{ colsKeybar }};border-bottom:1px solid rgba(255,255,255,.12)">
+      <div style="padding:26px 32px;border-right:1px solid rgba(255,255,255,.12)">
+        <span style="display:block;font-size:9.5px;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:9px">Address</span>
+        <b style="font-weight:400;font-size:14px;letter-spacing:.14em;text-transform:uppercase">{{ pAddress }}</b>
+      </div>
+      <div style="padding:26px 32px;border-right:{{ keybarEdge }}">
+        <span style="display:block;font-size:9.5px;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:9px">Market</span>
+        <b style="font-weight:400;font-size:14px;letter-spacing:.14em;text-transform:uppercase">{{ pMarket }}</b>
+      </div>
+      <div style="padding:26px 32px;border-right:1px solid rgba(255,255,255,.12);border-top:{{ keybarRow2 }}">
+        <span style="display:block;font-size:9.5px;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:9px">Concept</span>
+        <b style="font-weight:400;font-size:14px;letter-spacing:.14em;text-transform:uppercase">{{ pConcept }}</b>
+      </div>
+      <div style="padding:26px 32px;border-top:{{ keybarRow2 }}">
+        <span style="display:block;font-size:9.5px;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:9px">Opened</span>
+        <b style="font-weight:400;font-size:14px;letter-spacing:.14em;text-transform:uppercase">{{ pOpened }}</b>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:{{ colsSplit }};border-bottom:1px solid rgba(255,255,255,.12)">
+      <div style="padding:80px 5vw 80px 6vw">
+        <span style="font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:500">Case study</span>
+        <div style="display:flex;align-items:center;gap:16px;margin:20px 0 40px;flex-wrap:wrap">
+          <h1 style="font-size:clamp(32px,3.6vw,52px);line-height:1.1;font-weight:300;letter-spacing:-.01em;margin:0">{{ pTitle }}</h1>
+          {{ pTag }}
+        </div>
+
+        <h3 style="font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.5);margin:0 0 12px;font-weight:500">{{ pLabel1 }}</h3>
+        <p style="color:rgba(255,255,255,.72);font-size:15px;max-width:54ch;margin:0;text-wrap:pretty">{{ pBrief }}</p>
+
+        <h3 style="font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.5);margin:36px 0 12px;font-weight:500">{{ pLabel2 }}</h3>
+        <p style="color:#FFFFFF;font-size:15px;max-width:54ch;margin:0;font-weight:400">{{ pRole }}</p>
+
+        <h3 style="font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.5);margin:36px 0 12px;font-weight:500">{{ pLabel3 }}</h3>
+        <p style="color:rgba(255,255,255,.72);font-size:15px;max-width:54ch;margin:0;text-wrap:pretty">{{ pAddressCopy }}</p>
+
+        <h3 style="font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.5);margin:36px 0 12px;font-weight:500">The outcome</h3>
+        <p style="color:rgba(255,255,255,.72);font-size:15px;max-width:54ch;margin:0;text-wrap:pretty">{{ pOutcome }}</p>
+
+        <div style="margin-top:44px"><a href="#" data-goto="enquire" style="display:inline-block;background:#FFFFFF;border:1px solid #FFFFFF;color:#0B0B0B;padding:15px 34px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;transition:opacity .3s" style-hover="opacity:.75">{{ pCta }}</a></div>
+      </div>
+
+      <div style="border-left:{{ keybarEdge }};border-top:{{ keybarRow2 }};min-height:480px;display:grid;grid-template-rows:1fr">
+        <div style="display:grid;grid-template-rows:{{ galleryRows }};height:100%;gap:3px;background:#0B0B0B">
+          <div style="background-image:{{ dImg1 }};background-size:cover;background-position:center;background-color:#111111"></div>
+          <sc-if value="{{ pHasGallery }}" hint-placeholder-val="{{ false }}">
+          <div style="display:grid;grid-template-columns:{{ galleryCols }};gap:3px;background:#0B0B0B">
+            <div style="background-image:{{ dImg2 }};background-size:cover;background-position:center;background-color:#111111"></div>
+            <sc-if value="{{ pHasThird }}" hint-placeholder-val="{{ false }}">
+            <div style="background-image:{{ dImg3 }};background-size:cover;background-position:center;background-color:#111111"></div>
+            </sc-if>
+          </div>
+          </sc-if>
+        </div>
+      </div>
+    </div>
+
+    {{ pDisclosureBar }}
+
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding:32px 6vw;border-bottom:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.5);font-size:12px;letter-spacing:.12em;text-transform:uppercase">
+      <span>Related — {{ pRelated }}</span>
+      <a href="#" data-goto="work" style="color:#FFFFFF">Next project →</a>
+    </div>
+
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ isWhat }}" hint-placeholder-val="{{ false }}">
+  <div data-screen-label="What We Do">
+
+    <section style="padding:110px 6vw 90px;border-bottom:1px solid rgba(255,255,255,.12)">
+      <div style="max-width:1320px;margin:0 auto;display:grid;grid-template-columns:{{ colsCred }};gap:64px;align-items:end">
+        <div>
+          <span style="font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:500">What we do</span>
+          <h1 style="font-size:clamp(34px,4.4vw,64px);line-height:1.1;font-weight:300;letter-spacing:-.01em;margin:24px 0 0;max-width:15ch;text-wrap:balance">Real estate, for restaurants and retail. Nothing else.</h1>
+        </div>
+        <p style="color:rgba(255,255,255,.62);font-size:16px;margin:0;max-width:52ch;text-wrap:pretty">We source prime sites and negotiate the deals that put the world's best F&amp;B and retail brands into them. We are not lawyers, accountants or financiers — we are the real estate advisors who know exactly which ones you need, and bring them to the table.</p>
+      </div>
+    </section>
+
+    <div style="position:relative;height:46vh;min-height:320px;overflow:hidden;background:#111111;border-bottom:1px solid rgba(255,255,255,.12)">
+      <img src="assets/wwd-band-v4.jpg" alt="Knightsbridge interior — the address as product" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center 30%">
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,11,.25),rgba(11,11,11,.75))"></div>
+      <span style="position:absolute;left:6vw;bottom:38px;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.75);border-top:1px solid rgba(255,255,255,.3);padding-top:14px">The address is the product</span>
+    </div>
+
+    <section style="padding:0 0 0">
+      <div style="padding:70px 6vw 26px;max-width:1320px;margin:0 auto">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,.12);padding-bottom:20px">
+          <h2 style="font-size:12px;letter-spacing:.3em;text-transform:uppercase;font-weight:400;margin:0">The seat we take</h2>
+          <span style="font-size:11px;letter-spacing:.06em;color:rgba(255,255,255,.45)">One mandate, one seat — stated up front on every engagement.</span>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:{{ colsWork }};gap:1px;background:rgba(255,255,255,.12);border-top:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12)">
+        <div style="background:#0B0B0B;padding:44px 40px 52px">
+          <span style="font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.45)">01</span>
+          <h3 style="font-size:24px;font-weight:300;letter-spacing:.01em;margin:18px 0 16px">For brands &amp; tenants</h3>
+          <p style="color:rgba(255,255,255,.62);font-size:15px;margin:0;text-wrap:pretty">You know where you want to be; we know how to get you there. We identify the right location, negotiate the terms, and structure the deal — then surround it with the professionals a market entry needs.</p>
+        </div>
+        <div style="background:#0B0B0B;padding:44px 40px 52px">
+          <span style="font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.45)">02</span>
+          <h3 style="font-size:24px;font-weight:300;letter-spacing:.01em;margin:18px 0 16px">For landlords &amp; developers</h3>
+          <p style="color:rgba(255,255,255,.62);font-size:15px;margin:0;text-wrap:pretty">A prime site deserves a covenant worth building for. We bring landlords the brands that hold an address for fifteen years, not five — and negotiate tenancies both sides can live with.</p>
+        </div>
+        <div style="background:#0B0B0B;padding:44px 40px 52px">
+          <span style="font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.45)">03</span>
+          <h3 style="font-size:24px;font-weight:300;letter-spacing:.01em;margin:18px 0 16px">For brands entering new markets</h3>
+          <p style="color:rgba(255,255,255,.62);font-size:15px;margin:0;text-wrap:pretty">Franchise structures, partnerships, the right local vehicle — we place brands into markets they couldn't enter alone.</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:90px 0 0">
+      <div style="padding:0 6vw 30px;max-width:1320px;margin:0 auto">
+        <h2 style="font-size:12px;letter-spacing:.3em;text-transform:uppercase;font-weight:400;margin:0 0 20px;border-bottom:1px solid rgba(255,255,255,.12);padding-bottom:20px">The deal, end to end</h2>
+      </div>
+      <div style="max-width:1320px;margin:0 auto;padding:0 6vw">
+        <div style="display:grid;grid-template-columns:{{ colsStep }};gap:32px;align-items:baseline;padding:30px 0;border-bottom:1px solid rgba(255,255,255,.12)">
+          <span style="font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.4)">One</span>
+          <h3 style="font-size:22px;font-weight:300;margin:0">Identify the location</h3>
+          <p style="color:rgba(255,255,255,.62);font-size:15px;margin:0;text-wrap:pretty">The right address for the brand — sourced through landlord relationships, mostly before sites reach the market.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:{{ colsStep }};gap:32px;align-items:baseline;padding:30px 0;border-bottom:1px solid rgba(255,255,255,.12)">
+          <span style="font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.4)">Two</span>
+          <h3 style="font-size:22px;font-weight:300;margin:0">Negotiate the deal</h3>
+          <p style="color:rgba(255,255,255,.62);font-size:15px;margin:0;text-wrap:pretty">Every term with the landlord, structured and closed.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:{{ colsStep }};gap:32px;align-items:baseline;padding:30px 0;border-bottom:1px solid rgba(255,255,255,.12)">
+          <span style="font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.4)">Three</span>
+          <h3 style="font-size:22px;font-weight:300;margin:0">Assemble the professionals</h3>
+          <p style="color:rgba(255,255,255,.62);font-size:15px;margin:0;text-wrap:pretty">Accountants, lawyers, employment and licensing specialists, designers, contractors — we are none of these, and we know exactly who the best of each are. They come with us.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:{{ colsStep }};gap:32px;align-items:baseline;padding:30px 0;border-bottom:1px solid rgba(255,255,255,.12)">
+          <span style="font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.4)">Four</span>
+          <h3 style="font-size:22px;font-weight:300;margin:0">Source the financing</h3>
+          <p style="color:rgba(255,255,255,.62);font-size:15px;margin:0;text-wrap:pretty">Introductions to the capital that funds fit-outs and entries.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:{{ colsStep }};gap:32px;align-items:baseline;padding:30px 0">
+          <span style="font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.4)">Five</span>
+          <h3 style="font-size:22px;font-weight:300;margin:0">Stand up the framework</h3>
+          <p style="color:rgba(255,255,255,.62);font-size:15px;margin:0;text-wrap:pretty">Operators, employment structures, the legal scaffolding — connected, not performed.</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:#FFFFFF;color:#0B0B0B;margin-top:90px;display:grid;grid-template-columns:{{ colsSplit }}">
+      <div style="padding:100px 5vw 100px 6vw">
+        <span style="font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(11,11,11,.45);font-weight:500">The network</span>
+        <p style="font-size:clamp(22px,2.4vw,32px);line-height:1.34;font-weight:300;letter-spacing:-.005em;margin:24px 0 0;max-width:26ch;text-wrap:pretty">Eighteen years of transactions build a bench — the landlords and estates of London and Dubai, the region's developers, and the advisors who've closed these deals with us before.</p>
+        <p style="font-size:15px;color:rgba(11,11,11,.55);margin:22px 0 0;max-width:44ch">The network is the product as much as the address is.</p>
+      </div>
+      <div style="position:relative;min-height:420px;overflow:hidden;background:#EDEDED">
+        <img src="assets/wwd-room-v2.jpg" alt="A K+P room in daylight — the bench behind the deal" style="display:block;width:100%;height:100%;object-fit:cover">
+      </div>
+    </section>
+
+    <section style="padding:80px 6vw;border-bottom:1px solid rgba(255,255,255,.12)">
+      <div style="max-width:1320px;margin:0 auto;display:grid;grid-template-columns:{{ colsCred }};gap:64px;align-items:start">
+        <div>
+          <span style="font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:500">The owners' note</span>
+          <p style="font-size:19px;font-weight:300;line-height:1.5;margin:20px 0 0;max-width:50ch;text-wrap:pretty">We also open and operate restaurants of our own — MNKY HSE, African Queen and SANA among them, all tagged Founder Ventures on this site. We keep that side of the business separate from client mandates, and disclosed. But it's why our judgement on a site is an owner's, not a broker's.</p>
+        </div>
+        <div style="border-left:{{ keybarEdge }};border-top:{{ keybarRow2 }};padding:4px 0 4px 32px">
+          <a href="#" data-goto="work" style="display:block;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.6);padding:16px 0;border-bottom:1px solid rgba(255,255,255,.12)" style-hover="color:#FFFFFF">View the ventures →</a>
+          <a href="#" data-goto="work" style="display:block;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.6);padding:16px 0;border-bottom:1px solid rgba(255,255,255,.12)" style-hover="color:#FFFFFF">View the advisory work →</a>
+          <a href="#" data-goto="markets" style="display:block;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.6);padding:16px 0" style-hover="color:#FFFFFF">Markets we operate in →</a>
+        </div>
+      </div>
+    </section>
+
+    <section style="text-align:center;padding:110px 6vw;border-bottom:1px solid rgba(255,255,255,.12)">
+      <span style="font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:500">Contact</span>
+      <h2 style="font-size:clamp(30px,3.6vw,52px);max-width:18ch;margin:24px auto 40px;line-height:1.16;font-weight:300;letter-spacing:-.01em">Which seat do you need us in?</h2>
+      <a href="#" data-goto="enquire" style="display:inline-block;background:#FFFFFF;border:1px solid #FFFFFF;color:#0B0B0B;padding:16px 38px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;transition:opacity .3s" style-hover="opacity:.75">Start a conversation</a>
+    </section>
+
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ isWork }}" hint-placeholder-val="{{ false }}">
+  <div data-screen-label="Work index">
+
+    <section style="padding:100px 6vw 60px;border-bottom:1px solid rgba(255,255,255,.12)">
+      <div style="max-width:1320px;margin:0 auto;display:grid;grid-template-columns:{{ colsCred }};gap:64px;align-items:end">
+        <div>
+          <span style="font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:500">The work</span>
+          <h1 style="font-size:clamp(40px,5vw,72px);line-height:1.06;font-weight:300;letter-spacing:-.015em;margin:22px 0 0">Twenty-three openings, tagged Advisory or Founder Venture.</h1>
+        </div>
+        <p style="color:rgba(255,255,255,.62);font-size:16px;margin:0;max-width:50ch;text-wrap:pretty">Restaurants and retail placed, negotiated and closed by K+P. Some have traded for fifteen years; the newest open this year. Every entry is tagged Advisory or Founder Venture.</p>
+      </div>
+    </section>
+
+    <div style="position:sticky;top:{{ stickyTop }};z-index:40;background:rgba(11,11,11,.96);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.12);padding:16px 6vw">
+      <div style="max-width:1320px;margin:0 auto;display:flex;flex-wrap:wrap;gap:26px;align-items:center">
+        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+          <span style="font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-right:6px">Type</span>
+          <a href="#" data-filter="all" data-filter-key="type" style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;padding:8px 16px;border:1px solid {{ typeallB }};background:{{ typeallBg }};color:{{ typeallC }}">All</a>
+          <a href="#" data-filter="fb" data-filter-key="type" style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;padding:8px 16px;border:1px solid {{ typefbB }};background:{{ typefbBg }};color:{{ typefbC }}">F&amp;B</a>
+          <a href="#" data-filter="retail" data-filter-key="type" style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;padding:8px 16px;border:1px solid {{ typeretailB }};background:{{ typeretailBg }};color:{{ typeretailC }}">Retail</a>
+          <a href="#" data-filter="wellness" data-filter-key="type" style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;padding:8px 16px;border:1px solid {{ typewellnessB }};background:{{ typewellnessBg }};color:{{ typewellnessC }}">Wellness</a>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+          <span style="font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-right:6px">Market</span>
+          <a href="#" data-filter="all" data-filter-key="place" style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;padding:8px 16px;border:1px solid {{ placeallB }};background:{{ placeallBg }};color:{{ placeallC }}">All</a>
+          <a href="#" data-filter="london" data-filter-key="place" style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;padding:8px 16px;border:1px solid {{ placelondonB }};background:{{ placelondonBg }};color:{{ placelondonC }}">United Kingdom</a>
+          <a href="#" data-filter="europe" data-filter-key="place" style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;padding:8px 16px;border:1px solid {{ placeeuropeB }};background:{{ placeeuropeBg }};color:{{ placeeuropeC }}">Europe</a>
+          <a href="#" data-filter="me" data-filter-key="place" style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;padding:8px 16px;border:1px solid {{ placemeB }};background:{{ placemeBg }};color:{{ placemeC }}">The Middle East</a>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+          <span style="font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-right:6px">Mandate</span>
+          <a href="#" data-filter="all" data-filter-key="mandate" style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;padding:8px 16px;border:1px solid {{ mandateallB }};background:{{ mandateallBg }};color:{{ mandateallC }}">All</a>
+          <a href="#" data-filter="advisory" data-filter-key="mandate" style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;padding:8px 16px;border:1px solid {{ mandateadvisoryB }};background:{{ mandateadvisoryBg }};color:{{ mandateadvisoryC }}">Advisory</a>
+          <a href="#" data-filter="venture" data-filter-key="mandate" style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;padding:8px 16px;border:1px solid {{ mandateventureB }};background:{{ mandateventureBg }};color:{{ mandateventureC }}">Ventures</a>
+        </div>
+        <span style="margin-left:auto;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4)">{{ workCount }}</span>
+      </div>
+    </div>
+
+    <section style="padding:44px 6vw 110px">
+      <div style="max-width:1320px;margin:0 auto;display:grid;grid-template-columns:{{ colsWork }};gap:2px">
+        <sc-for list="{{ workProjects }}" as="p" hint-placeholder-count="6">
+          <a href="#" data-goto="project" data-project="{{ p.id }}" style="display:block;color:#FFFFFF;background:#0F0F0F">
+            <div style="aspect-ratio:4/3.2;background-image:{{ p.bg }};background-size:cover;background-position:center;background-color:#141414"></div>
+            <div style="padding:20px 22px 24px;border-top:1px solid rgba(255,255,255,.12)">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:13px">
+                <span style="font-size:18px;font-weight:300;letter-spacing:.02em">{{ p.name }}</span>
+                <span style="font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:{{ p.tagColor }};background:{{ p.tagBg }};border:1px solid {{ p.tagBorder }};padding:4px 8px;white-space:nowrap">{{ p.tag }}</span>
+              </div>
+              <span style="display:block;font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.85);border-top:1px solid rgba(255,255,255,.18);border-bottom:1px solid rgba(255,255,255,.18);padding:9px 0;margin-bottom:12px">{{ p.address }}</span>
+              <div style="font-size:12px;color:rgba(255,255,255,.45);font-weight:300">{{ p.meta }}</div>
+            </div>
+          </a>
+        </sc-for>
+      </div>
+    </section>
+
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ isMarkets }}" hint-placeholder-val="{{ false }}">
+  <div data-screen-label="Markets">
+
+    <div style="display:flex;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,.12)">
+      <button onClick="{{ goUK }}" style="flex:1;min-width:160px;padding:20px 28px;border:none;border-right:1px solid rgba(255,255,255,.12);font-family:Manrope,sans-serif;font-size:11px;letter-spacing:.24em;text-transform:uppercase;text-align:left;cursor:pointer;color:{{ ukColor }};background:{{ ukBg }}">United Kingdom</button>
+      <button onClick="{{ goEurope }}" style="flex:1;min-width:160px;padding:20px 28px;border:none;border-right:1px solid rgba(255,255,255,.12);font-family:Manrope,sans-serif;font-size:11px;letter-spacing:.24em;text-transform:uppercase;text-align:left;cursor:pointer;color:{{ europeColor }};background:{{ europeBg }}">Europe</button>
+      <button onClick="{{ goME }}" style="flex:1;min-width:160px;padding:20px 28px;border:none;font-family:Manrope,sans-serif;font-size:11px;letter-spacing:.24em;text-transform:uppercase;text-align:left;cursor:pointer;color:{{ meColor }};background:{{ meBg }}">The Middle East</button>
+    </div>
+
+    <header style="position:relative;min-height:62vh;display:flex;align-items:flex-end;background:#111111;border-bottom:1px solid rgba(255,255,255,.12);overflow:hidden">
+      <div style="position:absolute;inset:0;background-image:{{ mktHero }};background-size:cover;background-position:center"></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,11,.4) 0%,rgba(11,11,11,.2) 40%,rgba(11,11,11,.94) 100%)"></div>
+      <div style="position:relative;padding:0 6vw 7vh;width:100%;display:flex;align-items:flex-end;justify-content:space-between;gap:40px;flex-wrap:wrap">
+        <div>
+          <span style="font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:500">Market</span>
+          <h1 style="font-size:clamp(44px,6vw,84px);line-height:1;font-weight:300;letter-spacing:-.02em;margin:20px 0 0">{{ mktName }}</h1>
+        </div>
+        <div style="border-top:1px solid rgba(255,255,255,.3);padding-top:14px;min-width:220px">
+          <div style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:8px">{{ mktStat }}</div>
+          <div style="font-size:22px;font-weight:300">{{ mktYears }}</div>
+        </div>
+      </div>
+    </header>
+
+    <section style="padding:100px 6vw 90px;border-bottom:1px solid rgba(255,255,255,.12)">
+      <div style="max-width:1320px;margin:0 auto;display:grid;grid-template-columns:{{ colsCred }};gap:64px;align-items:start">
+        <div>
+          <span style="font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:500">Entering this market</span>
+          <h2 style="font-size:clamp(26px,3vw,40px);line-height:1.2;font-weight:300;letter-spacing:-.01em;margin:22px 0 0;max-width:20ch;text-wrap:balance">{{ mktHeadline }}</h2>
+        </div>
+        <div>
+          <p style="color:rgba(255,255,255,.72);font-size:16px;margin:0 0 18px;max-width:56ch;text-wrap:pretty">{{ mktCopy1 }}</p>
+          <p style="color:rgba(255,255,255,.72);font-size:16px;margin:0;max-width:56ch;text-wrap:pretty">{{ mktCopy2 }}</p>
+          <div style="border-top:1px solid rgba(255,255,255,.12);margin-top:28px;padding-top:18px;font-size:12.5px;letter-spacing:.04em;color:rgba(255,255,255,.45);max-width:56ch;text-wrap:pretty">{{ mktNote }}</div>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:80px 6vw 100px;border-bottom:1px solid rgba(255,255,255,.12)">
+      <div style="max-width:1320px;margin:0 auto">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,.12);padding-bottom:20px;margin-bottom:40px">
+          <h2 style="font-size:12px;letter-spacing:.3em;text-transform:uppercase;font-weight:400;margin:0">The work here</h2>
+          <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4)">{{ mktGridNote }}</span>
+        </div>
+        <div style="display:grid;grid-template-columns:{{ colsWork }};gap:2px">
+          <sc-for list="{{ mktProjects }}" as="p" hint-placeholder-count="3">
+            <a href="#" data-goto="project" data-project="{{ p.id }}" style="display:block;color:#FFFFFF;background:#0F0F0F">
+              <div style="aspect-ratio:4/3.2;background-image:{{ p.bg }};background-size:cover;background-position:center;background-color:#141414"></div>
+              <div style="padding:20px 22px 24px;border-top:1px solid rgba(255,255,255,.12)">
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:13px">
+                  <span style="font-size:18px;font-weight:300;letter-spacing:.02em">{{ p.name }}</span>
+                  <span style="font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:{{ p.tagColor }};background:{{ p.tagBg }};border:1px solid {{ p.tagBorder }};padding:4px 8px;white-space:nowrap">{{ p.tag }}</span>
+                </div>
+                <span style="display:block;font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.85);border-top:1px solid rgba(255,255,255,.18);border-bottom:1px solid rgba(255,255,255,.18);padding:9px 0;margin-bottom:12px">{{ p.address }}</span>
+                <div style="font-size:12px;color:rgba(255,255,255,.45);font-weight:300">{{ p.meta }}</div>
+              </div>
+            </a>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:#FFFFFF;color:#0B0B0B;padding:90px 6vw">
+      <div style="max-width:1320px;margin:0 auto;display:grid;grid-template-columns:{{ colsSplit }};gap:64px;align-items:center">
+        <div>
+          <span style="font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(11,11,11,.45);font-weight:500">{{ mktOffice }}</span>
+          <h2 style="font-size:clamp(26px,3vw,40px);line-height:1.2;font-weight:300;letter-spacing:-.01em;margin:20px 0 14px;max-width:18ch">{{ mktCtaHead }}</h2>
+          <p style="color:rgba(11,11,11,.55);font-size:15px;margin:0;max-width:44ch">{{ mktContact }}</p>
+        </div>
+        <div style="display:flex;justify-content:flex-start">
+          <a href="#" data-goto="enquire" style="display:inline-block;background:#0B0B0B;border:1px solid #0B0B0B;color:#FFFFFF;padding:16px 38px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;transition:opacity .3s" style-hover="opacity:.8">{{ mktCta }}</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ isBrands }}" hint-placeholder-val="{{ false }}">
+  <div data-screen-label="Brands &amp; Partners">
+
+    <section style="padding:110px 6vw 80px;border-bottom:1px solid rgba(255,255,255,.12)">
+      <div style="max-width:1320px;margin:0 auto;display:grid;grid-template-columns:{{ colsCred }};gap:64px;align-items:end">
+        <div>
+          <span style="font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:500">Brands &amp; partners</span>
+          <h1 style="font-size:clamp(38px,4.8vw,68px);line-height:1.08;font-weight:300;letter-spacing:-.015em;margin:22px 0 0;max-width:14ch;text-wrap:balance">Trusted on both sides of the table.</h1>
+        </div>
+        <p style="color:rgba(255,255,255,.62);font-size:16px;margin:0;max-width:48ch;text-wrap:pretty">Brands trust us to find the address. Landlords trust us to bring the brand. Sitting between the two is the whole business.</p>
+      </div>
+    </section>
+
+    <section style="background:#FFFFFF;color:#0B0B0B;padding:90px 6vw">
+      <div style="max-width:1320px;margin:0 auto">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;border-bottom:1px solid rgba(11,11,11,.9);padding-bottom:12px;margin-bottom:1px">
+          <span style="font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#0B0B0B;font-weight:500">Brands we've placed and built</span>
+          <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(11,11,11,.4)">Twenty</span>
+        </div>
+        <sc-for list="{{ brands }}" as="b" hint-placeholder-count="8">
+          <a href="#" style="display:grid;grid-template-columns:56px 1fr auto;gap:24px;align-items:baseline;padding:24px 10px;border-bottom:1px solid rgba(11,11,11,.16);color:#0B0B0B;transition:background .25s,color .25s,padding .25s" style-hover="background:#0B0B0B;color:#FFFFFF;padding-left:22px">
+            <span style="font-size:10px;letter-spacing:.24em;opacity:.4">{{ b.n }}</span>
+            <span style="font-size:clamp(22px,2.4vw,32px);font-weight:300;letter-spacing:-.005em">{{ b.name }}</span>
+            <span style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;opacity:.5;text-align:right">{{ b.meta }}</span>
+          </a>
+        </sc-for>
+        <p style="font-size:11.5px;letter-spacing:.04em;color:rgba(11,11,11,.45);margin:14px 0 0">Logos replace the wordmarks once files and permissions are in. African Queen and SANA are Founder Ventures — built, not placed.</p>
+      </div>
+    </section>
+
+    <section style="padding:100px 6vw">
+      <div style="max-width:1320px;margin:0 auto">
+        <div style="display:grid;grid-template-columns:{{ colsCred }};gap:64px;align-items:start;margin-bottom:56px">
+          <div>
+            <span style="font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:500">Landlord &amp; developer network</span>
+            <h2 style="font-size:clamp(24px,2.8vw,38px);line-height:1.22;font-weight:300;letter-spacing:-.01em;margin:20px 0 0;max-width:20ch;text-wrap:balance">One relationship can be worth a hundred viewings.</h2>
+          </div>
+          <p style="color:rgba(255,255,255,.62);font-size:16px;margin:0;max-width:48ch;text-wrap:pretty">Ours span the owners of the world's most valuable retail and dining streets — the estates that decide who holds an address, and the developers who build the next one.</p>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:16px;padding-bottom:14px">
+          <span style="font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.45)">United Kingdom</span>
+          <span style="flex:1;height:1px;background:rgba(255,255,255,.16)"></span>
+        </div>
+        <sc-for list="{{ landlordsUK }}" as="l" hint-placeholder-count="3">
+          <a href="#" style="display:grid;grid-template-columns:1fr auto;gap:24px;align-items:baseline;padding:22px 10px;border-bottom:1px solid rgba(255,255,255,.14);color:#FFFFFF;transition:background .25s,color .25s,padding .25s" style-hover="background:#FFFFFF;color:#0B0B0B;padding-left:22px">
+            <span style="font-size:clamp(20px,2.1vw,28px);font-weight:300;letter-spacing:-.005em">{{ l.name }}</span>
+            <span style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;opacity:.5;text-align:right">{{ l.meta }}</span>
+          </a>
+        </sc-for>
+        <div style="height:44px"></div>
+
+        <div style="display:flex;align-items:center;gap:16px;padding-bottom:14px">
+          <span style="font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.45)">United Arab Emirates</span>
+          <span style="flex:1;height:1px;background:rgba(255,255,255,.16)"></span>
+        </div>
+        <sc-for list="{{ landlordsUAE }}" as="l" hint-placeholder-count="3">
+          <a href="#" style="display:grid;grid-template-columns:1fr auto;gap:24px;align-items:baseline;padding:22px 10px;border-bottom:1px solid rgba(255,255,255,.14);color:#FFFFFF;transition:background .25s,color .25s,padding .25s" style-hover="background:#FFFFFF;color:#0B0B0B;padding-left:22px">
+            <span style="font-size:clamp(20px,2.1vw,28px);font-weight:300;letter-spacing:-.005em">{{ l.name }}</span>
+            <span style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;opacity:.5;text-align:right">{{ l.meta }}</span>
+          </a>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="text-align:center;padding:110px 6vw;border-top:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12)">
+      <span style="font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:500">Contact</span>
+      <h2 style="font-size:clamp(30px,3.6vw,52px);max-width:20ch;margin:24px auto 40px;line-height:1.16;font-weight:300;letter-spacing:-.01em">Which side of the table are you on?</h2>
+      <a href="#" data-goto="enquire" style="display:inline-block;background:#FFFFFF;border:1px solid #FFFFFF;color:#0B0B0B;padding:16px 38px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;transition:opacity .3s" style-hover="opacity:.75">Start a conversation</a>
+    </section>
+
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ isTeam }}" hint-placeholder-val="{{ false }}">
+  <div data-screen-label="Team">
+
+    <section style="padding:110px 6vw 80px;border-bottom:1px solid rgba(255,255,255,.12)">
+      <div style="max-width:1320px;margin:0 auto;display:grid;grid-template-columns:{{ colsCred }};gap:64px;align-items:end">
+        <div>
+          <span style="font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:500">Your Advisors</span>
+          <h1 style="font-size:clamp(38px,4.8vw,68px);line-height:1.08;font-weight:300;letter-spacing:-.015em;margin:22px 0 0;max-width:15ch;text-wrap:balance">Deals are done by people, not platforms.</h1>
+        </div>
+        <p style="color:rgba(255,255,255,.62);font-size:16px;margin:0;max-width:48ch;text-wrap:pretty">Over a century of combined sector experience and five languages between us. The same standards of discretion and precision whether the mandate is a Mayfair flagship or a multi-site expansion from Dubai to the South of France.</p>
+      </div>
+    </section>
+
+    <section style="padding:96px 6vw;border-bottom:1px solid rgba(255,255,255,.12)">
+      <div style="max-width:1320px;margin:0 auto">
+        <div style="display:flex;align-items:center;gap:16px;padding-bottom:44px">
+          <span style="font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.45)">Leadership</span>
+          <span style="flex:1;height:1px;background:rgba(255,255,255,.16)"></span>
+        </div>
+        <div style="display:grid;grid-template-columns:{{ colsTeam }};gap:48px 28px">
+            <div>
+              <img src="assets/team/p-boris.jpg" alt="Boris Kofman" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;display:block;background:#1A1A1A">
+              <div style="padding:18px 0 0">
+                <h3 style="font-size:19px;font-weight:300;letter-spacing:-.005em;margin:0 0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Boris Kofman</h3>
+                <span style="display:block;min-height:3.4em;font-size:10px;line-height:1.7;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:500">Founder</span>
+                <p style="color:rgba(255,255,255,.62);font-size:14px;line-height:1.6;margin:10px 0 0;text-wrap:pretty">Over two decades in property, hospitality and investment across Europe and the Middle East. Pioneer of buyer- and tenant-only representation in global super-prime markets.</p>
+              </div>
+            </div>
+            <div>
+              <img src="assets/team/p-sofia.jpg" alt="Sofia Schnell" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;display:block;background:#1A1A1A">
+              <div style="padding:18px 0 0">
+                <h3 style="font-size:19px;font-weight:300;letter-spacing:-.005em;margin:0 0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Sofia Schnell</h3>
+                <span style="display:block;min-height:3.4em;font-size:10px;line-height:1.7;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:500">CEO</span>
+                <p style="color:rgba(255,255,255,.62);font-size:14px;line-height:1.6;margin:10px 0 0;text-wrap:pretty">Strategic lead for London operations, with expertise in cross-border client acquisition, operational drive and corporate expansion for UHNWs and their families.</p>
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:96px 6vw">
+      <div style="max-width:1320px;margin:0 auto">
+        <div style="display:flex;align-items:center;gap:16px;padding-bottom:44px">
+          <span style="font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.45)">Commercial advisory</span>
+          <span style="flex:1;height:1px;background:rgba(255,255,255,.16)"></span>
+        </div>
+        <div style="display:grid;grid-template-columns:{{ colsTeam }};gap:48px 28px;justify-content:start;margin-bottom:96px">
+            <div>
+              <img src="assets/team/p-angie.jpg" alt="Angie Lucenko" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;display:block;background:#1A1A1A">
+              <div style="padding:18px 0 0">
+                <h3 style="font-size:19px;font-weight:300;letter-spacing:-.005em;margin:0 0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Angie Lucenko</h3>
+                <span style="display:block;min-height:3.4em;font-size:10px;line-height:1.7;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:500">Commercial Leasing Consultant</span>
+                <p style="color:rgba(255,255,255,.58);font-size:14px;line-height:1.6;margin:10px 0 0;text-wrap:pretty">Specialist in securing flagship F&amp;B and retail locations for international brands entering the UK.</p>
+              </div>
+            </div>
+            <div>
+              <img src="assets/team/p-elina.jpg" alt="Elina Mayor" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;display:block;background:#1A1A1A">
+              <div style="padding:18px 0 0">
+                <h3 style="font-size:19px;font-weight:300;letter-spacing:-.005em;margin:0 0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Elina Mayor</h3>
+                <span style="display:block;min-height:3.4em;font-size:10px;line-height:1.7;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:500">Commercial Leasing Consultant</span>
+                <p style="color:rgba(255,255,255,.58);font-size:14px;line-height:1.6;margin:10px 0 0;text-wrap:pretty">Experienced in sourcing and negotiating leasing opportunities for luxury retail and hospitality operators.</p>
+              </div>
+            </div>
+            <div>
+              <img src="assets/team/p-diana.jpg" alt="Diana Sirus" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;display:block;background:#1A1A1A">
+              <div style="padding:18px 0 0">
+                <h3 style="font-size:19px;font-weight:300;letter-spacing:-.005em;margin:0 0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Diana Sirus</h3>
+                <span style="display:block;min-height:3.4em;font-size:10px;line-height:1.7;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:500">UAE Advisor</span>
+                <p style="color:rgba(255,255,255,.58);font-size:14px;line-height:1.6;margin:10px 0 0;text-wrap:pretty">Sourcing consultant on commercial mandates, and our specialist on the UAE market.</p>
+              </div>
+            </div>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:16px;padding-bottom:40px">
+          <span style="font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.45)">Family office &amp; growth</span>
+          <span style="flex:1;height:1px;background:rgba(255,255,255,.16)"></span>
+        </div>
+
+        <div style="display:grid;grid-template-columns:{{ colsTeam }};gap:48px 28px;justify-content:start">
+            <div>
+              <img src="assets/team/p-almakaeva.jpg" alt="Anastasia Almakaeva" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;display:block;background:#1A1A1A">
+              <div style="padding:18px 0 0">
+                <h3 style="font-size:19px;font-weight:300;letter-spacing:-.005em;margin:0 0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Anastasia Almakaeva</h3>
+                <span style="display:block;min-height:3.4em;font-size:10px;line-height:1.7;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:500">Investments &amp; Family Office Relations</span>
+                <p style="color:rgba(255,255,255,.58);font-size:14px;line-height:1.6;margin:10px 0 0;text-wrap:pretty">Works with private investors and family offices on strategic relationships and opportunities.</p>
+              </div>
+            </div>
+            <div>
+              <img src="assets/team/p-ekaterina.jpg" alt="Ekaterina Piedeleu" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;display:block;background:#1A1A1A">
+              <div style="padding:18px 0 0">
+                <h3 style="font-size:19px;font-weight:300;letter-spacing:-.005em;margin:0 0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Ekaterina Piedeleu</h3>
+                <span style="display:block;min-height:3.4em;font-size:10px;line-height:1.7;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:500">Private Clients &amp; Family Office Solutions</span>
+                <p style="color:rgba(255,255,255,.58);font-size:14px;line-height:1.6;margin:10px 0 0;text-wrap:pretty">Leads digital platform development for private clients and family office solutions.</p>
+              </div>
+            </div>
+            <div>
+              <img src="assets/team/p-pospelova.jpg" alt="Anastasija Pospelova" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;display:block;background:#1A1A1A">
+              <div style="padding:18px 0 0">
+                <h3 style="font-size:19px;font-weight:300;letter-spacing:-.005em;margin:0 0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Anastasija Pospelova</h3>
+                <span style="display:block;min-height:3.4em;font-size:10px;line-height:1.7;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:500">Growth Strategy Manager</span>
+                <p style="color:rgba(255,255,255,.58);font-size:14px;line-height:1.6;margin:10px 0 0;text-wrap:pretty">Leads growth initiatives and cross-department coordination across the business.</p>
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:#FFFFFF;color:#0B0B0B;padding:90px 6vw">
+      <div style="max-width:1320px;margin:0 auto;display:grid;grid-template-columns:{{ colsStat }};gap:1px;background:rgba(11,11,11,.16)">
+        <div style="background:#FFFFFF;padding:30px 28px">
+          <b style="display:block;font-size:clamp(30px,3.4vw,46px);font-weight:300;letter-spacing:-.02em;margin-bottom:10px">100+</b>
+          <span style="font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:rgba(11,11,11,.5)">Years combined experience</span>
+        </div>
+        <div style="background:#FFFFFF;padding:30px 28px">
+          <b style="display:block;font-size:clamp(30px,3.4vw,46px);font-weight:300;letter-spacing:-.02em;margin-bottom:10px">5</b>
+          <span style="font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:rgba(11,11,11,.5)">Languages spoken</span>
+        </div>
+        <div style="background:#FFFFFF;padding:30px 28px">
+          <b style="display:block;font-size:clamp(30px,3.4vw,46px);font-weight:300;letter-spacing:-.02em;margin-bottom:10px">1</b>
+          <span style="font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:rgba(11,11,11,.5)">Office, three markets</span>
+        </div>
+        <div style="background:#FFFFFF;padding:30px 28px">
+          <b style="display:block;font-size:clamp(30px,3.4vw,46px);font-weight:300;letter-spacing:-.02em;margin-bottom:10px">24/7</b>
+          <span style="font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:rgba(11,11,11,.5)">Response, measured in minutes</span>
+        </div>
+      </div>
+    </section>
+
+    <section style="text-align:center;padding:110px 6vw;border-top:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12)">
+      <span style="font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:500">Contact</span>
+      <h2 style="font-size:clamp(30px,3.6vw,52px);max-width:20ch;margin:24px auto 40px;line-height:1.16;font-weight:300;letter-spacing:-.01em">Speak to the person who'll do the work.</h2>
+      <a href="#" data-goto="enquire" style="display:inline-block;background:#FFFFFF;border:1px solid #FFFFFF;color:#0B0B0B;padding:16px 38px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;transition:opacity .3s" style-hover="opacity:.75">Start a conversation</a>
+    </section>
+
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ isEnquire }}" hint-placeholder-val="{{ false }}">
+  <div data-screen-label="Enquire">
+
+    <section style="display:grid;grid-template-columns:{{ colsSplit }};border-bottom:1px solid rgba(255,255,255,.12)">
+      <div style="padding:100px 5vw 100px 6vw">
+        <span style="font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:500">Contact</span>
+        <h1 style="font-size:clamp(36px,4.4vw,62px);line-height:1.08;font-weight:300;letter-spacing:-.015em;margin:22px 0 24px;max-width:13ch">Tell us about the brand.</h1>
+        <p style="color:rgba(255,255,255,.62);font-size:16px;margin:0 0 44px;max-width:44ch;text-wrap:pretty">One conversation is usually enough to know whether we can help — and where the first site should be.</p>
+
+        <div style="border-top:1px solid rgba(255,255,255,.12)">
+          <a href="mailto:office@kofmanpartners.com" style="display:flex;justify-content:space-between;gap:20px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6)" style-hover="color:#FFFFFF"><span>Email</span><span>office@kofmanpartners.com</span></a>
+          <a href="https://wa.me/447457411495" style="display:flex;justify-content:space-between;gap:20px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6)" style-hover="color:#FFFFFF"><span>WhatsApp</span><span>+44 7457 411495</span></a>
+          <a href="#" style="display:flex;justify-content:space-between;gap:20px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6)" style-hover="color:#FFFFFF"><span>Book directly</span><span>calendly.com/kofmanpartners/30min</span></a>
+        </div>
+
+        <div style="display:grid;grid-template-columns:{{ colsSplit }};gap:1px;background:rgba(255,255,255,.14);margin-top:54px">
+          <div style="background:#0B0B0B;padding:24px 22px">
+            <span style="display:block;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:10px">Office</span>
+            <span style="font-size:13.5px;font-weight:300;color:rgba(255,255,255,.8)">12 Hay Hill, Mayfair, London W1J 8NR</span>
+          </div>
+          <div style="background:#0B0B0B;padding:24px 22px">
+            <span style="display:block;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:10px">Markets</span>
+            <span style="font-size:13.5px;font-weight:300;color:rgba(255,255,255,.8)">United Kingdom · Europe · The Middle East</span>
+          </div>
+        </div>
+
+        <p style="font-size:12px;letter-spacing:.06em;color:rgba(255,255,255,.4);margin:26px 0 0">K+P Commercial is part of the Kofman + Partners group, 18+ years on the market.</p>
+      </div>
+
+      <div style="background:#FFFFFF;color:#0B0B0B;padding:100px 6vw 100px 5vw">
+        <div style="max-width:520px">
+          <span style="display:block;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:rgba(11,11,11,.45);margin-bottom:8px">Name</span>
+          <div style="border-bottom:1px solid rgba(11,11,11,.25);height:38px;margin-bottom:30px"></div>
+
+          <span style="display:block;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:rgba(11,11,11,.45);margin-bottom:8px">Company / brand</span>
+          <div style="border-bottom:1px solid rgba(11,11,11,.25);height:38px;margin-bottom:34px"></div>
+
+          <span style="display:block;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:rgba(11,11,11,.45);margin-bottom:12px">F&amp;B or Retail</span>
+          <div style="display:flex;gap:8px;margin-bottom:34px">
+            <span style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;padding:11px 22px;border:1px solid rgba(11,11,11,.3)">F&amp;B</span>
+            <span style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;padding:11px 22px;border:1px solid rgba(11,11,11,.3)">Retail</span>
+          </div>
+
+          <span style="display:block;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:rgba(11,11,11,.45);margin-bottom:12px">Target market(s)</span>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:34px">
+            <span style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;padding:11px 22px;border:1px solid rgba(11,11,11,.3)">United Kingdom</span>
+            <span style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;padding:11px 22px;border:1px solid rgba(11,11,11,.3)">Europe</span>
+            <span style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;padding:11px 22px;border:1px solid rgba(11,11,11,.3)">The Middle East</span>
+          </div>
+
+          <span style="display:block;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:rgba(11,11,11,.45);margin-bottom:12px">Stage</span>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:34px">
+            <span style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;padding:11px 22px;border:1px solid rgba(11,11,11,.3)">Concept</span>
+            <span style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;padding:11px 22px;border:1px solid rgba(11,11,11,.3)">Site search</span>
+            <span style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;padding:11px 22px;border:1px solid rgba(11,11,11,.3)">Pre-opening</span>
+            <span style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;padding:11px 22px;border:1px solid rgba(11,11,11,.3)">Expanding</span>
+          </div>
+
+          <span style="display:block;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:rgba(11,11,11,.45);margin-bottom:8px">Message</span>
+          <div style="border-bottom:1px solid rgba(11,11,11,.25);height:92px;margin-bottom:38px"></div>
+
+          <a href="#" data-goto="enquire" style="display:inline-block;background:#0B0B0B;border:1px solid #0B0B0B;color:#FFFFFF;padding:16px 38px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;transition:opacity .3s" style-hover="opacity:.8">Start the conversation</a>
+          <p style="font-size:12px;letter-spacing:.04em;color:rgba(11,11,11,.5);margin:18px 0 0">We reply within one working day.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ showStickyBar }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 6vw;background:rgba(11,11,11,.96);border-top:1px solid rgba(255,255,255,.16);backdrop-filter:blur(6px)">
+    <span style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.55)">Bringing a brand to a new market?</span>
+    <a href="#" data-goto="enquire" style="background:#FFFFFF;color:#0B0B0B;padding:13px 24px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;white-space:nowrap">Contact</a>
+  </div>
+  </sc-if>
+
+  <footer style="padding:46px 6vw 90px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;color:rgba(255,255,255,.45);font-size:11px;letter-spacing:.18em;text-transform:uppercase">
+    <span>©2026 K+P Commercial</span>
+    <span>London · Dubai · Zurich</span>
+    <span>Part of the Kofman + Partners group</span>
+    <a href="https://www.instagram.com/kofmanpartners" target="_blank" style="color:rgba(255,255,255,.45)" style-hover="color:#FFFFFF">Instagram</a>
+    <a href="https://uk.linkedin.com/company/kofmanpartners" target="_blank" style="color:rgba(255,255,255,.45)" style-hover="color:#FFFFFF">LinkedIn</a>
+    <a href="https://docs.google.com/document/d/1BRCly03-Nmy5Nzy9uDkluf4FHnZ8pyvGmogx1WRqUkw/edit?usp=sharing" target="_blank" style="color:rgba(255,255,255,.45)" style-hover="color:#FFFFFF">Privacy</a>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;screen&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;work&quot;,&quot;what&quot;,&quot;markets&quot;,&quot;brands&quot;,&quot;enquire&quot;,&quot;novikov&quot;,&quot;queen&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;'home' | 'work' | 'what' | 'markets' | 'brands' | 'enquire' | 'novikov' | 'queen'&quot;},&quot;showDisclosure&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+const DATA = {
+  novikov: {
+    address: "50A Berkeley St · W1J 8HA",
+    market: "London — Mayfair",
+    concept: "Asian & Italian, lounge bar",
+    opened: "2011 — 15 years trading",
+    title: "Novikov London",
+    venture: false,
+    label1: "The brief",
+    brief: "Bring Moscow's most famous restaurateur to London with a two-kitchen concept that had no precedent in Mayfair — and find an address that could carry it for decades.",
+    label2: "Our role",
+    role: "Site sourcing & acquisition · Lease negotiation · Corporate & legal structure · Licensing · Launch strategy",
+    label3: "The address",
+    addressCopy: "One of the most sought-after restaurant addresses in the world. We identified the Berkeley Street site, structured the deal and negotiated every term with the landlord, then built the platform around it — the tax and employment advisors that let a first-time London operator open like a veteran.",
+    outcome: "Fifteen years of continuous trade on the same Mayfair address — the longevity most advisors can't show once.",
+    cta: "Discuss a London entry",
+    photo1: "Novikov — dining room",
+    photo2: "Bar",
+    photo3: "Façade at night",
+    img1: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?fm=jpg&q=75&w=1800&auto=format&fit=crop",
+    img2: "https://images.unsplash.com/photo-1744776411217-7cbe398b0c1a?fm=jpg&q=75&w=1200&auto=format&fit=crop",
+    img3: "https://images.unsplash.com/photo-1744776411223-71fb5794617a?fm=jpg&q=75&w=1200&auto=format&fit=crop",
+    related: "Park Chinois · Mayfair  |  Sumosan Twiga · Knightsbridge"
+  },
+  queen: {
+    address: "J1 Beach · Dubai",
+    market: "UAE — Dubai",
+    concept: "French Riviera beach restaurant",
+    opened: "2024",
+    title: "African Queen",
+    venture: true,
+    label1: "Our venture",
+    brief: "African Queen came to Dubai as a franchise, opened in partnership — on a site we sourced, with terms we negotiated ourselves, a legendary brand we placed on the global map.",
+    label2: "Our role",
+    role: "Site sourcing · Franchise partnership · Lease negotiation · Licensing & company setup · Staffing & launch",
+    label3: "Why it's on this site",
+    addressCopy: "Everything we sell as advisors, we did here for ourselves: site, deal structure, licences, company setup, staffing — the full Dubai playbook, paid for with our own capital.",
+    outcome: "One of the top high-end beach restaurants in Dubai.",
+    cta: "Discuss a UAE entry",
+    photo1: "African Queen — J1 Beach, dusk",
+    photo2: "Terrace",
+    photo3: "Beach frontage",
+    img1: "https://images.unsplash.com/photo-1744776411255-3c427c203685?fm=jpg&q=75&w=1800&auto=format&fit=crop",
+    img2: "https://images.unsplash.com/photo-1744776411222-c8103b0d8b51?fm=jpg&q=75&w=1200&auto=format&fit=crop",
+    img3: "https://images.unsplash.com/photo-1744776411221-702f2848b0b2?fm=jpg&q=75&w=1200&auto=format&fit=crop",
+    related: "Sakhalin Beach · Dubai  |  SANA · Jumeirah"
+  }
+};
+
+const IMG = (id, w) => "url(https://images.unsplash.com/photo-" + id + "?fm=jpg&q=72&w=" + (w || 1200) + "&auto=format&fit=crop)";
+
+const PROJECTS = [
+  { name: "Novikov", address: "50A Berkeley St · Mayfair", meta: "F&B · Opened 2011 — trading 15 years", tag: "Advisory", bg: "url(assets/project-novikov.jpg)", gallery: ["url(assets/project-novikov-02.jpg)", "url(assets/project-novikov-03.jpg)"] },
+  { name: "Bocconcino", address: "Mayfair · London", meta: "F&B · Opened 2014", tag: "Advisory", bg: "url(assets/project-bocconcino.jpg)", gallery: ["url(assets/project-bocconcino-02.jpg)", "url(assets/project-bocconcino-03.jpg)"] },
+  { name: "Park Chinois", address: "Berkeley St · Mayfair", meta: "F&B · Opened 2015", tag: "Advisory", bg: "url(assets/project-park-chinois.jpg)", gallery: ["url(assets/project-park-chinois-02.jpg)", "url(assets/project-park-chinois-03.jpg)"] },
+  { name: "MNKY HSE", address: "Mayfair · London", meta: "F&B · Opened 2016 · Brand, concept, design, build & operation", tag: "Founder Venture", bg: "url(assets/project-mnky-hse.jpg)", gallery: ["url(assets/project-mnky-hse-02.jpg)", "url(assets/project-mnky-hse-03.jpg)"] },
+  { name: "Sumosan Twiga", address: "165 Sloane St · Knightsbridge", meta: "F&B · Leasehold acquired · Opened Nov 2016", tag: "Advisory", bg: "url(assets/project-sumosan-twiga.jpg)", gallery: ["url(assets/project-sumosan-twiga-02.jpg)", "url(assets/project-sumosan-twiga-03.jpg)"] },
+  { name: "Aldo Coppola", address: "70 Sloane Ave · Chelsea", meta: "Retail · Premises search · Opened 2017", tag: "Advisory", bg: "url(assets/project-aldo-coppola.jpg)", gallery: ["url(assets/project-aldo-coppola-02.jpg)", "url(assets/project-aldo-coppola-03.jpg)"] },
+  { name: "Clarette", address: "44 Blandford St · Marylebone", meta: "F&B · Leasehold secured · Opened Apr 2017", tag: "Advisory", bg: "url(assets/project-clarette.jpg)", gallery: ["url(assets/project-clarette-02.jpg)", "url(assets/project-clarette-03.jpg)"] },
+  { name: "GAIA", address: "Monte Carlo · Monaco", meta: "F&B · Opened 2019", tag: "Advisory", bg: "url(assets/project-gaia-monaco-v2.jpg)", gallery: ["url(assets/project-gaia-monaco-02-v2.jpg)", "url(assets/project-gaia-monaco-03-v2.jpg)"] },
+  { name: "GAIA", address: "Mayfair · London", meta: "F&B · Opened 2023", tag: "Advisory", bg: "url(assets/project-gaia-london.jpg)", gallery: ["url(assets/project-gaia-london-02.jpg)", "url(assets/project-gaia-london-03.jpg)"] },
+  { name: "GAIA", address: "Marbella · Spain", meta: "F&B · Opened 2024", tag: "Advisory", bg: "url(assets/project-gaia-marbella.jpg)", gallery: ["url(assets/project-gaia-marbella-02.jpg)", "url(assets/project-gaia-marbella-03.jpg)"] },
+  { name: "Krasota", address: "Downtown · Dubai", meta: "F&B · Advisory to White Rabbit Family · Opened Apr 2023", tag: "Advisory", bg: "url(assets/project-krasota.jpg)", gallery: ["url(assets/project-krasota-02.jpg)", "url(assets/project-krasota-03.jpg)"] },
+  { name: "African Queen", address: "J1 Beach · Dubai", meta: "F&B · Franchise partnership · Opened 2024", tag: "Founder Venture", bg: "url(assets/project-african-queen-v2.jpg)", gallery: ["url(assets/project-african-queen-02-v2.jpg)", "url(assets/project-african-queen-03-v2.jpg)"] },
+  { name: "Cutfish", address: "Marsa Al Arab · Dubai", meta: "F&B · Sourced by K+P, operated by BIK · Opened Nov 2024", tag: "Founder Venture", bg: "url(assets/project-cutfish.jpg)", gallery: ["url(assets/project-cutfish-02.jpg)", "url(assets/project-cutfish-03.jpg)"] },
+  { name: "Sakhalin", address: "J1 Beach · Dubai", meta: "F&B · Advisory to White Rabbit Family · Opened Nov 2024", tag: "Advisory", bg: "url(assets/project-sakhalin.jpg)", gallery: ["url(assets/project-sakhalin-02.jpg)", "url(assets/project-sakhalin-03.jpg)"] },
+  { name: "YDF Interiors", address: "70 Brompton Rd · Knightsbridge", meta: "Retail · 20,000+ sq ft · 2024", tag: "Advisory", bg: "url(assets/project-ydf-interiors.jpg)", gallery: ["url(assets/project-ydf-interiors-02.jpg)", "url(assets/project-ydf-interiors-03.jpg)"] },
+  { name: "ABC Co", address: "Mareterra · Monaco", meta: "F&B · Placed in Mareterra", tag: "Advisory", bg: "url(assets/project-abc-monaco.jpg)", gallery: ["url(assets/project-abc-monaco-02.jpg)"] },
+  { name: "ABC Co", address: "Notting Hill · London", meta: "F&B · UK/EU anchor site · 2025", tag: "Advisory", bg: "url(assets/project-abc-london.jpg)", gallery: ["url(assets/project-abc-london-02.jpg)"] },
+  { name: "Alba", address: "Knightsbridge · London", meta: "F&B · First floor above YDF Interiors · Opened Feb 2025", tag: "Advisory", bg: "url(assets/project-alba.jpg)", gallery: ["url(assets/project-alba-02.jpg)", "url(assets/project-alba-03.jpg)"] },
+  { name: "Baxter Made In Italy", address: "Brompton Rd · London", meta: "Retail · 4,000 sq ft flagship · 2025", tag: "Advisory", bg: "url(assets/project-baxter.jpg)", gallery: ["url(assets/project-baxter-02.jpg)", "url(assets/project-baxter-03.jpg)"] },
+  { name: "Café Bunch", address: "Nine Elms · London", meta: "F&B · Secured · Nine Elms", tag: "Advisory", bg: "url(assets/project-cafe-bunch.jpg)", gallery: ["url(assets/project-cafe-bunch-02.jpg)"] },
+  { name: "SANA", address: "Mina A'Salam · Jumeirah, Dubai", meta: "F&B · Uzbek · 12,000 sq ft · 2025", tag: "Founder Venture", bg: "url(assets/project-sana.jpg)", gallery: ["url(assets/project-sana-02.jpg)", "url(assets/project-sana-03.jpg)"] },
+  { name: "Sonara Spa", address: "120 King's Rd · Chelsea", meta: "Wellness · Opened 2025", tag: "Advisory", bg: "url(assets/project-sonara-spa.jpg)", gallery: ["url(assets/project-sonara-spa-02.jpg)", "url(assets/project-sonara-spa-03.jpg)"] },
+  { name: "Orlov Banya", address: "Gabala · Azerbaijan", meta: "Wellness · For Bulldozer Group · Agreement signed 2026", tag: "Advisory", bg: "url(assets/project-orlov-banya.jpg)", gallery: ["url(assets/project-orlov-banya-02.jpg)", "url(assets/project-orlov-banya-03.jpg)"] }
+];
+
+PROJECTS.forEach(p => {
+  p.id = p.name === "GAIA" ? (/Monte Carlo/.test(p.address) ? "gaia-monaco" : /Mayfair/.test(p.address) ? "gaia-london" : "gaia-marbella") : p.name === "ABC Co" ? (/Mareterra/.test(p.address) ? "abc-monaco" : "abc-london") : p.name;
+  p.goto = p.name === "Novikov" ? "novikov" : p.name === "African Queen" ? "queen" : "work";
+  const v = p.tag === "Founder Venture";
+  p.tagColor = v ? "#0B0B0B" : "rgba(255,255,255,.7)";
+  p.tagBg = v ? "#FFFFFF" : "transparent";
+  p.tagBorder = v ? "#FFFFFF" : "rgba(255,255,255,.28)";
+});
+
+const ME = PROJECTS.filter(p => /Dubai|Riyadh|Doha/.test(p.address));
+const UK = PROJECTS.filter(p => /London|Mayfair|Knightsbridge|Marylebone|Chelsea|Kensington|Brompton|Soho|Sloane|Notting Hill|Nine Elms|King's Rd/.test(p.address) && !/Manchester/.test(p.address));
+const EUROPE = PROJECTS.filter(p => /Monaco|Marbella/.test(p.address));
+
+const STUDIES = {
+  "Novikov": {
+    concept: "Asian & Italian, lounge bar",
+    brief: "Bring Moscow's most famous restaurateur to London with a two-kitchen concept that had no precedent in Mayfair — and find an address that could carry it for decades.",
+    role: "Site sourcing & acquisition · Lease negotiation · Corporate & legal structure · Licensing · Launch strategy",
+    address: "One of the most sought-after restaurant addresses in the world. We identified the Berkeley Street site, structured the deal and negotiated every term with the landlord, then built the platform around it — the tax and employment advisors that let a first-time London operator open like a veteran.",
+    outcome: "Fifteen years of continuous trade on the same Mayfair address — the longevity most advisors can't show once.",
+    cta: "Discuss a London entry"
+  },
+  "Park Chinois": {
+    concept: "Fine-dining Chinese, live entertainment",
+    brief: "A grand, theatrical Chinese dining concept needing a Mayfair address with the scale — and the licences — for dinner, dancing and late entertainment under one roof.",
+    role: "Site identification · Full landlord negotiation, start to finish",
+    address: "A prime multi-level site built for dining and entertainment as one experience.",
+    outcome: "One of the most ambitious restaurant openings Mayfair has seen — a launch that set the stage for the brand for years to come.",
+    cta: "Discuss a London entry"
+  },
+  "GAIA": {
+    concept: "Greek-Mediterranean flagship, Fundamental Hospitality",
+    brief: "GAIA needed a Mayfair flagship for its first UK opening — a scheme placement inside One Berkeley's curated occupier mix, not a standalone letting.",
+    role: "Site sourcing & acquisition · Scheme negotiation · Deal structuring",
+    address: "50 Dover Street, within One Berkeley — Crosstree's 240,000 sq ft scheme on the Dover Street corner of Piccadilly, opposite The Ritz. c.10,000 sq ft across restaurant, bar and members' club.",
+    outcome: "Opened December 2023 — the London mandate inside a relationship that has taken GAIA from Dubai to Monaco, Marbella, Doha and Miami.",
+    cta: "Discuss a London entry"
+  },
+  "YDF Interiors": {
+    concept: "Design showroom",
+    brief: "Place an award-winning design and architecture bureau's furniture showroom in one of the most renowned retail buildings in London — directly opposite Harrods.",
+    role: "Opportunity identification · Deal structuring · Landlord negotiation · Legal & corporate setup for the UK entity",
+    address: "Knightsbridge footfall, Harrods adjacency, and a building the whole market was circling — the former Topshop building at 70 Brompton Road.",
+    outcome: "Over 20,000 sq ft of award-winning design — including Alba, the Italian restaurant on the upper floor, reached through the showroom.",
+    cta: "Discuss a retail entry"
+  },
+  "Sumosan Twiga": {
+    concept: "Japanese & Italian, late-night lounge",
+    brief: "A cross-border joint venture — Sumosan London and Twiga Monaco — needed a Knightsbridge address after fourteen years on Albemarle Street, on a pitch that had already defeated four previous operators.",
+    role: "Site sourcing & acquisition · Leasehold negotiation · Landlord presentation on a joint-venture covenant",
+    address: "165 Sloane Street — between Chanel and Hermès, opposite Prada and Armani. The site had cycled through Alain Ducasse, Jamie Oliver and others before we secured it for a joint venture landlords don't take lightly.",
+    outcome: "Sumosan Twiga has traded at 165 Sloane Street since November 2016 — close to a decade, on a pitch that had defeated every operator before it.",
+    cta: "Discuss a London relocation"
+  },
+  "Clarette": {
+    concept: "Wine bar & restaurant, Bordeaux emphasis",
+    brief: "The Tudor Rose, a Marylebone corner pub, went dark in 2016 after a proposed 100% rent increase. Ten months later we secured the leasehold for a Château Margaux-backed wine bar that could clear the new rent.",
+    role: "Site sourcing & acquisition · Leasehold negotiation · Change-of-use positioning",
+    address: "44 Blandford Street — a 1936 corner pub rebuilt in mock Tudor style, dark for ten months before we placed a use the rent could actually support.",
+    outcome: "Trading since April 2017 — nine years on an address the previous tenant couldn't hold.",
+    cta: "Discuss a London entry"
+  },
+  "Aldo Coppola": {
+    concept: "Luxury hair & beauty atelier",
+    brief: "Aldo Coppola's first UK atelier — an Italian house founded in 1973, with salons from Milan to Moscow — needed a Chelsea address to anchor its London arrival.",
+    role: "Premises search · Site sourcing",
+    address: "70 Sloane Avenue, SW3, at the Brompton Cross end — inside our Knightsbridge and Chelsea cluster alongside YDF, Alba and Baxter.",
+    outcome: "A multi-floor atelier with a technical consulting room, relaxation bar and treatment suites — the brand's London home.",
+    cta: "Discuss a retail entry"
+  },
+  "Krasota": {
+    concept: "Gastro-theatre, ticketed fine dining",
+    brief: "White Rabbit Family needed a Downtown Dubai address for Krasota — a cylindrical dining auditorium built around ten mapped projectors, not a conventional restaurant fit-out.",
+    role: "Site acquisition · Advisory",
+    address: "Address Downtown Hotel — twenty covers, three seatings a day, ticketed in advance. A different real-estate brief from a standard restaurant letting.",
+    outcome: "Opened April 2023 with Michelin-starred chef Vladimir Mukhin; two toques, Gault & Millau.",
+    cta: "Discuss a UAE entry"
+  },
+  "Sakhalin": {
+    concept: "MediterrAsian beachfront dining",
+    brief: "White Rabbit Family's second Dubai opening in eighteen months, after Krasota — a different format, a different part of the city, the same client relationship.",
+    role: "Advisory · Site sourcing",
+    address: "J1 Beach, Jumeirah — a beachfront room under Executive Chef Alexey Kogay, run on the sourcing strength of a group operating more than a dozen restaurants worldwide.",
+    outcome: "Opened November 2024 — one of four Sakhalin locations globally, and the second WRF mandate we've delivered in the city.",
+    cta: "Discuss a UAE entry"
+  },
+  "ABC Co": {
+    concept: "Speciality coffee & all-day café",
+    label3: "Why it's on this site",
+    brief: "ABC Co's founder calls the Notting Hill site the strategic cornerstone of the brand's UK and European expansion — not a retail lease, but the anchor for a multi-country programme.",
+    role: "Site sourcing & acquisition · Landlord negotiation",
+    address: "Notting Hill, W11, alongside a placement in Mareterra — the district Monaco built on reclaimed land at Anse du Portier, where the occupier mix is curated rather than marketed.",
+    outcome: "The London anchor of ABC Co's European rollout, with a foothold in one of the tightest-controlled schemes in Europe.",
+    cta: "Discuss a retail entry"
+  },
+  "Alba": {
+    concept: "Italian ristorante, first floor",
+    label3: "Why it's on this site",
+    brief: "Alba is the first-floor restaurant reached through the YDF Interiors showroom below — part of the same 70 Brompton Road mandate, not a separate site.",
+    role: "Component of the YDF acquisition · Represented on the buy-side, exclusively",
+    address: "First floor, 70 Brompton Road, Harrods-facing — designed by YODEZEEN, fitted out by YDF. The room turns a retail visit into a relationship; project discussions happen over lunch here.",
+    outcome: "Opened February 2025, as the second half of the YDF story.",
+    cta: "Discuss a retail entry"
+  },
+  "Café Bunch": {
+    concept: "All-day dining, dry-aged beef & natural wines",
+    brief: "An operator with ten years' experience and no UK trading history, placed into Nine Elms — a regeneration district where institutional landlords assemble their tenant mix from scratch and are cautious about unproven covenants.",
+    role: "Covenant representation · Landlord negotiation",
+    address: "Nine Elms, London — a harder placement than a known brand on Berkeley Street: we shaped the narrative and positioned the client as a credible, trustworthy operator.",
+    outcome: "Secured in Nine Elms — the deal is done; the opening date follows.",
+    cta: "Discuss a London entry"
+  },
+  "Sonara Spa": {
+    concept: "Banya, hammam & salt-grotto wellness complex",
+    brief: "A 600 m² wet-plant wellness complex on the King's Road — banya, hammam and salt grottoes, a heavy-engineering brief a standard retail or restaurant lease doesn't contemplate.",
+    role: "Site sourcing · Landlord consent & alterations negotiation",
+    address: "120 King's Road, Chelsea — extraction, structural loading, drainage and humidity management made landlord consent and the alterations provisions the whole negotiation.",
+    outcome: "A specialist letting few advisors in prime London have executed.",
+    cta: "Discuss a retail entry"
+  },
+  "Orlov Banya": {
+    concept: "Premium spa & wellness complex",
+    brief: "Bulldozer Group's first Orlov Banya outside Baku — reported as Gabala's first premium spa and wellness complex, in Azerbaijan's principal mountain resort region.",
+    role: "Advisory, for Bulldozer Group",
+    address: "Gabala, Azerbaijan — a cooperation agreement with Gabala Hospitality Group, announced 2026.",
+    outcome: "In development — agreement signed; the regional expansion of a brand already operating 23+ banya and spa complexes internationally.",
+    cta: "Discuss a wellness mandate"
+  },
+  "Cutfish": {
+    concept: "Contemporary Japanese izakaya, marina-level",
+    label1: "Sourced by K+P", label3: "Why it's on this site",
+    brief: "Sourced by Kofman + Partners, operated by BIK Hospitality (founded by Boris Kofman) — a marina-level unit beneath the Jumeirah Marsa Al Arab hotel, with berth frontage over Marsa Port.",
+    role: "Site sourcing · Lease negotiation",
+    address: "Jumeirah Marsa Al Arab Marina — hotel-adjacent F&B with captive luxury footfall, a different asset class from a beach-club strip. The brand already traded in London and Moscow; Dubai was its first UAE site.",
+    outcome: "Opened 11 November 2024, beneath a Jumeirah flagship hotel.",
+    cta: "Discuss a UAE entry"
+  },
+  "Bocconcino": {
+    concept: "Italian dining, wood-fired pizza",
+    brief: "A Forte dei Marmi concept brought to London under Russian ownership in 2014, onto 19 Berkeley Street — one site that became a three-venue London group.",
+    role: "Site sourcing & acquisition",
+    address: "19 Berkeley Street, Mayfair — inside the same cluster as Novikov and Park Chinois.",
+    outcome: "The original site is still the group's cornerstone, since followed by Soho and Covent Garden openings.",
+    cta: "Discuss a London entry"
+  },
+  "Baxter Made In Italy": {
+    concept: "Italian furniture flagship",
+    brief: "A UK flagship for one of Italy's leading furniture houses, in the postcode where London's design trade actually buys.",
+    role: "Site identification on the Brompton design corridor · Deal structuring · Landlord negotiation",
+    address: "232–236 Brompton Road, on the stretch of South Kensington where the design trade shops.",
+    outcome: "4,000 sq ft presented as a design and art gallery rather than a conventional furniture shop.",
+    cta: "Discuss a retail entry"
+  },
+  "African Queen": {
+    concept: "French Riviera beach restaurant",
+    label1: "Our venture", label3: "Why it's on this site",
+    brief: "African Queen came to Dubai as a franchise, opened in partnership — on a site we sourced, with terms we negotiated ourselves, a legendary brand we placed on the global map.",
+    role: "Site sourcing · Franchise partnership · Lease negotiation · Licensing & company setup · Staffing & launch",
+    address: "Everything we sell as advisors, we did here for ourselves: site, deal structure, licences, company setup, staffing — the full Dubai playbook, paid for with our own capital.",
+    outcome: "One of the top high-end beach restaurants in Dubai.",
+    cta: "Discuss a UAE entry"
+  },
+  "MNKY HSE": {
+    concept: "Latin-American dining & entertainment",
+    label1: "Our venture", label3: "Why it's on this site",
+    brief: "MNKY HSE is ours end to end — brand, concept, design, build and operation, carried across four cities and three countries.",
+    role: "Concept creation · Site sourcing · Negotiation in four markets · Design & build · Operation",
+    address: "The full arc of everything K+P advises on — including entries into Riyadh and Doha, two of the most demanding licensing environments in the region.",
+    outcome: "Award-winning Latin-American dining concepts across London, Manchester, Riyadh and Doha.",
+    cta: "Discuss an international mandate"
+  },
+  "SANA": {
+    concept: "Uzbek restaurant",
+    label1: "Our venture", label3: "Why it's on this site",
+    brief: "SANA we designed and built ourselves — from concept through construction to opening night.",
+    role: "Concept · Design · Build · Opening",
+    address: "Proof of the design-and-build capability behind our advisory: when we tell a client what a site can become, it's because we've drawn, costed and built it with our own money.",
+    outcome: "12,000 sq ft designed by award-winning Yodezeen, with award-winning Brand Chef Glen Ballis, in the heart of Jumeirah's branded hotels.",
+    cta: "Discuss a UAE entry"
+  }
+};
+
+const BRANDS = [
+  ["Novikov", "Mayfair, London · F&B · 2011", "Mayfair"],
+  ["Bocconcino", "Mayfair, London · F&B · 2014", "Mayfair"],
+  ["Park Chinois", "Mayfair, London · F&B · 2015", "Mayfair"],
+  ["MNKY HSE", "Mayfair · Manchester · Riyadh · Doha · Founder Venture", "Venture"],
+  ["Sumosan Twiga", "165 Sloane St, Knightsbridge · F&B · 2016", "Knightsbridge"],
+  ["Aldo Coppola", "Sloane Avenue, Chelsea · Retail · 2017", "Retail"],
+  ["Clarette", "44 Blandford St, Marylebone · F&B · 2017", "Marylebone"],
+  ["GAIA", "Monte Carlo · Mayfair · Marbella · F&B", "3 cities"],
+  ["Krasota", "Downtown Dubai · F&B · 2023", "Dubai"],
+  ["African Queen", "J1 Beach, Dubai · Founder Venture · 2024", "Venture"],
+  ["Cutfish", "Marsa Al Arab, Dubai · Founder Venture · 2024", "Venture"],
+  ["Sakhalin", "J1 Beach, Dubai · F&B · 2024", "Dubai"],
+  ["YDF Interiors", "Knightsbridge, London · Retail · 2024", "Retail"],
+  ["ABC Co", "Mareterra, Monaco · Notting Hill, London · F&B · 2025", "2 cities"],
+  ["Alba", "Knightsbridge, London · F&B · 2025", "Knightsbridge"],
+  ["Baxter Made In Italy", "Brompton Road, London · Retail · 2025", "Retail"],
+  ["Café Bunch", "Nine Elms, London · F&B · Secured 2025", "Nine Elms"],
+  ["SANA", "Jumeirah, Dubai · Founder Venture · 2025", "Venture"],
+  ["Sonara Spa", "King's Road, Chelsea · Wellness · 2025", "Chelsea"],
+  ["Orlov Banya", "Gabala, Azerbaijan · Wellness · Agreement signed 2026", "2026"]
+].map((b, i) => ({ n: String(i + 1).padStart(2, "0"), name: b[0], meta: b[1], short: b[2] }));
+
+const LANDLORDS_UK = [
+  { name: "The Crown Estate", meta: "Regent St · St James's" },
+  { name: "Grosvenor", meta: "Mayfair · Belgravia" },
+  { name: "Crosstree", meta: "Real estate investment" },
+  { name: "Motcomb Estate", meta: "Belgravia" },
+  { name: "South Kensington Estate", meta: "Brompton · South Ken" },
+  { name: "Lancer", meta: "Asset management" }
+];
+
+const LANDLORDS_UAE = [
+  { name: "Emaar", meta: "Downtown · Dubai Marina" },
+  { name: "Nakheel", meta: "Palm Jumeirah" },
+  { name: "Meraas", meta: "City Walk · J1 Beach" },
+  { name: "Dubai Holding", meta: "Jumeirah · Bluewaters" },
+  { name: "MAF", meta: "Mall of the Emirates" },
+  { name: "Kerzner", meta: "Atlantis · One&Only" }
+];
+
+const MARKETS = {
+  uk: {
+    name: "United Kingdom",
+    hero: "url(assets/market-uk.jpg)",
+    stat: "Ten venues placed — F&B and retail",
+    years: "2011 — 2025",
+    headline: "London is the hardest room to enter, and the most valuable to hold.",
+    copy1: "Prime sites trade off-market, landlords choose tenants as carefully as tenants choose sites, and a Mayfair address is won on relationships and covenant, not on search.",
+    copy2: "K+P has placed ten venues in the UK — Novikov, Park Chinois and Sumosan Twiga among the restaurants; YODEZEEN, Baxter and Aldo Coppola among the retail names, from the old Topshop building opposite Harrods to Chelsea's design streets. Several have traded for over a decade on the same addresses.",
+    note: "Every UK entry here is a client mandate — advisory, start to finish.",
+    gridNote: "All advisory mandates",
+    office: "London office",
+    contact: "12 Hay Hill, Mayfair, London W1J 8NR · office@kofmanpartners.com",
+    ctaHead: "Bringing a brand to the UK?",
+    cta: "Discuss a UK entry",
+    projects: UK
+  },
+  me: {
+    name: "The Middle East",
+    hero: "url(assets/market-me.jpg)",
+    stat: "Five venues — Dubai",
+    years: "2023 — 2025",
+    headline: "We didn't only advise in the Gulf. We entered as owners too.",
+    copy1: "African Queen at J1 Beach, Cutfish and SANA are ours — opened with our own capital on sites we sourced from the developers who control the market: Emaar, Nakheel, Meraas, MAF, Kerzner. Site, licence, landlord, launch: the full playbook, tuition paid in our own money. On Krasota and Sakhalin we acted as advisors, on site acquisition alone.",
+    copy2: "Beyond the Emirates, MNKY HSE — our own brand — operates in Riyadh and Doha, two of the most demanding licensing environments in the region. That playbook is what client mandates in the Middle East now engage. There is no cheaper way to learn a market than with someone who paid to learn it themselves.",
+    note: "This page claims a proven playbook, not completed client mandates — there are none in the region yet. The first that closes is added here.",
+    gridNote: "Advisory and Founder Ventures",
+    office: "London office · Middle East representation",
+    contact: "Diana · 12 Hay Hill, Mayfair, London W1J 8NR · office@kofmanpartners.com",
+    ctaHead: "Bringing a brand to the Middle East?",
+    cta: "Discuss a Middle East entry",
+    projects: ME
+  },
+  europe: {
+    name: "Europe",
+    hero: "url(assets/market-europe-v2.jpg)",
+    stat: "Monaco · Marbella",
+    years: "2019 — 2025",
+    headline: "The same brand, on two of the most contested coasts in Europe.",
+    copy1: "We placed GAIA in Monaco, then London, then Marbella — brand transfer between markets is the hardest move in this business, and the Riviera and Costa del Sol are two of the tightest rooms to do it in.",
+    copy2: "Monaco and Marbella are seasonal, licence-tight and relationship-driven — markets where the landlord's judgement of a brand matters more than the rent. Headquartered in London, we act across Continental Europe through a representative in Zurich and the family offices behind these deals.",
+    note: "Zurich is representation, not a market. Nothing on this site claims a market without a placement behind it.",
+    gridNote: "All advisory mandates",
+    office: "London office · European representation",
+    contact: "Elina · 12 Hay Hill, Mayfair, London W1J 8NR · office@kofmanpartners.com",
+    ctaHead: "Taking a brand into Europe?",
+    cta: "Discuss a European mandate",
+    projects: EUROPE
+  }
+};
+
+class Component extends DCLogic {
+  state = { screen: "home", market: "uk", project: "Novikov", switcher: false, narrow: false, menuOpen: false, scrolled: false, barH: 47 };
+  _barRef = React.createRef();
+
+  componentDidMount() {
+    if (this.props.screen) this.setState({ screen: this.props.screen });
+    this._onResize = () => this.setState({
+      narrow: window.innerWidth < 960,
+      barH: this._barRef.current ? Math.round(this._barRef.current.getBoundingClientRect().height) : 47
+    });
+    this._onScroll = () => this.setState({ scrolled: window.scrollY > 400 });
+    this._onResize();
+    this._onScroll();
+    window.addEventListener("resize", this._onResize);
+    window.addEventListener("scroll", this._onScroll, { passive: true });
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this._onResize);
+    window.removeEventListener("scroll", this._onScroll);
+  }
+
+  renderVals() {
+    const screen = this.state.screen;
+    const isProject = screen === "project";
+
+    const proj = PROJECTS.find(x => x.id === (this.state.project || "Novikov") || x.name === (this.state.project || "Novikov")) || PROJECTS[0];
+    const st = STUDIES[proj.name] || {};
+    const venture = proj.tag === "Founder Venture";
+    const pool = PROJECTS.filter(x => x.id !== proj.id);
+    const related = pool.filter(x => x.address.split("·").pop().trim() === proj.address.split("·").pop().trim()).slice(0, 2);
+    const p = {
+      address: proj.address,
+      market: /Dubai|Riyadh|Doha/.test(proj.address) ? "The Middle East" : /London|Mayfair|Knightsbridge|Marylebone|Chelsea|Kensington|Brompton|Soho|Sloane|Notting Hill|Nine Elms|King's Rd/.test(proj.address) ? "United Kingdom — London" : /Monaco|Marbella/.test(proj.address) ? "Europe" : proj.address.split(" · ").slice(-1)[0],
+      concept: st.concept || proj.meta.split("·")[0].trim(),
+      opened: proj.meta.replace(/^[^·]*·\s*/, ""),
+      title: proj.name,
+      venture,
+      label1: st.label1 || (venture ? "Our venture" : "The brief"),
+      brief: st.brief || (venture ? "A K+P venture — opened on a site we sourced, with terms we negotiated ourselves." : "A client mandate: the right address for the brand, sourced and negotiated by K+P. Full case study copy to follow."),
+      label2: "Our role",
+      role: st.role || "Site sourcing & acquisition · Lease negotiation · Deal structuring",
+      label3: st.label3 || "The address",
+      addressCopy: st.address || (proj.address + " — sourced through the landlord relationships that decide who holds an address in this market."),
+      outcome: st.outcome || proj.meta,
+      cta: st.cta || "Start a conversation",
+      related: related.length ? related.map(r => r.name + " · " + r.address.split("·")[0].trim()).join("  |  ") : "All projects",
+      img1: proj.bg,
+      img2: proj.gallery && proj.gallery[0] ? proj.gallery[0] : proj.bg,
+      img3: proj.gallery && proj.gallery[1] ? proj.gallery[1] : proj.bg
+    };
+
+    const fType = this.state.type || "all";
+    const fPlace = this.state.place || "all";
+    const fMandate = this.state.mandate || "all";
+    const isRetail = x => /Retail/.test(x.meta);
+    const isWellness = x => /Wellness/.test(x.meta);
+    const filtered = PROJECTS.filter(x => {
+      if (fType === "fb" && (isRetail(x) || isWellness(x))) return false;
+      if (fType === "retail" && !isRetail(x)) return false;
+      if (fType === "wellness" && !isWellness(x)) return false;
+      if (fPlace === "london" && !/London|Mayfair|Knightsbridge|Marylebone|Chelsea|Kensington|Brompton|Soho|Sloane|Notting Hill|Nine Elms|King's Rd/.test(x.address)) return false;
+      if (fPlace === "europe" && !/Monaco|Marbella/.test(x.address)) return false;
+      if (fPlace === "me" && !/Dubai|Riyadh|Doha/.test(x.address)) return false;
+      if (fMandate === "advisory" && x.tag !== "Advisory") return false;
+      if (fMandate === "venture" && x.tag !== "Founder Venture") return false;
+      return true;
+    });
+    const chipStyles = {};
+    [["type", fType, ["all", "fb", "retail", "wellness"]], ["place", fPlace, ["all", "london", "europe", "me"]], ["mandate", fMandate, ["all", "advisory", "venture"]]].forEach(([key, active, vals]) => {
+      vals.forEach(v => {
+        const on = active === v;
+        chipStyles[key + v + "Bg"] = on ? "#FFFFFF" : "transparent";
+        chipStyles[key + v + "C"] = on ? "#0B0B0B" : "rgba(255,255,255,.65)";
+        chipStyles[key + v + "B"] = on ? "#FFFFFF" : "rgba(255,255,255,.22)";
+      });
+    });
+
+    const tag = p.venture
+      ? React.createElement("span", { style: { fontSize: 9.5, letterSpacing: ".22em", textTransform: "uppercase", color: "#0B0B0B", background: "#FFFFFF", padding: "5px 11px", fontWeight: 500 } }, "Founder Venture")
+      : React.createElement("span", { style: { fontSize: 9.5, letterSpacing: ".22em", textTransform: "uppercase", color: "rgba(255,255,255,.7)", border: "1px solid rgba(255,255,255,.28)", padding: "5px 11px", fontWeight: 500 } }, "Advisory");
+
+    const disclosureText = proj.name === "Cutfish"
+      ? "Sourced by Kofman + Partners. Operated by BIK Hospitality, founded by Boris Kofman."
+      : proj.name + " is a K+P venture: our own capital, our own site, openly declared.";
+    const disclosureBar = p.venture
+      ? React.createElement("div", { style: { padding: "20px 6vw", borderBottom: "1px solid rgba(255,255,255,.12)", fontSize: 12, letterSpacing: ".14em", textTransform: "uppercase", color: "rgba(255,255,255,.5)" } },
+          React.createElement("b", { style: { color: "#FFFFFF", fontWeight: 500 } }, "Disclosed — "),
+          disclosureText)
+      : null;
+
+    const narrow = this.state.narrow;
+    const mk = this.state.market || "uk";
+    const m = MARKETS[mk];
+
+    return {
+      isHome: screen === "home",
+      isProject,
+      onNav: (e) => {
+        const el = e.target.closest && e.target.closest("[data-goto],[data-filter]");
+        if (!el) return;
+        e.preventDefault();
+        const next = { menuOpen: false };
+        if (el.getAttribute("data-goto")) next.screen = el.getAttribute("data-goto");
+        const mkt = el.getAttribute("data-market");
+        if (mkt) next.market = mkt;
+        const prj = el.getAttribute("data-project");
+        if (prj) next.project = prj;
+        const flt = el.getAttribute("data-filter");
+        if (flt) { next.screen = "work"; next[el.getAttribute("data-filter-key")] = flt; }
+        this.setState(next);
+        if (!flt) window.scrollTo(0, 0);
+      },
+      showSwitcher: this.state.switcher !== false,
+      switcherHidden: this.state.switcher === false,
+      hideSwitcher: () => this.setState({ switcher: false }),
+      showSwitcherFn: () => this.setState({ switcher: true }),
+      barRef: this._barRef,
+      stickyTop: (this.state.switcher === false ? 0 : (this.state.barH || 47)) + "px",
+      isNarrow: narrow,
+      isWide: !narrow,
+      menuOpen: this.state.menuOpen,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      showStickyBar: narrow && this.state.scrolled && !this.state.menuOpen,
+      colsWork: narrow ? "1fr" : "repeat(3,1fr)",
+      colsCred: narrow ? "1fr" : "1.05fr .95fr",
+      colsSplit: narrow ? "1fr" : "1fr 1fr",
+      colsKeybar: narrow ? "1fr 1fr" : "1.3fr 1fr 1.2fr 1fr",
+      keybarEdge: narrow ? "none" : "1px solid rgba(255,255,255,.12)",
+      keybarRow2: narrow ? "1px solid rgba(255,255,255,.12)" : "none",
+      screenName: { home: "01 — Home", work: "02 — Work index", what: "03 — What We Do", markets: "04 — Markets · " + m.name, brands: "05 — Brands & Partners", team: "06 — Your Advisors", enquire: "07 — Contact", project: "08 — " + proj.name }[screen],
+      goHome: () => this.setState({ screen: "home" }),
+      goNovikov: () => this.setState({ screen: "project", project: "Novikov" }),
+      goQueen: () => this.setState({ screen: "project", project: "African Queen" }),
+      goWhat: () => this.setState({ screen: "what" }),
+      goWork: () => this.setState({ screen: "work" }),
+      goMarkets: () => this.setState({ screen: "markets" }),
+      goBrands: () => this.setState({ screen: "brands" }),
+      goEnquire: () => this.setState({ screen: "enquire" }),
+      isEnquire: screen === "enquire",
+      isWhat: screen === "what",
+      isWork: screen === "work",
+      isMarkets: screen === "markets",
+      goUK: () => this.setState({ market: "uk" }),
+      goEurope: () => this.setState({ market: "europe" }),
+      goME: () => this.setState({ market: "me" }),
+      ukColor: mk === "uk" ? "#FFFFFF" : "rgba(255,255,255,.5)",
+      ukBg: mk === "uk" ? "#161616" : "transparent",
+      europeColor: mk === "europe" ? "#FFFFFF" : "rgba(255,255,255,.5)",
+      europeBg: mk === "europe" ? "#161616" : "transparent",
+      meColor: mk === "me" ? "#FFFFFF" : "rgba(255,255,255,.5)",
+      meBg: mk === "me" ? "#161616" : "transparent",
+      mktHero: m.hero, mktName: m.name, mktStat: m.stat, mktYears: m.years,
+      mktHeadline: m.headline, mktCopy1: m.copy1, mktCopy2: m.copy2, mktNote: m.note,
+      mktGridNote: m.gridNote, mktOffice: m.office, mktCtaHead: m.ctaHead, mktCta: m.cta, mktContact: m.contact,
+      mktProjects: m.projects,
+      isBrands: screen === "brands",
+      isTeam: screen === "team",
+      goTeam: () => this.setState({ screen: "team" }),
+      colsTeam: "repeat(auto-fill,minmax(190px,1fr))",
+      allProjects: PROJECTS,
+      workProjects: filtered,
+      workCount: filtered.length + (filtered.length === 1 ? " project" : " projects"),
+      ...chipStyles,
+      brands: BRANDS,
+      landlordsUK: LANDLORDS_UK,
+      landlordsUAE: LANDLORDS_UAE,
+      uaeProjects: ME,
+      colsBrandWall: narrow ? "repeat(2,1fr)" : "repeat(4,1fr)",
+      colsStat: narrow ? "repeat(2,1fr)" : "repeat(4,1fr)",
+      colsStep: narrow ? "1fr" : "120px minmax(220px,1fr) minmax(0,1.6fr)",
+      showDisclosure: this.props.showDisclosure ?? true,
+      pAddress: p.address, pMarket: p.market, pConcept: p.concept, pOpened: p.opened,
+      pTitle: p.title, pTag: tag, pLabel1: p.label1, pBrief: p.brief,
+      pLabel2: p.label2, pRole: p.role, pLabel3: p.label3, pAddressCopy: p.addressCopy,
+      pOutcome: p.outcome, pCta: p.cta, pRelated: p.related,
+      dImg1: p.img1, dImg2: p.img2, dImg3: p.img3,
+      pHasGallery: Boolean(proj.gallery && proj.gallery.length),
+      pHasThird: Boolean(proj.gallery && proj.gallery.length > 1),
+      galleryRows: proj.gallery && proj.gallery.length ? "1.5fr 1fr" : "1fr",
+      galleryCols: proj.gallery && proj.gallery.length > 1 ? "1fr 1fr" : "1fr",
+      galleryBottom: proj.gallery && proj.gallery.length ? "1px solid rgba(255,255,255,.12)" : "none",
+      galleryDivider: proj.gallery && proj.gallery.length > 1 ? "1px solid rgba(255,255,255,.12)" : "none",
+      pDisclosureBar: disclosureBar
+    };
+  }
+}
+
+</script>
+</body>
+</html>

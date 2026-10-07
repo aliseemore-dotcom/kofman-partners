@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="_ds/kofman-partners-design-system-a7445062-5d53-4cd6-9c99-8129a859388b/tokens/colors.css">
+<link rel="stylesheet" href="_ds/kofman-partners-design-system-a7445062-5d53-4cd6-9c99-8129a859388b/tokens/typography.css">
+<link rel="stylesheet" href="_ds/kofman-partners-design-system-a7445062-5d53-4cd6-9c99-8129a859388b/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/kofman-partners-design-system-a7445062-5d53-4cd6-9c99-8129a859388b/tokens/effects.css">
+<link rel="stylesheet" href="_ds/kofman-partners-design-system-a7445062-5d53-4cd6-9c99-8129a859388b/styles.css">
+<script src="_ds/kofman-partners-design-system-a7445062-5d53-4cd6-9c99-8129a859388b/_ds_bundle.js"></script>
+<script src="image-slot.js"></script>
+<style>
+:root{
+ --text-display-1:clamp(2rem,1.5rem + 1.9vw,3.25rem);
+ --text-display-2:clamp(1.5rem,1.2rem + 1.2vw,2.125rem);
+ --text-h1:clamp(1.25rem,1.1rem + 0.6vw,1.625rem);
+ --text-h2:1.25rem;
+ --text-h3:1rem;
+ --text-body-lg:1rem;
+ --text-body:0.9375rem;
+ --text-small:0.8125rem;
+ --text-eyebrow:0.75rem;
+}
+html{scroll-behavior:smooth}
+body{margin:0;background:#0A0A0A}
+a{color:#FFFFFF}
+a:hover{color:rgba(255,255,255,.7)}
+:focus-visible{outline:2px solid #FFFFFF;outline-offset:3px}
+[data-mobile]{display:none}
+@media (max-width:900px){
+ [data-desktop]{display:none !important}
+ [data-mobile]{display:flex !important}
+ [data-cols]{grid-template-columns:1fr !important}
+ [data-cols="3"]{grid-auto-flow:column;grid-auto-columns:82%;overflow-x:auto;scroll-snap-type:x mandatory}
+ [data-cols="3"]>*{scroll-snap-align:start}
+ [data-cols="4team"]{grid-template-columns:1fr 1fr !important}
+ [data-split]{grid-template-columns:1fr !important;gap:var(--space-5) !important}
+ [data-why]{grid-template-columns:1fr !important;gap:var(--space-5) !important}
+ [data-why]>div:last-child{margin-top:0 !important}
+ [data-split]>div:first-child{max-width:100%}
+ [data-pad]{padding-left:20px !important;padding-right:20px !important}
+ [data-hero]{height:auto !important;min-height:460px}
+ [data-journey]{padding-left:32px !important}
+ [data-jline]{left:0 !important}
+ [data-jnode]{left:-36px !important}
+}
+@media (max-width:1080px){[data-steps]{grid-template-columns:repeat(2,minmax(0,1fr)) !important}}
+[data-who]::-webkit-scrollbar{display:none}
+@media (max-width:1080px){[data-who]{grid-auto-columns:calc((100% - 24px) / 3) !important}}
+@media (max-width:640px){[data-steps]{grid-template-columns:1fr !important}[data-who]{grid-auto-columns:64% !important}}
+@media (max-width:1080px){
+ header [data-desktop]{display:none !important}
+ header [data-mobile]{display:flex !important}
+}
+@media (prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *:not([data-step]):not([data-step] *){transition:none !important;animation:none !important}
+}
+@keyframes kpLoaderOut{to{opacity:0;visibility:hidden}}
+</style>
+</helmet>
+<div aria-hidden="true" style="position:fixed;inset:0;z-index:9999;background:#0A0A0A;display:flex;align-items:center;justify-content:center;pointer-events:none;animation:kpLoaderOut 0.5s ease 0.15s forwards"><span style="font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:500;font-size:0.8125rem;letter-spacing:0.3em;text-transform:uppercase;color:#FFFFFF;white-space:nowrap">Kofman + Partners</span></div>
+
+
+<div style="background:#0A0A0A;color:var(--text-on-dark);font-family:var(--font-sans);font-weight:var(--weight-body);min-height:100vh">
+
+  <header style="position:relative;z-index:30;border-bottom:1px solid var(--border-on-dark-soft)">
+    <div data-pad style="max-width:1320px;margin:0 auto;padding:30px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <a href="index.html" style="display:flex;align-items:baseline;gap:0.6em;text-decoration:none;white-space:nowrap">
+        <span style="font-family:var(--font-label);font-weight:500;font-size:0.8125rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--ink-0)">Kofman + Partners</span>
+      </a>
+      <nav data-desktop style="display:flex;align-items:center;gap:30px">
+        <a href="residential.html" style="font-family:var(--font-label);font-size:0.6875rem;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;white-space:nowrap;color:var(--ink-300)" style-hover="color:var(--ink-0)">Residential</a>
+        <a href="lettings.html" style="font-family:var(--font-label);font-size:0.6875rem;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;white-space:nowrap;color:var(--ink-300)" style-hover="color:var(--ink-0)">Lettings</a>
+        <a href="#top" aria-current="page" style="font-family:var(--font-label);font-size:0.6875rem;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;white-space:nowrap;color:var(--ink-0)">How we work</a>
+        <a href="#advisors" style="font-family:var(--font-label);font-size:0.6875rem;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;white-space:nowrap;color:rgba(255,255,255,0.6)" style-hover="color:#FFFFFF">Your advisors</a>
+        <a href="commercial/" style="font-family:var(--font-label);font-size:0.6875rem;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;white-space:nowrap;color:rgba(255,255,255,0.6)" style-hover="color:#FFFFFF">Commercial</a>
+        <a href="#contact" style="display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--border-on-dark);padding:9px 20px;margin-left:8px;font-family:var(--font-label);font-size:0.6875rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-0);text-decoration:none;transition:border-color var(--duration-fast) var(--ease-standard)" style-hover="border-color:var(--ink-0)">Contact</a>
+      </nav>
+      <div data-mobile style="align-items:center;gap:16px">
+        <a href="#contact" style="display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--border-on-dark);padding:12px 20px;font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-0);text-decoration:none">Contact</a>
+        <button type="button" onClick="{{ openMenu }}" style="background:none;border:none;padding:8px 0;color:var(--ink-0);font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.16em;text-transform:uppercase;cursor:pointer">Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;inset:0;z-index:60;background:#0A0A0A;display:flex;flex-direction:column;padding:22px 20px 40px">
+      <div style="display:flex;align-items:center;justify-content:space-between">
+        <span style="font-family:var(--font-display);font-size:1.0625rem">Kofman + Partners</span>
+        <button type="button" onClick="{{ closeMenu }}" style="background:none;border:none;color:var(--ink-0);font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.16em;text-transform:uppercase;cursor:pointer;padding:8px 0">Close</button>
+      </div>
+      <nav style="display:flex;flex-direction:column;gap:4px;margin-top:56px">
+        <a href="residential.html" style="font-family:var(--font-display);font-weight:300;font-size:2rem;text-decoration:none;color:var(--ink-0);padding:10px 0">Residential</a>
+        <a href="lettings.html" style="font-family:var(--font-display);font-weight:300;font-size:2rem;text-decoration:none;color:var(--ink-0);padding:10px 0">Lettings</a>
+        <a href="#top" onClick="{{ closeMenu }}" style="font-family:var(--font-display);font-weight:300;font-size:2rem;text-decoration:none;color:var(--ink-0);padding:10px 0">How we work</a>
+        <a href="#advisors" onClick="{{ closeMenu }}" style="font-family:var(--font-display);font-weight:300;font-size:2rem;text-decoration:none;color:var(--ink-0);padding:10px 0">Your advisors</a>
+        <a href="commercial/" style="font-family:var(--font-display);font-weight:300;font-size:2rem;text-decoration:none;color:var(--ink-0);padding:10px 0">Commercial</a>
+      </nav>
+      <div style="margin-top:40px">
+        <x-import component-from-global-scope="KofmanPartnersDesignSystem_a74450.Button" variant="primary" arrow="{{ true }}" href="#contact" onClick="{{ closeMenu }}" hint-size="220px,52px">Contact</x-import>
+      </div>
+      <div style="margin-top:auto;font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-500)">London · UAE · Europe</div>
+    </div>
+  </sc-if>
+
+  <section id="top" data-screen-label="Hero" style="position:relative;min-height:640px;display:flex;align-items:flex-end;overflow:hidden;background:#1A1A1A">
+    <image-slot id="kp-hww-hero-v2" src="assets/rev/heroes/how-we-work_hero_study.jpg" fit="cover" position="center" shape="rect" alt="Study with desk and bookcase, daylight from tall windows" placeholder="How we work hero — study" style="position:absolute;inset:0;width:100%;height:100%"></image-slot>
+    <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(10,10,10,0.78) 0%,rgba(10,10,10,0.45) 40%,rgba(10,10,10,0) 70%),linear-gradient(90deg,rgba(10,10,10,0.5) 0%,rgba(10,10,10,0) 60%)"></div>
+    <div data-pad style="position:relative;z-index:1;max-width:1320px;width:100%;margin:0 auto;padding:120px 32px 88px;display:flex;flex-direction:column;gap:20px;box-sizing:border-box">
+      <span style="font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-300)">How we work</span>
+      <h1 style="font-family:var(--font-display);font-weight:var(--weight-display);font-size:var(--text-display-1);line-height:var(--lh-tight);letter-spacing:var(--tracking-tight);margin:0;max-width:16ch;text-wrap:balance">From your brief to the right property.</h1>
+      <p style="font-size:var(--text-body-lg);line-height:var(--lh-normal);color:var(--ink-100);max-width:52ch;margin:0;text-wrap:pretty">We work exclusively on your side — from defining your brief and sourcing the right properties to private viewings, negotiations and completion.</p>
+    </div>
+  </section>
+
+  <section id="journey" data-screen-label="Process" style="background:#0B0B0B;border-top:1px solid var(--border-on-dark-soft)">
+   <div data-pad style="max-width:1320px;margin:0 auto;padding:var(--space-7) 32px">
+    <span style="display:block;font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.6);line-height:1;margin-bottom:var(--space-6)">The process</span>
+    <div data-steps style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px">
+      <sc-for list="{{ steps }}" as="st" hint-placeholder-count="6">
+        <div data-step role="button" tabindex="0" aria-expanded="{{ st.expanded }}" onMouseEnter="{{ st.enter }}" onMouseLeave="{{ st.leave }}" onClick="{{ st.tap }}" onKeyDown="{{ st.key }}" style="position:relative;aspect-ratio:4/5;box-sizing:border-box;background:{{ st.bg }};border:{{ st.border }};overflow:hidden;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background 400ms cubic-bezier(0.22,1,0.36,1)">
+          <sc-if value="{{ st.photo }}" hint-placeholder-val="{{ false }}">
+            <sc-if value="{{ st.is03 }}" hint-placeholder-val="{{ false }}"><img src="assets/hww-step-search.jpg" alt="Garden square terrace in prime London" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(0.8);transform:{{ st.imgT }};transition:transform 600ms cubic-bezier(0.22,1,0.36,1)"></sc-if>
+            <sc-if value="{{ st.is04 }}" hint-placeholder-val="{{ false }}"><img src="assets/hww-step-interior.jpg" alt="Period drawing room and dining room" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(0.8);transform:{{ st.imgT }};transition:transform 600ms cubic-bezier(0.22,1,0.36,1)"></sc-if>
+            <sc-if value="{{ st.is06 }}" hint-placeholder-val="{{ false }}"><img src="assets/hww-step-keys-v2.jpg" alt="Keys in a front door lock" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(0.8);transform:{{ st.imgT }};transition:transform 600ms cubic-bezier(0.22,1,0.36,1)"></sc-if>
+            <span aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,0.75) 0%,rgba(0,0,0,0) 50%)"></span>
+            <span aria-hidden="true" style="position:absolute;inset:0;background:rgba(0,0,0,0.85);opacity:{{ st.dimO }};transition:opacity 600ms cubic-bezier(0.22,1,0.36,1)"></span>
+          </sc-if>
+          <div style="position:relative;height:100%;box-sizing:border-box;padding:28px;display:flex;flex-direction:column;justify-content:space-between">
+            <span style="font-family:var(--font-label);font-weight:400;font-size:56px;line-height:1;letter-spacing:-0.02em;color:#FFFFFF">{{ st.n }}</span>
+            <div style="display:flex;flex-direction:column">
+              <span aria-hidden="true" style="height:1px;background:rgba(255,255,255,0.3)"></span>
+              <h3 style="font-family:var(--font-sans);font-weight:500;font-size:1rem;line-height:1.3;letter-spacing:0.08em;text-transform:uppercase;margin:16px 0 0;color:#FFFFFF">{{ st.title }}</h3>
+              <div style="display:grid;grid-template-rows:{{ st.rows }};transition:grid-template-rows 450ms cubic-bezier(0.22,1,0.36,1)">
+                <div style="overflow:hidden;min-height:0">
+                  <p style="font-family:var(--font-sans);font-weight:300;font-size:15px;line-height:1.55;color:rgba(255,255,255,0.85);margin:0;padding-top:14px;text-wrap:pretty;opacity:{{ st.textO }};transform:{{ st.textT }};transition:{{ st.textTr }}">{{ st.body }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+
+    <div id="advisors" style="margin-top:var(--space-7);padding-top:var(--space-6);border-top:1px solid rgba(255,255,255,0.12);display:flex;flex-direction:column;gap:var(--space-5);scroll-margin-top:24px">
+      <div style="display:flex;flex-direction:column;gap:12px;max-width:56ch">
+        <h2 style="font-family:var(--font-label);font-weight:400;font-size:var(--text-eyebrow);letter-spacing:0.2em;text-transform:uppercase;color:#FFFFFF;margin:0;line-height:1">Your Advisors</h2>
+        <p style="font-family:var(--font-sans);font-weight:300;font-size:var(--text-body-lg);line-height:var(--lh-normal);color:rgba(255,255,255,0.85);margin:0;text-wrap:pretty">One advisor guides you through every stage, with the whole team behind them.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+        <div style="display:flex;justify-content:flex-end;gap:8px">
+          <button type="button" aria-label="Previous" onClick="{{ whoPrev }}" style="width:44px;height:44px;background:transparent;border:1px solid rgba(255,255,255,0.24);color:#FFFFFF;font-family:var(--font-label);font-size:1rem;cursor:pointer" style-hover="border-color:#FFFFFF">←</button>
+          <button type="button" aria-label="Next" onClick="{{ whoNext }}" style="width:44px;height:44px;background:transparent;border:1px solid rgba(255,255,255,0.24);color:#FFFFFF;font-family:var(--font-label);font-size:1rem;cursor:pointer" style-hover="border-color:#FFFFFF">→</button>
+        </div>
+        <div data-who ref="{{ whoRef }}" style="display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 48px) / 5);gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch">
+        <figure style="margin:0;display:flex;flex-direction:column;gap:12px;scroll-snap-align:start">
+          <div style="aspect-ratio:3/4;background:#2B2B2B;overflow:hidden"><img src="assets/team/v4/boris.jpg" alt="Boris Kofman" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center top"></div>
+          <figcaption style="display:flex;flex-direction:column;gap:2px;padding-top:14px">
+            <span style="font-family:var(--font-sans);font-weight:300;font-size:22px;letter-spacing:-.005em;line-height:1.25;color:#FFFFFF;margin-bottom:10px">Boris Kofman</span>
+            <span style="font-family:var(--font-sans);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,0.5);line-height:1.8">Founder · Partner</span>
+          </figcaption>
+        </figure>
+        <figure style="margin:0;display:flex;flex-direction:column;gap:12px;scroll-snap-align:start">
+          <div style="aspect-ratio:3/4;background:#2B2B2B;overflow:hidden"><img src="assets/team/v4/sofia.jpg" alt="Sofia Schnell" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center top"></div>
+          <figcaption style="display:flex;flex-direction:column;gap:2px;padding-top:14px">
+            <span style="font-family:var(--font-sans);font-weight:300;font-size:22px;letter-spacing:-.005em;line-height:1.25;color:#FFFFFF;margin-bottom:10px">Sofia Schnell</span>
+            <span style="font-family:var(--font-sans);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,0.5);line-height:1.8">CEO · Partner</span>
+          </figcaption>
+        </figure>
+        <figure style="margin:0;display:flex;flex-direction:column;gap:12px;scroll-snap-align:start">
+          <div style="aspect-ratio:3/4;background:#2B2B2B;overflow:hidden"><img src="assets/team/v4/natalia.jpg" alt="Natalia Lozhechnikova" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center top"></div>
+          <figcaption style="display:flex;flex-direction:column;gap:2px;padding-top:14px">
+            <span style="font-family:var(--font-sans);font-weight:300;font-size:22px;letter-spacing:-.005em;line-height:1.25;color:#FFFFFF;margin-bottom:10px">Natalia Lozhechnikova</span>
+            <span style="font-family:var(--font-sans);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,0.5);line-height:1.8">Sales &amp; Acquisitions Advisor</span>
+            <span style="font-family:var(--font-sans);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,0.5);line-height:1.8">London</span>
+          </figcaption>
+        </figure>
+        <figure style="margin:0;display:flex;flex-direction:column;gap:12px;scroll-snap-align:start">
+          <div style="aspect-ratio:3/4;background:#2B2B2B;overflow:hidden"><img src="assets/team/v4/marina.jpg" alt="Marina Kuchak" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center top"></div>
+          <figcaption style="display:flex;flex-direction:column;gap:2px;padding-top:14px">
+            <span style="font-family:var(--font-sans);font-weight:300;font-size:22px;letter-spacing:-.005em;line-height:1.25;color:#FFFFFF;margin-bottom:10px">Marina Kuchak</span>
+            <span style="font-family:var(--font-sans);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,0.5);line-height:1.8">Associate Director · Acquisitions</span>
+            <span style="font-family:var(--font-sans);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,0.5);line-height:1.8">London</span>
+          </figcaption>
+        </figure>
+        <figure style="margin:0;display:flex;flex-direction:column;gap:12px;scroll-snap-align:start">
+          <div style="aspect-ratio:3/4;background:#2B2B2B;overflow:hidden"><img src="assets/team/v4/bek.jpg" alt="Bek Aripov" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center top"></div>
+          <figcaption style="display:flex;flex-direction:column;gap:2px;padding-top:14px">
+            <span style="font-family:var(--font-sans);font-weight:300;font-size:22px;letter-spacing:-.005em;line-height:1.25;color:#FFFFFF;margin-bottom:10px">Bek Aripov</span>
+            <span style="font-family:var(--font-sans);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,0.5);line-height:1.8">Prime Residential Advisor</span>
+            <span style="font-family:var(--font-sans);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,0.5);line-height:1.8">London</span>
+          </figcaption>
+        </figure>
+        <figure style="margin:0;display:flex;flex-direction:column;gap:12px;scroll-snap-align:start">
+          <div style="aspect-ratio:3/4;background:#2B2B2B;overflow:hidden"><img src="assets/team/v4/tatiana.jpg" alt="Tatiana Knyazeva" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center top"></div>
+          <figcaption style="display:flex;flex-direction:column;gap:2px;padding-top:14px">
+            <span style="font-family:var(--font-sans);font-weight:300;font-size:22px;letter-spacing:-.005em;line-height:1.25;color:#FFFFFF;margin-bottom:10px">Tatiana Knyazeva</span>
+            <span style="font-family:var(--font-sans);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,0.5);line-height:1.8">Premium &amp; Super-Prime Lettings Advisor</span>
+            <span style="font-family:var(--font-sans);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,0.5);line-height:1.8">London</span>
+          </figcaption>
+        </figure>
+        <figure style="margin:0;display:flex;flex-direction:column;gap:12px;scroll-snap-align:start">
+          <div style="aspect-ratio:3/4;background:#2B2B2B;overflow:hidden"><img src="assets/team/v4/elina.jpg" alt="Elina Mayor" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center top"></div>
+          <figcaption style="display:flex;flex-direction:column;gap:2px;padding-top:14px">
+            <span style="font-family:var(--font-sans);font-weight:300;font-size:22px;letter-spacing:-.005em;line-height:1.25;color:#FFFFFF;margin-bottom:10px">Elina Mayor</span>
+            <span style="font-family:var(--font-sans);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,0.5);line-height:1.8">Commercial &amp; Residential Property</span>
+            <span style="font-family:var(--font-sans);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,0.5);line-height:1.8">Europe</span>
+          </figcaption>
+        </figure>
+        <figure style="margin:0;display:flex;flex-direction:column;gap:12px;scroll-snap-align:start">
+          <div style="aspect-ratio:3/4;background:#2B2B2B;overflow:hidden"><img src="assets/team/v4/diana.jpg" alt="Diana Suris" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center top"></div>
+          <figcaption style="display:flex;flex-direction:column;gap:2px;padding-top:14px">
+            <span style="font-family:var(--font-sans);font-weight:300;font-size:22px;letter-spacing:-.005em;line-height:1.25;color:#FFFFFF;margin-bottom:10px">Diana Suris</span>
+            <span style="font-family:var(--font-sans);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,0.5);line-height:1.8">Commercial &amp; Residential Property</span>
+            <span style="font-family:var(--font-sans);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,0.5);line-height:1.8">UAE</span>
+          </figcaption>
+        </figure>
+        <figure style="margin:0;display:flex;flex-direction:column;gap:12px;scroll-snap-align:start">
+          <div style="aspect-ratio:3/4;background:#2B2B2B;overflow:hidden"><img src="assets/team/v4/angie.jpg" alt="Angie Lucenko" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center top"></div>
+          <figcaption style="display:flex;flex-direction:column;gap:2px;padding-top:14px">
+            <span style="font-family:var(--font-sans);font-weight:300;font-size:22px;letter-spacing:-.005em;line-height:1.25;color:#FFFFFF;margin-bottom:10px">Angie Lucenko</span>
+            <span style="font-family:var(--font-sans);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,0.5);line-height:1.8">Commercial Leasing Consultant</span>
+          </figcaption>
+        </figure>
+        <figure style="margin:0;display:flex;flex-direction:column;gap:12px;scroll-snap-align:start">
+          <div style="aspect-ratio:3/4;background:#2B2B2B;overflow:hidden"><img src="assets/team/v4/almakaeva.jpg" alt="Anastasia Almakaeva" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center top"></div>
+          <figcaption style="display:flex;flex-direction:column;gap:2px;padding-top:14px">
+            <span style="font-family:var(--font-sans);font-weight:300;font-size:22px;letter-spacing:-.005em;line-height:1.25;color:#FFFFFF;margin-bottom:10px">Anastasia Almakaeva</span>
+            <span style="font-family:var(--font-sans);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,0.5);line-height:1.8">Investments &amp; Family Office Relations</span>
+          </figcaption>
+        </figure>
+        <figure style="margin:0;display:flex;flex-direction:column;gap:12px;scroll-snap-align:start">
+          <div style="aspect-ratio:3/4;background:#2B2B2B;overflow:hidden"><img src="assets/team/v4/ekaterina.jpg" alt="Ekaterina Piedeleu" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center top"></div>
+          <figcaption style="display:flex;flex-direction:column;gap:2px;padding-top:14px">
+            <span style="font-family:var(--font-sans);font-weight:300;font-size:22px;letter-spacing:-.005em;line-height:1.25;color:#FFFFFF;margin-bottom:10px">Ekaterina Piedeleu</span>
+            <span style="font-family:var(--font-sans);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,0.5);line-height:1.8">Private Clients &amp; Family Office Solutions</span>
+          </figcaption>
+        </figure>
+        <figure style="margin:0;display:flex;flex-direction:column;gap:12px;scroll-snap-align:start">
+          <div style="aspect-ratio:3/4;background:#2B2B2B;overflow:hidden"><img src="assets/team/v4/pospelova.jpg" alt="Anastasija Pospelova" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center top"></div>
+          <figcaption style="display:flex;flex-direction:column;gap:2px;padding-top:14px">
+            <span style="font-family:var(--font-sans);font-weight:300;font-size:22px;letter-spacing:-.005em;line-height:1.25;color:#FFFFFF;margin-bottom:10px">Anastasija Pospelova</span>
+            <span style="font-family:var(--font-sans);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,0.5);line-height:1.8">Growth Strategy Manager</span>
+          </figcaption>
+        </figure>
+        </div>
+      </div>
+    </div>
+   </div>
+  </section>
+
+  <section id="contact" data-screen-label="Contact" data-pad style="max-width:1320px;margin:0 auto;padding:var(--space-7) 32px var(--space-7);border-top:1px solid var(--border-on-dark-soft)">
+    <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:var(--space-4);max-width:52ch;margin:0 auto">
+      <h2 style="font-family:var(--font-display);font-weight:var(--weight-display);font-size:var(--text-display-2);line-height:var(--lh-tight);letter-spacing:var(--tracking-tight);margin:0;max-width:18ch;text-wrap:balance">Tell us what you're looking for.</h2>
+      <p style="font-size:var(--text-body);line-height:var(--lh-normal);color:var(--ink-300);margin:0;text-wrap:pretty">We'll take it from there.</p>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:var(--space-2)">
+        <a data-analytics="contact_whatsapp" href="{{ waContact }}" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:200px;background:var(--ink-0);color:var(--ink-950);padding:16px 28px;font-family:var(--font-label);font-size:0.75rem;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;border:1px solid var(--ink-0);box-sizing:border-box" style-hover="background:var(--charcoal);color:var(--ink-0)">WhatsApp →</a>
+        <a data-analytics="contact_email" href="mailto:office@kofmanpartners.com?subject=Enquiry" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:200px;background:transparent;color:var(--ink-0);padding:16px 28px;font-family:var(--font-label);font-size:0.75rem;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;border:1px solid var(--ink-0);box-sizing:border-box" style-hover="background:var(--ink-0);color:var(--ink-950)">Email →</a>
+      </div>
+      <span style="font-family:var(--font-label);font-size:var(--text-small);color:var(--ink-300)">or call <a data-analytics="contact_phone_tap" href="tel:+447457411495" style="color:var(--ink-0);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;display:inline-block;padding:10px 0" style-hover="color:var(--ink-300)">+44 7457 411495</a></span>
+      <span style="font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.06em;color:var(--ink-500)">Your enquiry stays confidential.</span>
+    </div>
+  </section>
+
+  <footer data-pad style="border-top:1px solid var(--border-on-dark-soft);padding:22px 32px 96px">
+    <div style="max-width:1320px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 32px;align-items:center">
+      <span style="font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.12em;color:var(--ink-300)">12 Hay Hill, Mayfair, London</span>
+      <span style="font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.12em;color:var(--ink-500)">PRS · SmartSearch · UK-Arab Chamber of Commerce</span>
+    </div>
+  </footer>
+
+  <sc-if value="{{ waBar }}" hint-placeholder-val="{{ false }}">
+    <a data-analytics="floating_whatsapp" href="{{ waContact }}" style="position:fixed;right:20px;bottom:{{ waBarBottom }};z-index:40;background:var(--ink-0);color:var(--ink-950);padding:14px 22px;font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;border:1px solid var(--ink-0);transition:opacity var(--duration-fast) var(--ease-standard);opacity:{{ waBarOpacity }};pointer-events:{{ waBarPointer }}" style-hover="background:var(--charcoal);color:var(--ink-0)">WhatsApp →</a>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;whatsappNumber&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;447457411495&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Behaviour&quot;},&quot;whatsappBar&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behaviour&quot;}}">
+class Component extends DCLogic {
+  state = { menuOpen:false, nearContactForm:false, heroVisible:true, openStep:null };
+  STEPS = [
+    ['01','First call','We start by understanding your priorities, lifestyle and what matters most to you. A confidential conversation about budget, timing and the areas you have in mind.'],
+    ['02','The brief','We turn your priorities into a clear brief that guides our entire search. Locations, property type, must-haves and timeline, agreed with you before we begin.'],
+    ['03','The search','We search across the open market and our Quiet Listings network. Every property is assessed before you see it — price, condition and potential issues.','assets/hww-step-search.jpg','Garden square terrace in prime London'],
+    ['04','Private viewings','We arrange and accompany private viewings of a carefully selected shortlist, with our honest view on each property.','assets/hww-step-interior.jpg','Period drawing room and dining room'],
+    ['05','The offer','We negotiate on your behalf, from price and terms to timing and the conditions that protect your interests.'],
+    ['06','Completion','We coordinate solicitors, surveyors and every final stage through to move-in, and remain available whenever you need us.','assets/hww-step-keys.jpg','Keys in a front door lock']
+  ];
+  whoRef = React.createRef();
+  whoScroll(d){ const el=this.whoRef.current; if(!el) return; const f=el.firstElementChild; const step=f ? f.getBoundingClientRect().width+12 : el.clientWidth; el.scrollBy({left:d*step,behavior:'smooth'}); }
+  canHover(){ return window.matchMedia && window.matchMedia('(hover:hover) and (pointer:fine)').matches; }
+  reduced(){ return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches; }
+
+  wa(text){
+    const num = this.props.whatsappNumber || '447457411495';
+    return 'https://wa.me/' + num + '?text=' + encodeURIComponent(text);
+  }
+
+  componentDidMount(){
+    this._onScroll = () => {
+      const hero = document.getElementById('top');
+      const hv = hero ? hero.getBoundingClientRect().bottom > 80 : false;
+      if (hv !== this.state.heroVisible) this.setState({heroVisible: hv});
+      if (window.innerWidth > 900) { if (this.state.nearContactForm) this.setState({nearContactForm:false}); return; }
+      const el = document.getElementById('contact');
+      if (!el) return;
+      const r = el.getBoundingClientRect();
+      const near = r.top < window.innerHeight && r.bottom > 0;
+      if (near !== this.state.nearContactForm) this.setState({nearContactForm: near});
+    };
+    const heroEl = document.getElementById('top');
+    if (heroEl && 'IntersectionObserver' in window) {
+      this._io = new IntersectionObserver(([e]) => this.setState({heroVisible: e.isIntersecting}), {rootMargin:'0px 0px -80px 0px'});
+      this._io.observe(heroEl);
+    }
+    window.addEventListener('scroll', this._onScroll, {passive:true});
+    window.addEventListener('resize', this._onScroll);
+    this._onScroll();
+  }
+  componentWillUnmount(){
+    if (this._io) this._io.disconnect();
+    window.removeEventListener('scroll', this._onScroll);
+    window.removeEventListener('resize', this._onScroll);
+  }
+
+  renderVals(){
+    const s = this.state;
+    return {
+      menuOpen: s.menuOpen,
+      openMenu: () => this.setState({menuOpen:true}),
+      closeMenu: () => this.setState({menuOpen:false}),
+      waBar: this.props.whatsappBar !== false && s.heroVisible === false,
+      waBarOpacity: (s.nearContactForm || s.heroVisible) ? 0 : 1,
+      waBarPointer: (s.nearContactForm || s.heroVisible) ? 'none' : 'auto',
+      waBarBottom: '20px',
+      waContact: this.wa("Hello, I'd like to talk about a property in London."),
+      whoRef: this.whoRef, whoPrev: () => this.whoScroll(-1), whoNext: () => this.whoScroll(1),
+      steps: this.STEPS.map(([n,title,body,src,alt],i) => {
+        const o = s.openStep === i, rm = this.reduced(), photo = !!src;
+        const ease = 'cubic-bezier(0.22,1,0.36,1)';
+        return {
+          n, title, body, photo, is03: n==='03', is04: n==='04', is06: n==='06', expanded: o ? 'true' : 'false',
+          enter: () => { if (this.canHover()) this.setState({openStep:i}); },
+          leave: () => { if (this.canHover() && this.state.openStep === i) this.setState({openStep:null}); },
+          tap: () => { if (!this.canHover()) this.setState(p => ({openStep: p.openStep === i ? null : i})); },
+          key: e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.setState(p => ({openStep: p.openStep === i ? null : i})); } },
+          bg: photo ? '#0B0B0B' : (o ? '#262626' : '#1A1A1A'),
+          border: photo ? '1px solid transparent' : '1px solid rgba(255,255,255,0.12)',
+          imgT: (o && !rm) ? 'scale(1.04)' : 'scale(1)',
+          dimO: o ? 1 : 0,
+          rows: o ? '1fr' : '0fr',
+          textO: o ? 1 : 0,
+          textT: (o || rm) ? 'none' : 'translateY(12px)',
+          textTr: o ? 'opacity 350ms '+ease+' 150ms, transform 350ms '+ease+' 150ms' : 'opacity 200ms '+ease+', transform 200ms '+ease
+        };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>
