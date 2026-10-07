@@ -81,6 +81,19 @@ a:hover{color:rgba(255,255,255,.7)}
  header [data-mobile]{gap:10px !important}
  header [data-mobile] a{padding:11px 14px !important;letter-spacing:0.12em !important}
 }
+@media (max-width:640px){
+ [data-screen-label="Hero"]{min-height:440px !important;height:auto !important}
+ [data-screen-label="Hero"]::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,0.25) 0%,rgba(10,10,10,0.8) 100%);pointer-events:none;z-index:0}
+ [data-screen-label="Hero"] > div[data-pad]{padding:80px 20px 32px !important;gap:14px !important}
+ [data-screen-label="Hero"] h1{font-size:1.75rem !important;line-height:1.15 !important;max-width:none !important}
+ [data-screen-label="Hero"] p{font-size:0.875rem !important;line-height:1.5 !important}
+ [data-screen-label="Hero"] .kp-award{font-size:0.625rem !important;letter-spacing:0.1em !important}
+ [data-screen-label="Hero"] img[src*="award-flag"]{width:26px !important;height:50px !important}
+ [data-founding] > div:first-child > span:first-child{font-size:4.5rem !important}
+ .kp-hide-m{display:none !important}
+}
+.kp-show-m{display:none}
+@media (max-width:640px){.kp-show-m{display:block !important}}
 </style>
 </helmet>
 <div aria-hidden="true" style="position:fixed;inset:0;z-index:9999;background:#0A0A0A;display:flex;align-items:center;justify-content:center;pointer-events:none;animation:kpLoaderOut 0.5s ease 0.15s forwards"><span style="font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:500;font-size:0.8125rem;letter-spacing:0.3em;text-transform:uppercase;color:#FFFFFF;white-space:nowrap">Kofman + Partners</span></div>
@@ -134,12 +147,13 @@ a:hover{color:rgba(255,255,255,.7)}
     <div data-pad style="position:relative;z-index:1;max-width:1320px;width:100%;margin:0 auto;padding:120px 32px 88px;display:flex;flex-direction:column;gap:20px;box-sizing:border-box">
       <span style="font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-300)">How we work</span>
       <h1 style="font-family:var(--font-display);font-weight:var(--weight-display);font-size:var(--text-display-1);line-height:var(--lh-tight);letter-spacing:var(--tracking-tight);margin:0;max-width:16ch;text-wrap:balance">From your brief to the right property.</h1>
-      <p style="font-size:var(--text-body-lg);line-height:var(--lh-normal);color:var(--ink-100);max-width:52ch;margin:0;text-wrap:pretty">We work exclusively on your side — from defining your brief and sourcing the right properties to private viewings, negotiations and completion.</p>
+      <p class="kp-hide-m" style="font-size:var(--text-body-lg);line-height:var(--lh-normal);color:var(--ink-100);max-width:52ch;margin:0;text-wrap:pretty">We work exclusively on your side — from defining your brief and sourcing the right properties to private viewings, negotiations and completion.</p>
     </div>
   </section>
 
   <section id="journey" data-screen-label="Process" style="background:#0B0B0B;border-top:1px solid var(--border-on-dark-soft)">
    <div data-pad style="max-width:1320px;margin:0 auto;padding:var(--space-7) 32px">
+    <p class="kp-show-m" style="font-size:0.9375rem;line-height:1.55;color:var(--ink-100);margin:0 0 28px;text-wrap:pretty">We work exclusively on your side — from defining your brief and sourcing the right properties to private viewings, negotiations and completion.</p>
     <span style="display:block;font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.6);line-height:1;margin-bottom:var(--space-6)">The process</span>
     <div data-steps style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px">
       <sc-for list="{{ steps }}" as="st" hint-placeholder-count="6">

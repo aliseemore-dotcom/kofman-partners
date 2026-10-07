@@ -19,6 +19,22 @@
   ::selection { background: #FFFFFF; color: #0B0B0B; }
   .kp-chip{position:relative;display:inline-block;cursor:pointer}
   button{font-family:inherit}
+  .kp-form-head{display:none}
+  @media (max-width:959px){
+    .kp-strip{display:grid !important;grid-template-columns:1fr 1fr}
+    .kp-strip > *{min-width:0 !important;padding:18px 20px !important;border-right:1px solid rgba(255,255,255,.12) !important;border-bottom:1px solid rgba(255,255,255,.12)}
+    .kp-strip > *:nth-child(2n){border-right:none !important}
+    .kp-strip > *:nth-last-child(-n+2){border-bottom:none}
+    .kp-strip b{font-size:11px !important;letter-spacing:.2em !important;margin-bottom:6px !important}
+    .kp-strip span{font-size:12px !important}
+    .kp-scroller{grid-template-columns:none !important;grid-auto-flow:column;grid-auto-columns:78%;gap:10px !important;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-right:-6vw;padding-right:6vw}
+    .kp-scroller::-webkit-scrollbar{display:none}
+    .kp-scroller > *{scroll-snap-align:start}
+    .kp-enq > .kp-enq-info{order:2;padding:56px 6vw 64px !important}
+    .kp-enq > div:last-child{padding:56px 6vw 56px !important}
+    .kp-enq-head{display:none}
+    .kp-form-head{display:block}
+  }
   @media (max-width:700px){.kp-footer{flex-direction:column;align-items:flex-start;gap:14px !important;padding-bottom:110px !important}}
   @media (max-width:959px){
     [data-screen-label] section > div{min-width:0}
@@ -108,21 +124,21 @@
     </header>
     </sc-if>
     <sc-if value="{{ isNarrow }}" hint-placeholder-val="{{ false }}">
-    <header data-screen-label="Home" style="background:#F2F1EF;color:#1A1A1A;border-bottom:1px solid rgba(255,255,255,.12)">
-      <img src="assets/hero-commercial-sakhalin.jpg?v=1" alt="Sakhalin restaurant entrance, Dubai" style="display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:center">
-      <div style="padding:44px 6vw 52px">
-        <span style="font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(26,26,26,.7);font-weight:500">Global F&amp;B &amp; Retail Advisory</span>
-        <h1 style="font-size:clamp(32px,6vw,48px);line-height:1.08;font-weight:300;letter-spacing:-.01em;margin:20px 0 20px;max-width:16ch;text-wrap:balance;color:#1A1A1A">The world's best concepts, at the world's best addresses.</h1>
-        <p style="color:rgba(26,26,26,.78);max-width:44ch;font-size:15px;margin:0 0 28px;text-wrap:pretty">For eighteen years, K+P has sourced the sites and closed the deals behind some of the world's most celebrated restaurants and retail flagships in hotspots such as London, Monaco and Dubai.</p>
-        <div style="display:flex;gap:14px;flex-wrap:wrap">
-          <a href="#" data-goto="enquire" style="background:#1A1A1A;border:1px solid #1A1A1A;color:#FFFFFF;padding:15px 30px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;transition:opacity .3s" style-hover="opacity:.8;color:#FFFFFF">Start a conversation</a>
-          <a href="#" data-goto="work" style="border:1px solid rgba(26,26,26,.5);color:#1A1A1A;padding:15px 30px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;transition:background .3s,color .3s" style-hover="background:#1A1A1A;color:#FFFFFF">View the work</a>
+    <header data-screen-label="Home" style="position:relative;display:flex;align-items:flex-end;min-height:min(74vh,560px);background:#0B0B0B;color:#FFFFFF;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.12)">
+      <img src="assets/hero-commercial-sakhalin.jpg?v=1" alt="Sakhalin restaurant entrance, Dubai" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 88%">
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,11,.15) 0%,rgba(11,11,11,.55) 38%,rgba(11,11,11,.94) 100%)"></div>
+      <div style="position:relative;width:100%;box-sizing:border-box;padding:0 6vw 28px">
+        <span style="font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.8);font-weight:400">Global F&amp;B &amp; Retail Advisory</span>
+        <h1 style="font-size:28px;line-height:1.14;font-weight:300;letter-spacing:-.01em;margin:14px 0 22px;max-width:15ch;text-wrap:balance;color:#FFFFFF">The world's best concepts, at the world's best addresses.</h1>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <a href="#" data-goto="enquire" style="text-align:center;background:#FFFFFF;border:1px solid #FFFFFF;color:#0B0B0B;padding:14px 8px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:500" style-hover="opacity:.8;color:#0B0B0B">Start a conversation</a>
+          <a href="#" data-goto="work" style="text-align:center;border:1px solid rgba(255,255,255,.6);color:#FFFFFF;padding:14px 8px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:500" style-hover="background:#FFFFFF;color:#0B0B0B">View the work</a>
         </div>
       </div>
     </header>
     </sc-if>
 
-    <div style="border-bottom:1px solid rgba(255,255,255,.12);display:flex;flex-wrap:wrap">
+    <div class="kp-strip" style="border-bottom:1px solid rgba(255,255,255,.12);display:flex;flex-wrap:wrap">
       <a href="#" data-goto="markets" data-market="uk" style="flex:1;min-width:200px;padding:30px 32px;border-right:1px solid rgba(255,255,255,.12);display:block;color:#FFFFFF;transition:background .3s" style-hover="background:#141414">
         <b style="display:block;font-size:12px;font-weight:400;letter-spacing:.26em;text-transform:uppercase;margin-bottom:10px">United Kingdom</b>
         <span style="font-size:13px;color:rgba(255,255,255,.5);font-weight:300;font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace">14 venues</span>
@@ -141,6 +157,10 @@
       </a>
     </div>
 
+    <sc-if value="{{ isNarrow }}" hint-placeholder-val="{{ false }}">
+    <p style="margin:0;padding:30px 6vw 6px;font-size:14px;line-height:1.6;color:rgba(255,255,255,.62);text-wrap:pretty">For eighteen years, K+P has sourced the sites and closed the deals behind some of the world's most celebrated restaurants and retail flagships in hotspots such as London, Monaco and Dubai.</p>
+    </sc-if>
+
     <section style="padding:110px 6vw">
       <div style="max-width:1320px;margin:0 auto">
         <div style="display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-bottom:54px;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,.12);padding-bottom:22px">
@@ -148,7 +168,7 @@
           <a href="#" data-goto="work" style="font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.6)" style-hover="color:#FFFFFF">All projects →</a>
         </div>
 
-        <div style="display:grid;grid-template-columns:{{ colsWork }};gap:2px">
+        <div class="kp-scroller" style="display:grid;grid-template-columns:{{ colsWork }};gap:2px">
 
           <a href="#" data-goto="project" data-project="Novikov" style="display:block;color:#FFFFFF;background:#0F0F0F">
             <div style="position:relative;aspect-ratio:4/4.4;overflow:hidden;background:#111111">
@@ -825,11 +845,11 @@
   <sc-if value="{{ isEnquire }}" hint-placeholder-val="{{ false }}">
   <div data-screen-label="Enquire">
 
-    <section style="display:grid;grid-template-columns:{{ colsSplit }};border-bottom:1px solid rgba(255,255,255,.12)">
-      <div style="padding:100px 5vw 100px 6vw">
-        <span style="font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:500">Contact</span>
-        <h1 style="font-size:clamp(36px,4.4vw,62px);line-height:1.08;font-weight:300;letter-spacing:-.015em;margin:22px 0 24px;max-width:13ch">Tell us about the brand.</h1>
-        <p style="color:rgba(255,255,255,.62);font-size:16px;margin:0 0 44px;max-width:44ch;text-wrap:pretty">One conversation is usually enough to know whether we can help — and where the first site should be.</p>
+    <section class="kp-enq" style="display:grid;grid-template-columns:{{ colsSplit }};border-bottom:1px solid rgba(255,255,255,.12)">
+      <div class="kp-enq-info" style="padding:100px 5vw 100px 6vw">
+        <span class="kp-enq-head" style="font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:500">Contact</span>
+        <h1 class="kp-enq-head" style="font-size:clamp(36px,4.4vw,62px);line-height:1.08;font-weight:300;letter-spacing:-.015em;margin:22px 0 24px;max-width:13ch">Tell us about the brand.</h1>
+        <p class="kp-enq-head" style="color:rgba(255,255,255,.62);font-size:16px;margin:0 0 44px;max-width:44ch;text-wrap:pretty">One conversation is usually enough to know whether we can help — and where the first site should be.</p>
 
         <div style="border-top:1px solid rgba(255,255,255,.12)">
           <a href="mailto:office@kofmanpartners.com" class="kp-row" style="display:flex;justify-content:space-between;gap:20px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6)" style-hover="color:#FFFFFF"><span>Email</span><span>office@kofmanpartners.com</span></a>
@@ -853,6 +873,11 @@
 
       <div style="background:#FFFFFF;color:#0B0B0B;padding:100px 6vw 100px 5vw">
         <form name="commercial-enquiry" method="POST" onSubmit="{{ submitEnquiry }}" style="max-width:520px">
+          <div class="kp-form-head">
+            <span style="display:block;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(11,11,11,.5);font-weight:500">Contact</span>
+            <h1 style="font-size:30px;line-height:1.12;font-weight:300;letter-spacing:-.015em;margin:16px 0 14px;max-width:13ch;color:#0B0B0B">Tell us about the brand.</h1>
+            <p style="font-size:14px;line-height:1.55;color:rgba(11,11,11,.62);margin:0 0 36px;text-wrap:pretty">One conversation is usually enough to know whether we can help — and where the first site should be.</p>
+          </div>
           <input type="hidden" name="form-name" value="commercial-enquiry">
           <p style="display:none"><label>Do not fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
           <span style="display:block;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:rgba(11,11,11,.45);margin-bottom:8px">Name</span>

@@ -69,6 +69,27 @@ a:hover{color:rgba(255,255,255,.7)}
  header [data-mobile]{gap:10px !important}
  header [data-mobile] a{padding:11px 14px !important;letter-spacing:0.12em !important}
 }
+@media (max-width:640px){
+ [data-screen-label="Hero"]{min-height:440px !important;height:auto !important}
+ [data-screen-label="Hero"]::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,0.25) 0%,rgba(10,10,10,0.8) 100%);pointer-events:none;z-index:0}
+ [data-screen-label="Hero"] > div[data-pad]{padding:80px 20px 32px !important;gap:14px !important}
+ [data-screen-label="Hero"] h1{font-size:1.75rem !important;line-height:1.15 !important;max-width:none !important}
+ [data-screen-label="Hero"] p{font-size:0.875rem !important;line-height:1.5 !important}
+ [data-screen-label="Hero"] .kp-award{font-size:0.625rem !important;letter-spacing:0.1em !important}
+ [data-screen-label="Hero"] img[src*="award-flag"]{width:26px !important;height:50px !important}
+ [data-founding] > div:first-child > span:first-child{font-size:4.5rem !important}
+ .kp-hide-m{display:none !important}
+}
+.kp-show-m{display:none}
+@media (max-width:640px){.kp-show-m{display:block !important}}
+@media (max-width:900px){
+ [data-founders]{display:none !important}
+ [data-m-only]{display:flex !important}
+ [data-cols="4team"]{grid-template-columns:none !important;grid-auto-flow:column;grid-auto-columns:64%;gap:12px !important;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-right:-20px;padding-right:20px}
+ [data-cols="4team"]::-webkit-scrollbar{display:none}
+ [data-cols="4team"] > figure{scroll-snap-align:start}
+}
+[data-m-only]{display:none}
 </style>
 </helmet>
 <div aria-hidden="true" style="position:fixed;inset:0;z-index:9999;background:#0A0A0A;display:flex;align-items:center;justify-content:center;pointer-events:none;animation:kpLoaderOut 0.5s ease 0.15s forwards"><span style="font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:500;font-size:0.8125rem;letter-spacing:0.3em;text-transform:uppercase;color:#FFFFFF;white-space:nowrap">Kofman + Partners</span></div>
@@ -124,13 +145,13 @@ a:hover{color:rgba(255,255,255,.7)}
     <div data-pad style="position:relative;z-index:1;max-width:1320px;width:100%;margin:0 auto;padding:96px 32px 72px;display:flex;flex-direction:column;gap:20px">
       <span style="font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-300)">Private Client · Residential</span>
       <h1 style="font-family:var(--font-display);font-weight:var(--weight-display);font-size:var(--text-display-1);line-height:var(--lh-tight);letter-spacing:var(--tracking-tight);margin:0;max-width:22ch;text-wrap:balance">Your partner in finding exceptional property beyond the open market.</h1>
-      <p style="font-family:var(--font-label);font-size:var(--text-small);letter-spacing:0.06em;color:var(--ink-300);margin:0">Mayfair · Belgravia · Knightsbridge · Kensington &amp; Chelsea</p>
+      <p class="kp-hide-m" style="font-family:var(--font-label);font-size:var(--text-small);letter-spacing:0.06em;color:var(--ink-300);margin:0">Mayfair · Belgravia · Knightsbridge · Kensington &amp; Chelsea</p>
       <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:14px">
         <a data-analytics="hero_whatsapp" href="{{ waHero }}" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--ink-0);color:var(--ink-950);padding:16px 28px;font-family:var(--font-label);font-size:0.75rem;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;border:1px solid var(--ink-0)" style-hover="background:var(--charcoal);color:var(--ink-0)">WhatsApp →</a>
       </div>
       <div style="display:flex;align-items:center;gap:14px;margin-top:22px">
         <img src="assets/award-flag.png" alt="UK International Property Awards, Real Estate, 2025-2026" style="display:block;width:34px;height:66px;object-fit:contain;flex:none">
-        <span style="font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-300)">UK Property Awards · Best Property Consultancy 2025–2026</span>
+        <span class="kp-award" style="font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-300)">UK Property Awards · Best Property Consultancy 2025–2026</span>
       </div>
     </div>
   </section>
@@ -226,6 +247,20 @@ a:hover{color:rgba(255,255,255,.7)}
       <h2 style="font-family:var(--font-display);font-weight:var(--weight-display);font-size:var(--text-display-2);line-height:var(--lh-tight);letter-spacing:var(--tracking-tight);margin:0;max-width:20ch;text-wrap:balance">Your Advisors</h2>
     </div>
     <div data-cols="4team" style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:var(--space-6) 12px">
+        <figure data-m-only style="margin:0;display:none;flex-direction:column;gap:12px">
+          <div style="aspect-ratio:3/4;background:#2B2B2B;overflow:hidden"><img src="assets/team/v2/boris.jpg" alt="Boris Kofman" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center top"></div>
+          <figcaption style="display:flex;flex-direction:column;gap:4px;padding-top:14px">
+            <span style="font-family:var(--font-sans);font-weight:300;font-size:22px;letter-spacing:-.005em;line-height:1.25;color:#FFFFFF;margin-bottom:10px">Boris Kofman</span>
+            <span style="font-family:var(--font-sans);font-size:14px;font-weight:400;letter-spacing:0;line-height:1.4;color:rgba(255,255,255,0.78);margin-top:2px">Founder · Partner</span>
+          </figcaption>
+        </figure>
+        <figure data-m-only style="margin:0;display:none;flex-direction:column;gap:12px">
+          <div style="aspect-ratio:3/4;background:#2B2B2B;overflow:hidden"><img src="assets/team/v2/sofia.jpg" alt="Sofia Schnell" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center top"></div>
+          <figcaption style="display:flex;flex-direction:column;gap:4px;padding-top:14px">
+            <span style="font-family:var(--font-sans);font-weight:300;font-size:22px;letter-spacing:-.005em;line-height:1.25;color:#FFFFFF;margin-bottom:10px">Sofia Schnell</span>
+            <span style="font-family:var(--font-sans);font-size:14px;font-weight:400;letter-spacing:0;line-height:1.4;color:rgba(255,255,255,0.78);margin-top:2px">CEO · Partner</span>
+          </figcaption>
+        </figure>
         <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
           <div style="aspect-ratio:3/4;background:#2B2B2B;overflow:hidden"><img src="assets/team/v4/natalia.jpg" alt="Natalia Lozhechnikova" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center top"></div>
           <figcaption style="display:flex;flex-direction:column;gap:4px;padding-top:14px">
