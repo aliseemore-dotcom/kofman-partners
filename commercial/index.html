@@ -19,6 +19,19 @@
   ::selection { background: #FFFFFF; color: #0B0B0B; }
   .kp-chip{position:relative;display:inline-block;cursor:pointer}
   button{font-family:inherit}
+  @media (max-width:959px){
+    [data-screen-label] section > div{min-width:0}
+  }
+  @media (max-width:520px){
+    .kp-row{flex-wrap:wrap;gap:6px 20px !important;letter-spacing:.1em !important;overflow-wrap:anywhere}
+  }
+  @media (max-width:520px){
+    nav{padding:22px 5vw !important;gap:10px !important}
+    nav > div:first-child{flex-direction:column !important;align-items:flex-start !important;gap:5px !important;font-size:11px !important;letter-spacing:.22em !important}
+    nav > div:first-child a:last-child{letter-spacing:.22em !important}
+    nav > div:last-child a, nav > div:last-child button{padding:10px 13px !important;letter-spacing:.14em !important}
+    nav > div:last-child{gap:8px !important}
+  }
   .kp-chip span{display:block}
   .kp-chip input{position:absolute;opacity:0;width:0;height:0;margin:0}
   .kp-chip input:checked + span{background:#0B0B0B;color:#FFFFFF !important;border-color:#0B0B0B !important}
@@ -818,9 +831,9 @@
         <p style="color:rgba(255,255,255,.62);font-size:16px;margin:0 0 44px;max-width:44ch;text-wrap:pretty">One conversation is usually enough to know whether we can help — and where the first site should be.</p>
 
         <div style="border-top:1px solid rgba(255,255,255,.12)">
-          <a href="mailto:office@kofmanpartners.com" style="display:flex;justify-content:space-between;gap:20px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6)" style-hover="color:#FFFFFF"><span>Email</span><span>office@kofmanpartners.com</span></a>
-          <a href="https://wa.me/447457411495" style="display:flex;justify-content:space-between;gap:20px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6)" style-hover="color:#FFFFFF"><span>WhatsApp</span><span>+44 7457 411495</span></a>
-          <a href="#" style="display:flex;justify-content:space-between;gap:20px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6)" style-hover="color:#FFFFFF"><span>Book directly</span><span>calendly.com/kofmanpartners/30min</span></a>
+          <a href="mailto:office@kofmanpartners.com" class="kp-row" style="display:flex;justify-content:space-between;gap:20px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6)" style-hover="color:#FFFFFF"><span>Email</span><span>office@kofmanpartners.com</span></a>
+          <a href="https://wa.me/447457411495" class="kp-row" style="display:flex;justify-content:space-between;gap:20px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6)" style-hover="color:#FFFFFF"><span>WhatsApp</span><span>+44 7457 411495</span></a>
+          <a href="#" class="kp-row" style="display:flex;justify-content:space-between;gap:20px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6)" style-hover="color:#FFFFFF"><span>Book directly</span><span>calendly.com/kofmanpartners/30min</span></a>
         </div>
 
         <div style="display:grid;grid-template-columns:{{ colsSplit }};gap:1px;background:rgba(255,255,255,.14);margin-top:54px">
@@ -1276,7 +1289,7 @@ class Component extends DCLogic {
   componentDidMount() {
     if (this.props.screen) this.setState({ screen: this.props.screen });
     this._onResize = () => this.setState({
-      narrow: window.innerWidth < 960,
+      narrow: document.documentElement.clientWidth < 960,
       barH: this._barRef.current ? Math.round(this._barRef.current.getBoundingClientRect().height) : 47
     });
     this._onScroll = () => this.setState({ scrolled: window.scrollY > 400 });

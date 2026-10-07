@@ -63,6 +63,12 @@ a:hover{color:rgba(255,255,255,.7)}
 [data-carousel]{scrollbar-width:none}
 [data-carousel]::-webkit-scrollbar{display:none}
 @keyframes kpLoaderOut{to{opacity:0;visibility:hidden}}
+@media (max-width:520px){
+ header [data-pad]{padding-left:20px !important;padding-right:20px !important;gap:10px !important}
+ header [data-pad] > a span{letter-spacing:0.18em !important}
+ header [data-mobile]{gap:10px !important}
+ header [data-mobile] a{padding:11px 14px !important;letter-spacing:0.12em !important}
+}
 </style>
 </helmet>
 <div aria-hidden="true" style="position:fixed;inset:0;z-index:9999;background:#0A0A0A;display:flex;align-items:center;justify-content:center;pointer-events:none;animation:kpLoaderOut 0.5s ease 0.15s forwards"><span style="font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:500;font-size:0.8125rem;letter-spacing:0.3em;text-transform:uppercase;color:#FFFFFF;white-space:nowrap">Kofman + Partners</span></div>
