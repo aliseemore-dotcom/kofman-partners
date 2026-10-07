@@ -155,16 +155,16 @@ a:hover{color:rgba(255,255,255,.7)}
     <div data-founders style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-5)">
     <figure style="margin:0;display:flex;flex-direction:column;gap:var(--space-3)">
       <div style="aspect-ratio:4/5;background:var(--ink-900);overflow:hidden;position:relative"><image-slot id="kp-founder-boris" src="assets/team/v2/boris.jpg" fit="cover" position="center top" shape="rect" alt="Boris Kofman, Founder and Partner" placeholder="Portrait — Boris Kofman" style="position:absolute;inset:0;width:100%;height:100%"></image-slot></div>
-      <figcaption style="display:flex;flex-direction:column;gap:2px;padding-top:14px">
+      <figcaption style="display:flex;flex-direction:column;gap:4px;padding-top:14px">
         <span style="font-family:var(--font-display);font-weight:400;font-size:var(--text-h3)">Boris Kofman</span>
-        <span style="font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-300);line-height:1.5">Founder · Partner</span>
+        <span style="font-family:var(--font-sans);font-size:14px;font-weight:400;letter-spacing:0;line-height:1.4;color:rgba(255,255,255,0.78);margin-top:2px">Founder · Partner</span>
       </figcaption>
     </figure>
     <figure style="margin:0;display:flex;flex-direction:column;gap:var(--space-3)">
       <div style="aspect-ratio:4/5;background:var(--ink-900);overflow:hidden;position:relative"><image-slot id="kp-team-sofia" src="assets/team/v2/sofia.jpg" fit="cover" position="center top" shape="rect" alt="Sofia Schnell, CEO" placeholder="Portrait — Sofia Schnell" style="position:absolute;inset:0;width:100%;height:100%"></image-slot></div>
-      <figcaption style="display:flex;flex-direction:column;gap:2px;padding-top:14px">
+      <figcaption style="display:flex;flex-direction:column;gap:4px;padding-top:14px">
         <span style="font-family:var(--font-display);font-weight:400;font-size:var(--text-h3)">Sofia Schnell</span>
-        <span style="font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-300);line-height:1.5">CEO · Partner</span>
+        <span style="font-family:var(--font-sans);font-size:14px;font-weight:400;letter-spacing:0;line-height:1.4;color:rgba(255,255,255,0.78);margin-top:2px">CEO · Partner</span>
       </figcaption>
     </figure>
     </div>
@@ -207,7 +207,7 @@ a:hover{color:rgba(255,255,255,.7)}
             <div style="position:absolute;left:0;right:0;bottom:0;padding:20px 22px;display:flex;flex-direction:column;gap:6px;pointer-events:none">
               <span style="font-family:var(--font-sans);font-weight:400;font-size:var(--text-h2);color:#FFFFFF">{{ p.name }}</span>
               <sc-if value="{{ p.loc }}" hint-placeholder-val="{{ true }}"><span style="font-family:var(--font-label);font-size:var(--text-small);letter-spacing:0.04em;color:rgba(255,255,255,0.6)">{{ p.loc }}</span></sc-if>
-              <span style="font-family:var(--font-label);font-size:var(--text-small);letter-spacing:0.04em;color:#FFFFFF">{{ p.price }}</span>
+              <span style="font-family:var(--font-num);font-size:var(--text-small);letter-spacing:0.02em;color:#FFFFFF">{{ p.price }}</span>
             </div>
           </div>
         </div>
@@ -222,42 +222,42 @@ a:hover{color:rgba(255,255,255,.7)}
     <div data-cols="4team" style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:var(--space-6) 12px">
         <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
           <div style="aspect-ratio:3/4;background:#2B2B2B;overflow:hidden"><img src="assets/team/v4/natalia.jpg" alt="Natalia Lozhechnikova" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center top"></div>
-          <figcaption style="display:flex;flex-direction:column;gap:2px;padding-top:14px">
+          <figcaption style="display:flex;flex-direction:column;gap:4px;padding-top:14px">
             <span style="font-family:var(--font-sans);font-weight:300;font-size:22px;letter-spacing:-.005em;line-height:1.25;color:#FFFFFF;margin-bottom:10px">Natalia Lozhechnikova</span>
-            <span style="font-family:var(--font-sans);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,0.5);line-height:1.8">Sales &amp; Acquisitions Advisor</span>
-            <span style="font-family:var(--font-sans);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,0.5);line-height:1.8">London</span>
+            <span style="font-family:var(--font-sans);font-size:14px;font-weight:400;letter-spacing:0;line-height:1.4;color:rgba(255,255,255,0.78);margin-top:2px">Sales &amp; Acquisitions Advisor</span>
+            <span style="font-family:var(--font-sans);font-size:13px;font-weight:400;letter-spacing:0.02em;line-height:1.4;color:rgba(255,255,255,0.5)">London</span>
           </figcaption>
         </figure>
         <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
           <div style="aspect-ratio:3/4;background:#2B2B2B;overflow:hidden"><img src="assets/team/v4/marina.jpg" alt="Marina Kuchak" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center top"></div>
-          <figcaption style="display:flex;flex-direction:column;gap:2px;padding-top:14px">
+          <figcaption style="display:flex;flex-direction:column;gap:4px;padding-top:14px">
             <span style="font-family:var(--font-sans);font-weight:300;font-size:22px;letter-spacing:-.005em;line-height:1.25;color:#FFFFFF;margin-bottom:10px">Marina Kuchak</span>
-            <span style="font-family:var(--font-sans);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,0.5);line-height:1.8">Associate Director · Acquisitions &amp; Development</span>
-            <span style="font-family:var(--font-sans);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,0.5);line-height:1.8">London</span>
+            <span style="font-family:var(--font-sans);font-size:14px;font-weight:400;letter-spacing:0;line-height:1.4;color:rgba(255,255,255,0.78);margin-top:2px">Associate Director · Acquisitions &amp; Development</span>
+            <span style="font-family:var(--font-sans);font-size:13px;font-weight:400;letter-spacing:0.02em;line-height:1.4;color:rgba(255,255,255,0.5)">London</span>
           </figcaption>
         </figure>
         <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
           <div style="aspect-ratio:3/4;background:#2B2B2B;overflow:hidden"><img src="assets/team/v4/bek.jpg" alt="Bek Aripov" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center top"></div>
-          <figcaption style="display:flex;flex-direction:column;gap:2px;padding-top:14px">
+          <figcaption style="display:flex;flex-direction:column;gap:4px;padding-top:14px">
             <span style="font-family:var(--font-sans);font-weight:300;font-size:22px;letter-spacing:-.005em;line-height:1.25;color:#FFFFFF;margin-bottom:10px">Bek Aripov</span>
-            <span style="font-family:var(--font-sans);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,0.5);line-height:1.8">Prime Residential Advisor</span>
-            <span style="font-family:var(--font-sans);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,0.5);line-height:1.8">London</span>
+            <span style="font-family:var(--font-sans);font-size:14px;font-weight:400;letter-spacing:0;line-height:1.4;color:rgba(255,255,255,0.78);margin-top:2px">Prime Residential Advisor</span>
+            <span style="font-family:var(--font-sans);font-size:13px;font-weight:400;letter-spacing:0.02em;line-height:1.4;color:rgba(255,255,255,0.5)">London</span>
           </figcaption>
         </figure>
         <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
           <div style="aspect-ratio:3/4;background:#2B2B2B;overflow:hidden"><img src="assets/team/v4/elina.jpg" alt="Elina Mayor" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center top"></div>
-          <figcaption style="display:flex;flex-direction:column;gap:2px;padding-top:14px">
+          <figcaption style="display:flex;flex-direction:column;gap:4px;padding-top:14px">
             <span style="font-family:var(--font-sans);font-weight:300;font-size:22px;letter-spacing:-.005em;line-height:1.25;color:#FFFFFF;margin-bottom:10px">Elina Mayor</span>
-            <span style="font-family:var(--font-sans);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,0.5);line-height:1.8">Commercial &amp; Residential Property Advisor</span>
-            <span style="font-family:var(--font-sans);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,0.5);line-height:1.8">Europe</span>
+            <span style="font-family:var(--font-sans);font-size:14px;font-weight:400;letter-spacing:0;line-height:1.4;color:rgba(255,255,255,0.78);margin-top:2px">Commercial &amp; Residential Property Advisor</span>
+            <span style="font-family:var(--font-sans);font-size:13px;font-weight:400;letter-spacing:0.02em;line-height:1.4;color:rgba(255,255,255,0.5)">Europe</span>
           </figcaption>
         </figure>
         <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
           <div style="aspect-ratio:3/4;background:#2B2B2B;overflow:hidden"><img src="assets/team/v4/diana.jpg" alt="Diana Suris" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center top"></div>
-          <figcaption style="display:flex;flex-direction:column;gap:2px;padding-top:14px">
+          <figcaption style="display:flex;flex-direction:column;gap:4px;padding-top:14px">
             <span style="font-family:var(--font-sans);font-weight:300;font-size:22px;letter-spacing:-.005em;line-height:1.25;color:#FFFFFF;margin-bottom:10px">Diana Suris</span>
-            <span style="font-family:var(--font-sans);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,0.5);line-height:1.8">Commercial &amp; Residential Property Advisor</span>
-            <span style="font-family:var(--font-sans);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,0.5);line-height:1.8">UAE</span>
+            <span style="font-family:var(--font-sans);font-size:14px;font-weight:400;letter-spacing:0;line-height:1.4;color:rgba(255,255,255,0.78);margin-top:2px">Commercial &amp; Residential Property Advisor</span>
+            <span style="font-family:var(--font-sans);font-size:13px;font-weight:400;letter-spacing:0.02em;line-height:1.4;color:rgba(255,255,255,0.5)">UAE</span>
           </figcaption>
         </figure>
     </div>
@@ -271,7 +271,7 @@ a:hover{color:rgba(255,255,255,.7)}
         <a data-analytics="contact_whatsapp" href="{{ waContact }}" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--ink-0);color:var(--ink-950);padding:16px 28px;font-family:var(--font-label);font-size:0.75rem;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;border:1px solid var(--ink-0);min-width:200px;box-sizing:border-box" style-hover="background:var(--charcoal);color:var(--ink-0)">WhatsApp →</a>
         <a data-analytics="contact_email" href="mailto:office@kofmanpartners.com?subject=Residential%20enquiry" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:200px;background:transparent;color:var(--ink-0);padding:16px 28px;font-family:var(--font-label);font-size:0.75rem;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;border:1px solid var(--ink-0);box-sizing:border-box" style-hover="background:var(--ink-0);color:var(--ink-950)">Email →</a>
       </div>
-      <span style="font-family:var(--font-label);font-size:var(--text-small);color:var(--ink-300)">or call <a data-analytics="contact_phone_tap" href="tel:+447457411495" style="color:var(--ink-0);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;display:inline-block;padding:10px 0" style-hover="color:var(--ink-300)">+44 7457 411495</a></span>
+      <span style="font-family:var(--font-label);font-size:var(--text-small);color:var(--ink-300)">or call <a data-analytics="contact_phone_tap" href="tel:+447457411495" style="font-family:var(--font-num);color:var(--ink-0);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;display:inline-block;padding:10px 0" style-hover="color:var(--ink-300)">+44 7457 411495</a></span>
       <span style="font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.06em;color:var(--ink-500)">Your enquiry stays confidential.</span>
     </div>
   </section>

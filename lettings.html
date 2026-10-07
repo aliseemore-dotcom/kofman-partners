@@ -153,7 +153,7 @@ a:hover{color:rgba(255,255,255,.7)}
             <div style="position:absolute;left:0;right:0;bottom:0;padding:20px 22px;display:flex;flex-direction:column;gap:6px;pointer-events:none">
               <span style="font-family:var(--font-sans);font-weight:400;font-size:var(--text-h2);color:#FFFFFF">{{ p.name }}</span>
               <sc-if value="{{ p.loc }}" hint-placeholder-val="{{ true }}"><span style="font-family:var(--font-label);font-size:var(--text-small);letter-spacing:0.04em;color:rgba(255,255,255,0.6)">{{ p.loc }}</span></sc-if>
-              <span style="font-family:var(--font-label);font-size:var(--text-small);letter-spacing:0.04em;color:#FFFFFF">{{ p.price }}</span>
+              <span style="font-family:var(--font-num);font-size:var(--text-small);letter-spacing:0.02em;color:#FFFFFF">{{ p.price }}</span>
             </div>
           </div>
         </div>
@@ -170,10 +170,10 @@ a:hover{color:rgba(255,255,255,.7)}
           <div style="flex:0 1 380px;min-width:240px;aspect-ratio:3/4;background:#2B2B2B;overflow:hidden"><img src="assets/team/v4/tatiana.jpg" alt="Tatiana Knyazeva" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center top"></div>
           <div style="flex:1 1 360px;min-width:0;display:flex;flex-direction:column;gap:var(--space-5)">
           <p style="font-family:var(--font-display);font-weight:var(--weight-display);font-size:clamp(1.75rem,3vw,2.75rem);line-height:var(--lh-snug,1.2);letter-spacing:var(--tracking-tight);color:var(--ink-0);max-width:22ch;margin:0;text-wrap:balance">Tatiana finds your home, arranges the viewings and negotiates the tenancy on your side.</p>
-          <figcaption style="display:flex;flex-direction:column;gap:2px;padding-top:14px;padding-top:var(--space-4);border-top:1px solid var(--border-on-dark-soft)">
+          <figcaption style="display:flex;flex-direction:column;gap:4px;padding-top:14px;padding-top:var(--space-4);border-top:1px solid var(--border-on-dark-soft)">
             <span style="font-family:var(--font-sans);font-weight:300;font-size:22px;letter-spacing:-.005em;line-height:1.25;color:#FFFFFF;margin-bottom:10px">Tatiana Knyazeva</span>
-            <span style="font-family:var(--font-sans);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,0.5);line-height:1.8">Private Client · Premium &amp; Super-Prime Lettings Advisor</span>
-            <span style="font-family:var(--font-sans);font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,0.5);line-height:1.8">London</span>
+            <span style="font-family:var(--font-sans);font-size:14px;font-weight:400;letter-spacing:0;line-height:1.4;color:rgba(255,255,255,0.78);margin-top:2px">Private Client · Premium &amp; Super-Prime Lettings Advisor</span>
+            <span style="font-family:var(--font-sans);font-size:13px;font-weight:400;letter-spacing:0.02em;line-height:1.4;color:rgba(255,255,255,0.5)">London</span>
           </figcaption>
           </div>
       </figure>
@@ -188,7 +188,7 @@ a:hover{color:rgba(255,255,255,.7)}
         <a data-analytics="contact_whatsapp" href="{{ waContact }}" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--ink-0);color:var(--ink-950);padding:16px 28px;font-family:var(--font-label);font-size:0.75rem;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;border:1px solid var(--ink-0);min-width:200px;box-sizing:border-box" style-hover="background:var(--charcoal);color:var(--ink-0)">WhatsApp →</a>
         <a data-analytics="contact_email" href="mailto:office@kofmanpartners.com?subject=Lettings%20enquiry" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:200px;background:transparent;color:var(--ink-0);padding:16px 28px;font-family:var(--font-label);font-size:0.75rem;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;border:1px solid var(--ink-0);box-sizing:border-box" style-hover="background:var(--ink-0);color:var(--ink-950)">Email →</a>
       </div>
-      <span style="font-family:var(--font-label);font-size:var(--text-small);color:var(--ink-300)">or call <a data-analytics="contact_phone_tap" href="tel:+447457411495" style="color:var(--ink-0);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;display:inline-block;padding:10px 0" style-hover="color:var(--ink-300)">+44 7457 411495</a></span>
+      <span style="font-family:var(--font-label);font-size:var(--text-small);color:var(--ink-300)">or call <a data-analytics="contact_phone_tap" href="tel:+447457411495" style="font-family:var(--font-num);color:var(--ink-0);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;display:inline-block;padding:10px 0" style-hover="color:var(--ink-300)">+44 7457 411495</a></span>
       <span style="font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.06em;color:var(--ink-300)">Your enquiry stays confidential.</span>
     </div>
   </section>

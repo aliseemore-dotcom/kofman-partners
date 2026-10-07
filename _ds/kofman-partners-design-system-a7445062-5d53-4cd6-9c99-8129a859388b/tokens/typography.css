@@ -2,8 +2,9 @@
 :root{
 --font-display:'Geist',-apple-system,'Segoe UI',sans-serif;
 --font-sans:'Geist',-apple-system,'Segoe UI',sans-serif;
---font-label:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace;/* labels, meta, eyebrows, data */
---font-mono:var(--font-label);/* deprecated alias */
+--font-label:'Geist',-apple-system,'Segoe UI',sans-serif;/* labels, meta, eyebrows */
+--font-num:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace;/* figures only: prices, numbers, phone */
+--font-mono:var(--font-num);/* deprecated alias */
 --text-display-1:clamp(2.75rem,2rem + 3vw,5.5rem);/* @kind other */
 --text-display-2:clamp(2rem,1.5rem + 2vw,3.5rem);/* @kind other */
 --text-h1:clamp(1.75rem,1.4rem + 1.2vw,2.5rem);/* @kind other */
