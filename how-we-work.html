@@ -51,6 +51,17 @@ a:hover{color:rgba(255,255,255,.7)}
  [data-jline]{left:0 !important}
  [data-jnode]{left:-36px !important}
 }
+@media (max-width:640px){
+ [data-step]{aspect-ratio:auto !important}
+ [data-step] > div:last-child{min-height:168px;padding:20px !important}
+ [data-step] > div:last-child > span:first-child{font-size:36px !important}
+ [data-step]:not(:has(img)){background:#000000 !important;border:1px solid rgba(255,255,255,0.22) !important}
+ [data-step][aria-expanded="true"]:not(:has(img)){border-color:rgba(255,255,255,0.5) !important}
+ [data-step] h3{margin-top:12px !important}
+}
+[data-tap]{display:none}
+@media (hover:none){[data-tap]{display:block}}
+[data-step][aria-expanded="true"] [data-tap]{display:none !important}
 @media (max-width:1080px){[data-steps]{grid-template-columns:repeat(2,minmax(0,1fr)) !important}}
 [data-who]::-webkit-scrollbar{display:none}
 @media (max-width:1080px){[data-who]{grid-auto-columns:calc((100% - 24px) / 3) !important}}
@@ -142,6 +153,7 @@ a:hover{color:rgba(255,255,255,.7)}
           </sc-if>
           <div style="position:relative;height:100%;box-sizing:border-box;padding:28px;display:flex;flex-direction:column;justify-content:space-between">
             <span style="font-family:var(--font-num);font-weight:400;font-size:56px;line-height:1;letter-spacing:-0.02em;color:#FFFFFF">{{ st.n }}</span>
+            <span data-tap aria-hidden="true" style="position:absolute;top:24px;right:20px;font-family:var(--font-label);font-size:0.6875rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.7)">Tap →</span>
             <div style="display:flex;flex-direction:column">
               <span aria-hidden="true" style="height:1px;background:rgba(255,255,255,0.3)"></span>
               <h3 style="font-family:var(--font-sans);font-weight:500;font-size:1rem;line-height:1.3;letter-spacing:0.08em;text-transform:uppercase;margin:16px 0 0;color:#FFFFFF">{{ st.title }}</h3>
@@ -283,9 +295,6 @@ a:hover{color:rgba(255,255,255,.7)}
     </div>
   </footer>
 
-  <sc-if value="{{ waBar }}" hint-placeholder-val="{{ false }}">
-    <a data-analytics="floating_whatsapp" href="{{ waContact }}" style="position:fixed;right:20px;bottom:{{ waBarBottom }};z-index:40;background:var(--ink-0);color:var(--ink-950);padding:14px 22px;font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;border:1px solid var(--ink-0);transition:opacity var(--duration-fast) var(--ease-standard);opacity:{{ waBarOpacity }};pointer-events:{{ waBarPointer }}" style-hover="background:var(--charcoal);color:var(--ink-0)">WhatsApp →</a>
-  </sc-if>
 
 </div>
 </x-dc>

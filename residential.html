@@ -118,7 +118,7 @@ a:hover{color:rgba(255,255,255,.7)}
   </sc-if>
 
   <section id="top" data-hero data-screen-label="Hero" style="position:relative;height:680px;display:flex;align-items:flex-end;overflow:hidden">
-    <!-- TEMP: заменить --><image-slot id="kp-res-hero" src="https://cdn.prod.website-files.com/64b3c44c32dbf85fa55516ee/66e929937efdd45c29f7295a_LMH_20-Dacre-Road_HR-22-scaled.jpg" fit="cover" shape="rect" alt="Drawing room on Mount Street, evening light" placeholder="Mayfair drawing room or street, evening light — real photography, not a render" style="position:absolute;inset:0;width:100%;height:100%"></image-slot>
+    <image-slot id="kp-res-hero" src="https://cdn.prod.website-files.com/64b3c44c32dbf85fa55516ee/66e929937efdd45c29f7295a_LMH_20-Dacre-Road_HR-22-scaled.jpg" fit="cover" shape="rect" alt="Drawing room on Mount Street, evening light" placeholder="Mayfair drawing room or street, evening light — real photography, not a render" style="position:absolute;inset:0;width:100%;height:100%"></image-slot>
     <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,0) 40%,rgba(10,10,10,0.72) 100%)"></div>
     <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,10,0.66) 0%,rgba(10,10,10,0.3) 42%,rgba(10,10,10,0) 72%)"></div>
     <div data-pad style="position:relative;z-index:1;max-width:1320px;width:100%;margin:0 auto;padding:96px 32px 72px;display:flex;flex-direction:column;gap:20px">
@@ -289,9 +289,6 @@ a:hover{color:rgba(255,255,255,.7)}
     </div>
   </footer>
 
-  <sc-if value="{{ waBar }}" hint-placeholder-val="{{ true }}">
-    <a data-analytics="floating_whatsapp" href="{{ waContact }}" style="position:fixed;right:20px;bottom:{{ waBarBottom }};z-index:40;background:var(--ink-0);color:var(--ink-950);padding:14px 22px;font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;border:1px solid var(--ink-0);transition:opacity var(--duration-fast) var(--ease-standard);opacity:{{ waBarOpacity }};pointer-events:{{ waBarPointer }}" style-hover="background:var(--charcoal);color:var(--ink-0)">WhatsApp →</a>
-  </sc-if>
 
 </div>
 </x-dc>
