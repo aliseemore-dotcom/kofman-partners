@@ -914,6 +914,9 @@
 
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;screen&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;work&quot;,&quot;what&quot;,&quot;markets&quot;,&quot;brands&quot;,&quot;enquire&quot;,&quot;novikov&quot;,&quot;queen&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;'home' | 'work' | 'what' | 'markets' | 'brands' | 'enquire' | 'novikov' | 'queen'&quot;},&quot;showDisclosure&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+// Google Apps Script web-app URL that receives enquiries (see commercial/form-backend/README.md).
+const FORM_ENDPOINT = "";
+
 const DATA = {
   novikov: {
     address: "50A Berkeley St · W1J 8HA",
@@ -1411,8 +1414,9 @@ class Component extends DCLogic {
         if (!f.elements.name.value.trim() || !f.elements.contact.value.trim()) { this.setState({ formStatus: "invalid" }); return; }
         const body = new URLSearchParams(new FormData(f)).toString();
         this.setState({ formStatus: "sending" });
-        fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body })
-          .then(r => { if (!r.ok) throw new Error(r.status); this.setState({ formStatus: "sent" }); })
+        if (!FORM_ENDPOINT) { this.setState({ formStatus: "error" }); return; }
+        fetch(FORM_ENDPOINT, { method: "POST", mode: "no-cors", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body })
+          .then(() => this.setState({ formStatus: "sent" }))
           .catch(() => this.setState({ formStatus: "error" }));
       },
       formSent: this.state.formStatus === "sent",
