@@ -17,6 +17,12 @@
   a { color: #FFFFFF; text-decoration: none; }
   a:hover { color: rgba(255,255,255,.6); }
   ::selection { background: #FFFFFF; color: #0B0B0B; }
+  .kp-chip{position:relative;display:inline-block;cursor:pointer}
+  .kp-chip span{display:block}
+  .kp-chip input{position:absolute;opacity:0;width:0;height:0;margin:0}
+  .kp-chip input:checked + span{background:#0B0B0B;color:#FFFFFF !important;border-color:#0B0B0B !important}
+  .kp-chip input:focus-visible + span,.kp-field:focus-visible,form button:focus-visible{outline:1px solid #0B0B0B;outline-offset:3px}
+  .kp-field:focus{border-bottom-color:#0B0B0B !important}
 </style>
 </helmet>
 
@@ -831,40 +837,57 @@
       </div>
 
       <div style="background:#FFFFFF;color:#0B0B0B;padding:100px 6vw 100px 5vw">
-        <div style="max-width:520px">
+        <form name="commercial-enquiry" method="POST" onSubmit="{{ submitEnquiry }}" style="max-width:520px">
+          <input type="hidden" name="form-name" value="commercial-enquiry">
+          <p style="display:none"><label>Do not fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
           <span style="display:block;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:rgba(11,11,11,.45);margin-bottom:8px;font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace">Name</span>
-          <div style="border-bottom:1px solid rgba(11,11,11,.25);height:38px;margin-bottom:30px"></div>
+          <input class="kp-field" type="text" name="name" aria-required="true" aria-label="Name" style="display:block;width:100%;box-sizing:border-box;border:none;border-bottom:1px solid rgba(11,11,11,.25);border-radius:0;background:transparent;height:38px;padding:0;margin-bottom:30px;font-family:inherit;font-size:16px;font-weight:300;color:#0B0B0B;outline:none">
 
           <span style="display:block;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:rgba(11,11,11,.45);margin-bottom:8px;font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace">Company / brand</span>
-          <div style="border-bottom:1px solid rgba(11,11,11,.25);height:38px;margin-bottom:34px"></div>
+          <input class="kp-field" type="text" name="company" aria-label="Company / brand" style="display:block;width:100%;box-sizing:border-box;border:none;border-bottom:1px solid rgba(11,11,11,.25);border-radius:0;background:transparent;height:38px;padding:0;margin-bottom:34px;font-family:inherit;font-size:16px;font-weight:300;color:#0B0B0B;outline:none">
+
+          <span style="display:block;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:rgba(11,11,11,.45);margin-bottom:8px;font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace">Email or WhatsApp</span>
+          <input class="kp-field" type="text" name="contact" aria-required="true" aria-label="Email or WhatsApp" style="display:block;width:100%;box-sizing:border-box;border:none;border-bottom:1px solid rgba(11,11,11,.25);border-radius:0;background:transparent;height:38px;padding:0;margin-bottom:34px;font-family:inherit;font-size:16px;font-weight:300;color:#0B0B0B;outline:none">
 
           <span style="display:block;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:rgba(11,11,11,.45);margin-bottom:12px;font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace">F&amp;B or Retail</span>
-          <div style="display:flex;gap:8px;margin-bottom:34px">
-            <span style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;padding:11px 22px;border:1px solid rgba(11,11,11,.3);font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace">F&amp;B</span>
-            <span style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;padding:11px 22px;border:1px solid rgba(11,11,11,.3);font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace">Retail</span>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:34px">
+            <label class="kp-chip"><input type="radio" name="sector" value="F&B"><span style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;padding:11px 22px;border:1px solid rgba(11,11,11,.3);font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace">F&amp;B</span></label>
+            <label class="kp-chip"><input type="radio" name="sector" value="Retail"><span style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;padding:11px 22px;border:1px solid rgba(11,11,11,.3);font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace">Retail</span></label>
           </div>
 
           <span style="display:block;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:rgba(11,11,11,.45);margin-bottom:12px;font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace">Target market(s)</span>
           <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:34px">
-            <span style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;padding:11px 22px;border:1px solid rgba(11,11,11,.3);font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace">United Kingdom</span>
-            <span style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;padding:11px 22px;border:1px solid rgba(11,11,11,.3);font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace">Europe</span>
-            <span style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;padding:11px 22px;border:1px solid rgba(11,11,11,.3);font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace">The Middle East</span>
+            <label class="kp-chip"><input type="checkbox" name="markets" value="United Kingdom"><span style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;padding:11px 22px;border:1px solid rgba(11,11,11,.3);font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace">United Kingdom</span></label>
+            <label class="kp-chip"><input type="checkbox" name="markets" value="Europe"><span style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;padding:11px 22px;border:1px solid rgba(11,11,11,.3);font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace">Europe</span></label>
+            <label class="kp-chip"><input type="checkbox" name="markets" value="The Middle East"><span style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;padding:11px 22px;border:1px solid rgba(11,11,11,.3);font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace">The Middle East</span></label>
           </div>
 
           <span style="display:block;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:rgba(11,11,11,.45);margin-bottom:12px;font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace">Stage</span>
           <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:34px">
-            <span style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;padding:11px 22px;border:1px solid rgba(11,11,11,.3);font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace">Concept</span>
-            <span style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;padding:11px 22px;border:1px solid rgba(11,11,11,.3);font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace">Site search</span>
-            <span style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;padding:11px 22px;border:1px solid rgba(11,11,11,.3);font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace">Pre-opening</span>
-            <span style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;padding:11px 22px;border:1px solid rgba(11,11,11,.3);font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace">Expanding</span>
+            <label class="kp-chip"><input type="radio" name="stage" value="Concept"><span style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;padding:11px 22px;border:1px solid rgba(11,11,11,.3);font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace">Concept</span></label>
+            <label class="kp-chip"><input type="radio" name="stage" value="Site search"><span style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;padding:11px 22px;border:1px solid rgba(11,11,11,.3);font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace">Site search</span></label>
+            <label class="kp-chip"><input type="radio" name="stage" value="Pre-opening"><span style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;padding:11px 22px;border:1px solid rgba(11,11,11,.3);font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace">Pre-opening</span></label>
+            <label class="kp-chip"><input type="radio" name="stage" value="Expanding"><span style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;padding:11px 22px;border:1px solid rgba(11,11,11,.3);font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace">Expanding</span></label>
           </div>
 
           <span style="display:block;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:rgba(11,11,11,.45);margin-bottom:8px;font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace">Message</span>
-          <div style="border-bottom:1px solid rgba(11,11,11,.25);height:92px;margin-bottom:38px"></div>
+          <textarea class="kp-field" name="message" aria-label="Message" style="display:block;width:100%;box-sizing:border-box;border:none;border-bottom:1px solid rgba(11,11,11,.25);border-radius:0;background:transparent;height:92px;padding:0;margin-bottom:38px;resize:none;font-family:inherit;font-size:16px;font-weight:300;line-height:1.5;color:#0B0B0B;outline:none"></textarea>
 
-          <a href="#" data-goto="enquire" style="display:inline-block;background:#0B0B0B;border:1px solid #0B0B0B;color:#FFFFFF;padding:16px 38px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;transition:opacity .3s;font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace" style-hover="opacity:.8">Start the conversation</a>
+          <sc-if value="{{ formNotSent }}" hint-placeholder-val="{{ true }}">
+          <button type="submit" style="display:inline-block;cursor:pointer;background:#0B0B0B;border:1px solid #0B0B0B;color:#FFFFFF;padding:16px 38px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;transition:opacity .3s;border-radius:0;font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace" style-hover="opacity:.8">Start the conversation</button>
           <p style="font-size:12px;letter-spacing:.04em;color:rgba(11,11,11,.5);margin:18px 0 0">We reply within one working day.</p>
-        </div>
+          </sc-if>
+          <sc-if value="{{ formInvalid }}" hint-placeholder-val="{{ false }}">
+          <p style="font-size:12px;letter-spacing:.04em;color:#0B0B0B;margin:12px 0 0">Please add your name and an email or WhatsApp number so we can reply.</p>
+          </sc-if>
+          <sc-if value="{{ formError }}" hint-placeholder-val="{{ false }}">
+          <p style="font-size:12px;letter-spacing:.04em;color:#0B0B0B;margin:12px 0 0">Something went wrong. Please email <a href="mailto:office@kofmanpartners.com" style="color:#0B0B0B;text-decoration:underline">office@kofmanpartners.com</a> or message us on WhatsApp.</p>
+          </sc-if>
+          <sc-if value="{{ formSent }}" hint-placeholder-val="{{ false }}">
+          <p style="font-size:22px;font-weight:300;letter-spacing:-.01em;margin:0 0 10px">Thank you.</p>
+          <p style="font-size:14px;color:rgba(11,11,11,.62);margin:0">We have your message and will reply within one working day.</p>
+          </sc-if>
+        </form>
       </div>
     </section>
 
@@ -1381,6 +1404,21 @@ class Component extends DCLogic {
       goMarkets: () => this.setState({ screen: "markets" }),
       goBrands: () => this.setState({ screen: "brands" }),
       goEnquire: () => this.setState({ screen: "enquire" }),
+      submitEnquiry: (e) => {
+        e.preventDefault();
+        if (this.state.formStatus === "sending") return;
+        const f = e.target;
+        if (!f.elements.name.value.trim() || !f.elements.contact.value.trim()) { this.setState({ formStatus: "invalid" }); return; }
+        const body = new URLSearchParams(new FormData(f)).toString();
+        this.setState({ formStatus: "sending" });
+        fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body })
+          .then(r => { if (!r.ok) throw new Error(r.status); this.setState({ formStatus: "sent" }); })
+          .catch(() => this.setState({ formStatus: "error" }));
+      },
+      formSent: this.state.formStatus === "sent",
+      formNotSent: this.state.formStatus !== "sent",
+      formError: this.state.formStatus === "error",
+      formInvalid: this.state.formStatus === "invalid",
       isEnquire: screen === "enquire",
       isWhat: screen === "what",
       isWork: screen === "work",
