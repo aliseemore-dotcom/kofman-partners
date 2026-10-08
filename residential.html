@@ -236,7 +236,7 @@ a:hover{color:rgba(255,255,255,.7)}
     <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:var(--space-6)">
       <div style="display:flex;align-items:baseline;gap:20px;flex-wrap:wrap">
         <span style="font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-300)">Selected transactions</span>
-        <span style="font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-0)">{{ regionName }}</span>
+        <div role="group" aria-label="Region" style="display:flex;align-items:baseline;gap:22px;flex-wrap:wrap"><button type="button" onClick="{{ tab_uk }}" aria-pressed="{{ pressed_uk }}" style="appearance:none;background:none;border:none;border-bottom:1px solid {{ ul_uk }};padding:0 0 6px;cursor:pointer;font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.2em;text-transform:uppercase;color:{{ fg_uk }};transition:color var(--duration-fast) var(--ease-standard)" style-hover="color:var(--ink-0)">UK</button><button type="button" onClick="{{ tab_eu }}" aria-pressed="{{ pressed_eu }}" style="appearance:none;background:none;border:none;border-bottom:1px solid {{ ul_eu }};padding:0 0 6px;cursor:pointer;font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.2em;text-transform:uppercase;color:{{ fg_eu }};transition:color var(--duration-fast) var(--ease-standard)" style-hover="color:var(--ink-0)">Europe</button><button type="button" onClick="{{ tab_me }}" aria-pressed="{{ pressed_me }}" style="appearance:none;background:none;border:none;border-bottom:1px solid {{ ul_me }};padding:0 0 6px;cursor:pointer;font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.2em;text-transform:uppercase;color:{{ fg_me }};transition:color var(--duration-fast) var(--ease-standard)" style-hover="color:var(--ink-0)">Middle East</button></div>
       </div>
       <div style="display:flex;gap:8px">
         <button type="button" aria-label="Previous" onClick="{{ txPrev }}" style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;border:1px solid var(--border-on-dark);background:none;color:var(--ink-0);font-family:var(--font-label);font-size:1rem;cursor:pointer;opacity:{{ txPrevOp }};transition:border-color var(--duration-fast) var(--ease-standard)" style-hover="border-color:var(--ink-0)">←</button>
@@ -396,6 +396,11 @@ class Component extends DCLogic {
     const s = el.scrollLeft < 4, e = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4;
     if (s !== this.state.txStart || e !== this.state.txEnd) this.setState({ txStart:s, txEnd:e });
   };
+  setRegion(r){
+    this.setState({ region:r }, () => {
+      const el = this.txRef.current; if (el) { el.scrollLeft = 0; setTimeout(this.txSync, 60); }
+    });
+  }
   pickRegion(r){
     this.setState({ region:r }, () => {
       const el = this.txRef.current; if (el) { el.scrollLeft = 0; setTimeout(this.txSync, 60); }
@@ -436,6 +441,8 @@ class Component extends DCLogic {
     for (const k of ['uk','eu','me']) {
       const on = s.region === k;
       reg['pick_'+k] = () => this.pickRegion(k);
+      reg['tab_'+k] = () => this.setRegion(k);
+      reg['ul_'+k] = on ? 'var(--ink-0)' : 'transparent';
       reg['pressed_'+k] = on ? 'true' : 'false';
       reg['bg_'+k] = on ? '#161616' : 'transparent';
       reg['fg_'+k] = on ? 'var(--ink-0)' : 'var(--ink-300)';
