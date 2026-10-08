@@ -114,6 +114,7 @@ a:hover{color:rgba(255,255,255,.7)}
  [data-cols="4team"] > figure{scroll-snap-align:start}
 }
 [data-m-only]{display:none}
+@media (max-width:700px){.kp-foot-row{flex-direction:column;align-items:flex-start;gap:14px !important}}
 </style>
 </helmet>
 <div aria-hidden="true" style="position:fixed;inset:0;z-index:9999;background:#0A0A0A;display:flex;align-items:center;justify-content:center;pointer-events:none;animation:kpLoaderOut 0.5s ease 0.15s forwards"><span style="font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:500;font-size:0.8125rem;letter-spacing:0.3em;text-transform:uppercase;color:#FFFFFF;white-space:nowrap">Kofman + Partners</span></div>
@@ -341,11 +342,14 @@ a:hover{color:rgba(255,255,255,.7)}
     </div>
   </section>
 
-  <footer data-pad style="border-top:1px solid var(--border-on-dark-soft);padding:22px 32px 96px">
-    <div style="max-width:1320px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:center;text-align:center;gap:12px 32px;align-items:center">
-      <span style="font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.12em;color:var(--ink-300)">12 Hay Hill, Mayfair, London</span>
-      <span style="font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.12em;color:var(--ink-500)">© 2026 Kofman + Partners Limited</span>
-      <span style="display:contents"><a href="https://docs.google.com/document/d/1BRCly03-Nmy5Nzy9uDkluf4FHnZ8pyvGmogx1WRqUkw/preview" target="_blank" rel="noopener" style="font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.12em;color:var(--ink-300);text-decoration:none">Privacy</a><a href="/legal" style="font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.12em;color:var(--ink-300);text-decoration:none">Legal</a></span>
+  <footer data-pad style="border-top:1px solid var(--border-on-dark-soft);padding:46px 32px 56px">
+    <div class="kp-foot-row" style="max-width:1320px;margin:0 auto;display:flex;justify-content:space-between;gap:16px 24px;flex-wrap:wrap;color:rgba(255,255,255,.45);font-family:var(--font-sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase">
+      <span>©2026 Kofman + Partners Limited</span>
+      <span>London · Dubai · Zurich</span>
+      <a href="https://www.instagram.com/kofmanpartners" target="_blank" rel="noopener" style="color:rgba(255,255,255,.45);text-decoration:none" style-hover="color:#FFFFFF">Instagram</a>
+      <a href="https://uk.linkedin.com/company/kofmanpartners" target="_blank" rel="noopener" style="color:rgba(255,255,255,.45);text-decoration:none" style-hover="color:#FFFFFF">LinkedIn</a>
+      <a href="https://docs.google.com/document/d/1BRCly03-Nmy5Nzy9uDkluf4FHnZ8pyvGmogx1WRqUkw/preview" target="_blank" rel="noopener" style="color:rgba(255,255,255,.45);text-decoration:none" style-hover="color:#FFFFFF">Privacy</a>
+      <a href="/legal" style="color:rgba(255,255,255,.45);text-decoration:none" style-hover="color:#FFFFFF">Legal</a>
     </div>
   </footer>
 
