@@ -36,8 +36,17 @@
   .kp-chip{position:relative;display:inline-block;cursor:pointer}
   button{font-family:inherit}
   .kp-check:focus-visible{outline:1px solid #0B0B0B;outline-offset:3px}
+  @media (max-width:340px){
+    nav > div:last-child a{display:none !important}
+  }
+  @media (max-width:360px){
+    nav{gap:6px !important}
+    nav > div:last-child{gap:6px !important}
+    nav > div:last-child a, nav > div:last-child button{padding:0 9px !important;letter-spacing:.08em !important;font-size:9px !important}
+    nav > div:first-child{font-size:10px !important;letter-spacing:.16em !important}
+  }
   .kp-form-head{display:none}
-  @media (max-width:959px){
+  @media (max-width:1199px){
     .kp-strip{display:grid !important;grid-template-columns:1fr 1fr}
     .kp-strip > *{min-width:0 !important;padding:18px 6vw !important;border-right:1px solid rgba(255,255,255,.12) !important;border-bottom:1px solid rgba(255,255,255,.12)}
     .kp-strip > *:nth-child(2n){border-right:none !important}
@@ -53,13 +62,13 @@
     .kp-form-head{display:block}
   }
   @media (max-width:700px){.kp-footer{flex-direction:column;align-items:flex-start;gap:14px !important;padding-bottom:110px !important}}
-  @media (max-width:959px){
+  @media (max-width:1199px){
     [data-screen-label] section > div{min-width:0}
   }
   @media (max-width:520px){
     .kp-row{flex-wrap:wrap;gap:6px 20px !important;letter-spacing:.1em !important;overflow-wrap:anywhere}
   }
-  @media (max-width:520px){
+  @media (max-width:780px){
     nav{padding:22px 6vw !important;gap:10px !important}
     nav > div:first-child{flex-direction:column !important;align-items:flex-start !important;gap:5px !important;font-size:11px !important;letter-spacing:.22em !important}
     nav > div:first-child a:last-child{letter-spacing:.22em !important}
@@ -1533,7 +1542,7 @@ class Component extends DCLogic {
     };
     window.addEventListener("popstate", this._onPop);
     this._onResize = () => this.setState({
-      narrow: document.documentElement.clientWidth < 960,
+      narrow: document.documentElement.clientWidth < 1200,
       barH: this._barRef.current ? Math.round(this._barRef.current.getBoundingClientRect().height) : 47
     });
     this._onScroll = () => this.setState({ scrolled: window.scrollY > 400 });
