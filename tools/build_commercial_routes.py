@@ -108,7 +108,7 @@ def main():
         out = os.path.join(ROOT, path.strip("/"), "index.html")
         os.makedirs(os.path.dirname(out), exist_ok=True)
         open(out, "w").write(set_head(src, title, desc, path))
-    urls = ["/", "/residential", "/lettings", "/how-we-work"] + list(meta.keys())
+    urls = ["/", "/residential", "/lettings", "/how-we-work", "/legal"] + list(meta.keys())
     open(os.path.join(ROOT, "sitemap.xml"), "w").write(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         + "".join(f"  <url><loc>{SITE}{u}</loc></url>\n" for u in urls) + "</urlset>\n")
