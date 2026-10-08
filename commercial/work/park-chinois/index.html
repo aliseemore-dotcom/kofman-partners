@@ -36,15 +36,19 @@
   .kp-chip{position:relative;display:inline-block;cursor:pointer}
   button{font-family:inherit}
   .kp-check:focus-visible{outline:1px solid #0B0B0B;outline-offset:3px}
-  @media (max-width:340px){
-    nav > div:last-child a{display:none !important}
+  .kp-hdr{line-height:1.55}
+  :root{--kp-hdr:71px}
+  html{scroll-padding-top:var(--kp-hdr)}
+  @media (max-width:1199px){:root{--kp-hdr:59px}.kp-hdr nav{padding:10px 0 !important}}
+  @media (max-width:900px){.kp-hdr-sec{display:none !important}}
+  @media (max-width:520px){
+    .kp-hdr nav{gap:10px !important}
+    .kp-hdr nav > div:first-child a{letter-spacing:.18em !important}
+    .kp-hdr nav > div:last-child{gap:10px !important}
+    .kp-hdr nav > div:last-child a{padding:9px 14px !important;letter-spacing:.12em !important}
   }
-  @media (max-width:360px){
-    nav{gap:6px !important}
-    nav > div:last-child{gap:6px !important}
-    nav > div:last-child a, nav > div:last-child button{padding:0 9px !important;letter-spacing:.08em !important;font-size:9px !important}
-    nav > div:first-child{font-size:10px !important;letter-spacing:.16em !important}
-  }
+  @media (max-width:360px){.kp-hdr nav > div:first-child a{letter-spacing:.1em !important;font-size:12px !important}.kp-hdr nav > div:last-child a{padding:9px 10px !important;letter-spacing:.08em !important}.kp-hdr nav > div:last-child{gap:8px !important}}
+  @media (max-width:1199px){.kp-filterbar{position:static !important}}
   .kp-form-head{display:none}
   @media (max-width:1199px){
     .kp-strip{display:grid !important;grid-template-columns:1fr 1fr}
@@ -61,19 +65,12 @@
     .kp-enq-head{display:none}
     .kp-form-head{display:block}
   }
-  @media (max-width:700px){.kp-footer{flex-direction:column;align-items:flex-start;gap:14px !important;padding-bottom:110px !important}}
+  @media (max-width:700px){.kp-footer{flex-direction:column;align-items:flex-start;gap:14px !important;padding-bottom:56px !important}}
   @media (max-width:1199px){
     [data-screen-label] section > div{min-width:0}
   }
   @media (max-width:520px){
     .kp-row{flex-wrap:wrap;gap:6px 20px !important;letter-spacing:.1em !important;overflow-wrap:anywhere}
-  }
-  @media (max-width:780px){
-    nav{padding:22px 6vw !important;gap:10px !important}
-    nav > div:first-child{flex-direction:column !important;align-items:flex-start !important;gap:5px !important;font-size:11px !important;letter-spacing:.22em !important}
-    nav > div:first-child a:last-child{letter-spacing:.22em !important}
-    nav > div:last-child a, nav > div:last-child button{display:flex;align-items:center;box-sizing:border-box;height:40px;padding:0 13px !important;letter-spacing:.14em !important;line-height:1}
-    nav > div:last-child{gap:8px !important}
   }
   .kp-chip span{display:block}
   .kp-chip input{position:absolute;opacity:0;width:0;height:0;margin:0}
@@ -89,28 +86,30 @@
 
   
 
-  <nav style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:30px 6vw;border-bottom:1px solid rgba(255,255,255,.12)">
-    <div style="display:flex;align-items:baseline;gap:12px;flex-shrink:0;font-size:12px;letter-spacing:.32em;text-transform:uppercase;font-weight:400;color:#FFFFFF;white-space:nowrap"><a href="/" style="display:flex;align-items:baseline;gap:12px;color:#FFFFFF">Kofman <span style="font-weight:300">+</span> Partners</a><a href="/commercial/" data-goto="home" style="color:rgba(255,255,255,.45);letter-spacing:.3em">Commercial</a></div>
+  <header class="kp-hdr" style="position:sticky;top:0;z-index:50;padding:0 6vw;background:rgba(10,10,10,.92);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.12)">
+  <nav style="max-width:1320px;margin:0 auto;padding:18px 0;display:flex;align-items:center;justify-content:space-between;gap:24px">
+    <div style="display:flex;align-items:baseline;gap:.6em;flex-shrink:0;white-space:nowrap"><a href="/" style="font-weight:500;font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:#FFFFFF;text-decoration:none">Kofman + Partners</a><a href="/commercial/" data-goto="home" class="kp-hdr-sec" style="font-weight:400;font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:#6E767D;text-decoration:none">Commercial</a></div>
 
     <sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}">
-    <div style="display:flex;gap:28px;align-items:center;font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:400;white-space:nowrap">
-      <a href="/commercial/work/" data-goto="work" style="color:rgba(255,255,255,.6)" style-hover="color:#FFFFFF">Work</a>
-      <a href="/commercial/what-we-do/" data-goto="what" style="color:rgba(255,255,255,.6)" style-hover="color:#FFFFFF">What We Do</a>
-      <a href="/commercial/markets/uk/" data-goto="markets" style="color:rgba(255,255,255,.6)" style-hover="color:#FFFFFF">Markets</a>
-      <a href="/commercial/brands/" data-goto="brands" style="color:rgba(255,255,255,.6)" style-hover="color:#FFFFFF">Brands</a>
-      <a href="/commercial/advisors/" data-goto="team" style="color:rgba(255,255,255,.6)" style-hover="color:#FFFFFF">Your Advisors</a>
-      <a href="/residential" style="color:rgba(255,255,255,.6)" style-hover="color:#FFFFFF">Residential</a>
-      <a href="/commercial/contact/" data-goto="enquire" style="border:1px solid rgba(255,255,255,.35);color:#FFFFFF;padding:11px 22px;font-size:10px;letter-spacing:.2em;margin-left:8px;transition:background .3s,color .3s" style-hover="background:#FFFFFF;color:#0B0B0B">Contact</a>
+    <div style="display:flex;gap:30px;align-items:center">
+      <a href="/commercial/work/" data-goto="work" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;white-space:nowrap;color:rgba(255,255,255,.6)" style-hover="color:#FFFFFF">Work</a>
+      <a href="/commercial/what-we-do/" data-goto="what" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;white-space:nowrap;color:rgba(255,255,255,.6)" style-hover="color:#FFFFFF">What We Do</a>
+      <a href="/commercial/markets/uk/" data-goto="markets" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;white-space:nowrap;color:rgba(255,255,255,.6)" style-hover="color:#FFFFFF">Markets</a>
+      <a href="/commercial/brands/" data-goto="brands" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;white-space:nowrap;color:rgba(255,255,255,.6)" style-hover="color:#FFFFFF">Brands</a>
+      <a href="/commercial/advisors/" data-goto="team" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;white-space:nowrap;color:rgba(255,255,255,.6)" style-hover="color:#FFFFFF">Your Advisors</a>
+      <a href="/residential" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;white-space:nowrap;color:rgba(255,255,255,.6)" style-hover="color:#FFFFFF">Residential</a>
+      <a href="/commercial/contact/" data-goto="enquire" style="display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.18);padding:9px 20px;margin-left:8px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;white-space:nowrap;color:#FFFFFF;transition:border-color .2s ease" style-hover="border-color:#FFFFFF">Contact</a>
     </div>
     </sc-if>
 
     <sc-if value="{{ isNarrow }}" hint-placeholder-val="{{ false }}">
-    <div style="display:flex;align-items:center;gap:14px">
-      <a href="/commercial/contact/" data-goto="enquire" style="border:1px solid rgba(255,255,255,.35);color:#FFFFFF;padding:12px 22px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap">Contact</a>
-      <button onClick="{{ toggleMenu }}" aria-label="Menu" style="background:transparent;border:1px solid rgba(255,255,255,.35);color:#FFFFFF;font-size:10px;letter-spacing:.22em;text-transform:uppercase;padding:12px 18px;cursor:pointer">Menu</button>
+    <div style="display:flex;align-items:center;gap:16px">
+      <a href="/commercial/contact/" data-goto="enquire" style="display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.18);padding:10px 16px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#FFFFFF;text-decoration:none;white-space:nowrap">Contact</a>
+      <button onClick="{{ toggleMenu }}" aria-label="Menu" style="background:none;border:none;padding:8px 0;color:#FFFFFF;font-size:12px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer">Menu</button>
     </div>
     </sc-if>
   </nav>
+  </header>
 
   <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
   <div style="position:fixed;inset:0;z-index:80;background:#0B0B0B;display:flex;flex-direction:column;padding:30px 6vw">
@@ -540,7 +539,7 @@
       </div>
     </section>
 
-    <div style="position:sticky;top:{{ stickyTop }};z-index:40;background:rgba(11,11,11,.96);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.12);padding:16px 6vw">
+    <div class="kp-filterbar" style="position:sticky;top:{{ stickyTop }};z-index:40;background:rgba(11,11,11,.96);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.12);padding:16px 6vw">
       <div style="max-width:1320px;margin:0 auto;display:flex;flex-wrap:wrap;gap:26px;align-items:center">
         <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
           <span style="font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-right:6px">Type</span>
@@ -982,7 +981,7 @@
   </div>
   </sc-if>
 
-  <footer class="kp-footer" style="padding:46px 6vw 90px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;color:rgba(255,255,255,.45);font-size:11px;letter-spacing:.18em;text-transform:uppercase">
+  <footer class="kp-footer" style="padding:46px 6vw 56px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;color:rgba(255,255,255,.45);font-size:11px;letter-spacing:.18em;text-transform:uppercase">
     <span>©2026 K+P Commercial</span>
     <span>London · Dubai · Zurich</span>
     <span>Part of the Kofman + Partners group</span>
@@ -1663,12 +1662,12 @@ class Component extends DCLogic {
       hideSwitcher: () => this.setState({ switcher: false }),
       showSwitcherFn: () => this.setState({ switcher: true }),
       barRef: this._barRef,
-      stickyTop: (this.state.switcher === false ? 0 : (this.state.barH || 47)) + "px",
+      stickyTop: "var(--kp-hdr)",
       isNarrow: narrow,
       isWide: !narrow,
       menuOpen: this.state.menuOpen,
       toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
-      showStickyBar: narrow && this.state.scrolled && !this.state.menuOpen,
+      showStickyBar: false,
       colsWork: narrow ? "1fr" : "repeat(3,1fr)",
       colsCred: narrow ? "1fr" : "1.05fr .95fr",
       colsSplit: narrow ? "1fr" : "1fr 1fr",
