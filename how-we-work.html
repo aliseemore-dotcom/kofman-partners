@@ -70,10 +70,11 @@ a:hover{color:rgba(255,255,255,.7)}
  [data-step]{aspect-ratio:auto !important}
  [data-step] > div:last-child{min-height:168px;padding:20px !important}
  [data-step] > div:last-child > span:first-child{font-size:36px !important}
- [data-step]:not(:has(img)){background:#000000 !important;border:1px solid rgba(255,255,255,0.22) !important}
- [data-step][aria-expanded="true"]:not(:has(img)){border-color:rgba(255,255,255,0.5) !important}
  [data-step] h3{margin-top:12px !important}
 }
+@media (min-width:641px){[data-step]{aspect-ratio:4/3 !important}}
+[data-step]:not(:has(img)){background:#0B0B0B !important;border:1px solid rgba(255,255,255,0.22) !important}
+[data-step][aria-expanded="true"]:not(:has(img)){border-color:rgba(255,255,255,0.5) !important}
 [data-tap]{display:none}
 @media (hover:none){[data-tap]{display:block}}
 [data-step][aria-expanded="true"] [data-tap]{display:none !important}
