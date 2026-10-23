@@ -15,3 +15,5 @@ K+P Commercial routes (SEO)
   (needs python3 + node). It also regenerates sitemap.xml.
 
 Enquiry form: commercial/form-backend/ (Google Apps Script -> Google Sheet + email).
+
+Analytics: analytics.js (Google Analytics 4 with cookie consent). Inactive until GA_ID at the top of the file is set.

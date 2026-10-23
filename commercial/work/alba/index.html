@@ -22,6 +22,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "RealEstateAgent", "name": "K+P Commercial — Kofman + Partners", "url": "https://www.kofmanpartners.com/commercial/", "logo": "https://www.kofmanpartners.com/favicon.svg", "image": "https://www.kofmanpartners.com/assets/res-door.jpg", "email": "office@kofmanpartners.com", "telephone": "+44 7457 411495", "address": {"@type": "PostalAddress", "streetAddress": "12 Hay Hill", "addressLocality": "Mayfair, London", "postalCode": "W1J 8NR", "addressCountry": "GB"}, "areaServed": ["London", "Europe", "Dubai"], "sameAs": ["https://www.instagram.com/kofmanpartners", "https://uk.linkedin.com/company/kofmanpartners"], "description": "F&B and retail site acquisition and advisory for brands entering the UK, Europe and the Middle East."}</script>
 <meta name="twitter:card" content="summary_large_image">
+<script src="/analytics.js" defer></script>
 <script src="/commercial/support.js"></script>
 </head>
 <body>
@@ -987,6 +988,7 @@
     <span>Part of the Kofman + Partners group</span>
     <a href="https://www.instagram.com/kofmanpartners" target="_blank" style="color:rgba(255,255,255,.45)" style-hover="color:#FFFFFF">Instagram</a>
     <a href="https://uk.linkedin.com/company/kofmanpartners" target="_blank" style="color:rgba(255,255,255,.45)" style-hover="color:#FFFFFF">LinkedIn</a>
+    <a href="#" data-cookie-settings style="color:rgba(255,255,255,.45)" style-hover="color:#FFFFFF">Cookies</a>
     <a href="https://docs.google.com/document/d/1BRCly03-Nmy5Nzy9uDkluf4FHnZ8pyvGmogx1WRqUkw/preview" target="_blank" style="color:rgba(255,255,255,.45)" style-hover="color:#FFFFFF">Privacy</a>
     <a href="/legal" style="color:rgba(255,255,255,.45)" style-hover="color:#FFFFFF">Legal</a>
   </footer>
@@ -1554,9 +1556,9 @@ class Component extends DCLogic {
   componentDidUpdate() {
     const next = pathFromState(this.state);
     if (this._lastPath && next !== this._lastPath) {
+      applyRouteMeta(next);
       window.history.pushState(null, "", next);
       this._lastPath = next;
-      applyRouteMeta(next);
     }
   }
 
@@ -1693,7 +1695,7 @@ class Component extends DCLogic {
         this.setState({ formStatus: "sending" });
         if (!FORM_ENDPOINT) { this.setState({ formStatus: "error" }); return; }
         fetch(FORM_ENDPOINT, { method: "POST", mode: "no-cors", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body })
-          .then(() => this.setState({ formStatus: "sent" }))
+          .then(() => { this.setState({ formStatus: "sent" }); if (window.kpTrack) window.kpTrack("generate_lead", { form_name: "commercial_enquiry" }); })
           .catch(() => this.setState({ formStatus: "error" }));
       },
       formSent: this.state.formStatus === "sent",
