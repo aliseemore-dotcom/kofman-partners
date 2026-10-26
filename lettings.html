@@ -107,6 +107,9 @@ header [data-pad]{padding-top:18px !important;padding-bottom:18px !important}
  header [data-pad]{padding-top:10px !important;padding-bottom:10px !important}
  header [data-mobile] a{padding:10px 16px !important}
 }
+header [data-pad] > a img{width:220px !important}
+@media (max-width:520px){header [data-pad] > a img{width:172px !important}}
+@media (max-width:360px){header [data-pad] > a img{width:140px !important}}
 </style>
 </helmet>
 <div aria-hidden="true" style="position:fixed;inset:0;z-index:9999;background:#0A0A0A;display:flex;align-items:center;justify-content:center;pointer-events:none;animation:kpLoaderOut 0.5s ease 0.15s forwards"><img src="/assets/logo-kofman-partners.png" alt="" width="550" height="54" style="display:block;width:min(300px,64vw);height:auto"></div>
@@ -116,8 +119,8 @@ header [data-pad]{padding-top:18px !important;padding-bottom:18px !important}
 
   <header style="position:sticky;top:0;z-index:30;background:rgba(10,10,10,0.92);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--border-on-dark-soft)">
     <div data-pad style="max-width:1320px;margin:0 auto;padding:30px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px">
-      <a href="index.html" style="display:flex;align-items:baseline;gap:0.6em;text-decoration:none;white-space:nowrap">
-        <span style="font-family:var(--font-label);font-weight:500;font-size:0.8125rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--ink-0)">Kofman + Partners</span>
+      <a href="index.html" style="display:flex;align-items:center;gap:0.9em;text-decoration:none;white-space:nowrap">
+        <img src="/assets/logo-wordmark.png" alt="Kofman + Partners" width="550" height="40" style="display:block;width:220px;height:auto">
         <span data-desktop style="font-family:var(--font-label);font-weight:400;font-size:0.8125rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--ink-300)">Lettings</span>
       </a>
       <nav data-desktop style="display:flex;align-items:center;gap:30px">
@@ -138,7 +141,7 @@ header [data-pad]{padding-top:18px !important;padding-bottom:18px !important}
   <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
     <div style="position:fixed;inset:0;z-index:60;background:#0A0A0A;display:flex;flex-direction:column;padding:22px 20px 40px">
       <div style="display:flex;align-items:center;justify-content:space-between">
-        <span style="font-family:var(--font-display);font-size:1.0625rem">Kofman + Partners</span>
+        <img src="/assets/logo-wordmark.png" alt="Kofman + Partners" width="550" height="40" style="display:block;width:190px;height:auto">
         <button type="button" onClick="{{ closeMenu }}" style="background:none;border:none;color:var(--ink-0);font-family:var(--font-label);font-size:var(--text-eyebrow);letter-spacing:0.16em;text-transform:uppercase;cursor:pointer;padding:8px 0">Close</button>
       </div>
       <nav style="display:flex;flex-direction:column;gap:4px;margin-top:56px">

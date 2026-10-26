@@ -38,6 +38,9 @@
   button{font-family:inherit}
   .kp-check:focus-visible{outline:1px solid #0B0B0B;outline-offset:3px}
   .kp-hdr{line-height:1.55}
+  .kp-hdr nav > div:first-child img{width:220px !important}
+  @media (max-width:520px){.kp-hdr nav > div:first-child img{width:172px !important}}
+  @media (max-width:360px){.kp-hdr nav > div:first-child img{width:140px !important}}
   :root{--kp-hdr:71px}
   html{scroll-padding-top:var(--kp-hdr)}
   @media (max-width:1199px){:root{--kp-hdr:59px}.kp-hdr nav{padding:10px 0 !important}}
@@ -89,7 +92,7 @@
 
   <header class="kp-hdr" style="position:sticky;top:0;z-index:50;padding:0 6vw;background:rgba(10,10,10,.92);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.12)">
   <nav style="max-width:1320px;margin:0 auto;padding:18px 0;display:flex;align-items:center;justify-content:space-between;gap:24px">
-    <div style="display:flex;align-items:baseline;gap:.6em;flex-shrink:0;white-space:nowrap"><a href="/" style="font-weight:500;font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:#FFFFFF;text-decoration:none">Kofman + Partners</a><a href="/commercial/" data-goto="home" class="kp-hdr-sec" style="font-weight:400;font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:#6E767D;text-decoration:none">Commercial</a></div>
+    <div style="display:flex;align-items:center;gap:.9em;flex-shrink:0;white-space:nowrap"><a href="/" style="display:block;line-height:0"><img src="/assets/logo-wordmark.png" alt="Kofman + Partners" width="550" height="40" style="display:block;width:220px;height:auto"></a><a href="/commercial/" data-goto="home" class="kp-hdr-sec" style="font-weight:400;font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:#6E767D;text-decoration:none">Commercial</a></div>
 
     <sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}">
     <div style="display:flex;gap:30px;align-items:center">
@@ -115,7 +118,7 @@
   <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
   <div style="position:fixed;inset:0;z-index:80;background:#0B0B0B;display:flex;flex-direction:column;padding:30px 6vw">
     <div style="display:flex;align-items:center;justify-content:space-between;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.12)">
-      <span style="font-size:13px;letter-spacing:.32em;text-transform:uppercase">Kofman + Partners</span>
+      <img src="/assets/logo-wordmark.png" alt="Kofman + Partners" width="550" height="40" style="display:block;width:190px;height:auto">
       <button onClick="{{ toggleMenu }}" style="background:transparent;border:1px solid rgba(255,255,255,.35);color:#FFFFFF;font-size:10px;letter-spacing:.22em;text-transform:uppercase;padding:12px 18px;cursor:pointer">Close</button>
     </div>
     <div style="display:flex;flex-direction:column;gap:0;flex:1;justify-content:center">
