@@ -264,7 +264,7 @@ header [data-pad] > a img{width:220px !important}
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;whatsappNumber&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;447457411495&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Behaviour&quot;},&quot;whatsappBar&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behaviour&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;whatsappNumber&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;447457405680&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Behaviour&quot;},&quot;whatsappBar&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behaviour&quot;}}">
 const LETTINGS = [
   { slot:'kp-let-card-1', src:'assets/rev/let/01_the-lancasters_exterior.jpg', alt:'The Lancasters', name:'The Lancasters', loc:'Hyde Park', price:'From £8,000 pcm', pos:'center' },
   { slot:'kp-let-card-2', src:'assets/rev/let/02_corniche_interior.jpg', alt:'Corniche', name:'Corniche', loc:'Albert Embankment', price:'From £7,500 pcm', pos:'center' },
@@ -292,7 +292,7 @@ class Component extends DCLogic {
   };
 
   wa(text, src){
-    const num = (this.props.whatsappNumber || '447457411495').replace(/\D/g,'');
+    const num = (this.props.whatsappNumber || '447457405680').replace(/\D/g,'');
     return 'https://wa.me/' + num + '?text=' + encodeURIComponent(text) + '&utm_source=lettings&utm_content=' + src;
   }
 

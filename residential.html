@@ -368,7 +368,7 @@ header [data-pad] > a img{width:220px !important}
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;whatsappNumber&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;447457411495&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Behaviour&quot;},&quot;whatsappBar&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behaviour&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;whatsappNumber&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;447457405680&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Behaviour&quot;},&quot;whatsappBar&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behaviour&quot;}}">
 const TX = {
   uk: [
     { slot:'kp-res-card-1', src:'assets/rev/res/01_chelsea-barracks_exterior.jpg', alt:'Chelsea Barracks exterior', name:'Chelsea Barracks', price:'From £3.2m', pos:'center' },
@@ -432,7 +432,7 @@ class Component extends DCLogic {
   }
 
   wa(text){
-    const num = this.props.whatsappNumber || '447457411495';
+    const num = this.props.whatsappNumber || '447457405680';
     return 'https://wa.me/' + num + '?text=' + encodeURIComponent(text);
   }
 
