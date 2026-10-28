@@ -58,7 +58,7 @@ def build_meta(d):
     meta["/commercial/what-we-do/"] = (f"What We Do — Site Acquisition for F&B and Retail Brands | {brand}",
         "We source prime sites and negotiate the deals that put the world's best F&B and retail brands into them — for brands, landlords and developers.")
     meta["/commercial/brands/"] = (f"Brands & Partners — Landlord and Developer Network | {brand}",
-        "Eighteen years of transactions build a bench: the landlords and estates of London, the region's developers and the brands we have placed.")
+        "Nineteen years of transactions build a bench: the landlords and estates of London, the region's developers and the brands we have placed.")
     meta["/commercial/advisors/"] = (f"Your Advisors — The {brand} Team",
         "Deals are done by people, not platforms. Meet the leadership and advisory team behind K+P Commercial: over a century of combined sector experience.")
     meta["/commercial/contact/"] = (f"Contact {brand} — Tell Us About the Brand",
